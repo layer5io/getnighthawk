@@ -1,4 +1,6 @@
-# NightHawk-go for Meshery
+# Nighthawk-go for Meshery
+
+Nighthawk adapter to run load-test with Meshery.
 
 
 <div>&nbsp;</div>
