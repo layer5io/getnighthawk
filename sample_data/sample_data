@@ -1,0 +1,226 @@
+{
+ "Labels": "",
+ "RequestedQPS": 5,
+ "ActualQPS": 4.9999995930000329,
+ "ActualDuration": 5000000407,
+ "NumThreads": 100,
+ "DurationHistogram": {
+  "Count": "25",
+  "Data": [
+   {
+    "Start": 0.024088575,
+    "End": 0.024088575,
+    "Percent": 0,
+    "Count": "1"
+   },
+   {
+    "Start": 0.024088575,
+    "End": 0.024779775,
+    "Percent": 10,
+    "Count": "2"
+   },
+   {
+    "Start": 0.024779775,
+    "End": 0.025127935,
+    "Percent": 20,
+    "Count": "2"
+   },
+   {
+    "Start": 0.025127935,
+    "End": 0.025554943,
+    "Percent": 30,
+    "Count": "3"
+   },
+   {
+    "Start": 0.025554943,
+    "End": 0.025939967,
+    "Percent": 40,
+    "Count": "2"
+   },
+   {
+    "Start": 0.025939967,
+    "End": 0.026267647,
+    "Percent": 50,
+    "Count": "3"
+   },
+   {
+    "Start": 0.026267647,
+    "End": 0.026441727,
+    "Percent": 55.000000000000007,
+    "Count": "1"
+   },
+   {
+    "Start": 0.026441727,
+    "End": 0.026473471,
+    "Percent": 60,
+    "Count": "1"
+   },
+   {
+    "Start": 0.026473471,
+    "End": 0.026583039,
+    "Percent": 65,
+    "Count": "2"
+   },
+   {
+    "Start": 0.026583039,
+    "End": 0.027447295,
+    "Percent": 70,
+    "Count": "1"
+   },
+   {
+    "Start": 0.027447295,
+    "End": 0.055091199,
+    "Percent": 75,
+    "Count": "1"
+   },
+   {
+    "Start": 0.055091199,
+    "End": 0.076689407,
+    "Percent": 77.5,
+    "Count": "1"
+   },
+   {
+    "Start": 0.076689407,
+    "End": 0.076689407,
+    "Percent": 80,
+    "Count": "0"
+   },
+   {
+    "Start": 0.076689407,
+    "End": 0.097136639,
+    "Percent": 82.5,
+    "Count": "1"
+   },
+   {
+    "Start": 0.097136639,
+    "End": 0.107311103,
+    "Percent": 85,
+    "Count": "1"
+   },
+   {
+    "Start": 0.107311103,
+    "End": 0.107311103,
+    "Percent": 87.5,
+    "Count": "0"
+   },
+   {
+    "Start": 0.107311103,
+    "End": 0.112869375,
+    "Percent": 88.75,
+    "Count": "1"
+   },
+   {
+    "Start": 0.112869375,
+    "End": 0.112869375,
+    "Percent": 90,
+    "Count": "0"
+   },
+   {
+    "Start": 0.112869375,
+    "End": 0.112869375,
+    "Percent": 91.25,
+    "Count": "0"
+   },
+   {
+    "Start": 0.112869375,
+    "End": 0.138584063,
+    "Percent": 92.5,
+    "Count": "1"
+   },
+   {
+    "Start": 0.138584063,
+    "End": 0.138584063,
+    "Percent": 93.75,
+    "Count": "0"
+   },
+   {
+    "Start": 0.138584063,
+    "End": 0.138584063,
+    "Percent": 94.375,
+    "Count": "0"
+   },
+   {
+    "Start": 0.138584063,
+    "End": 0.138584063,
+    "Percent": 95,
+    "Count": "0"
+   },
+   {
+    "Start": 0.138584063,
+    "End": 0.138584063,
+    "Percent": 95.625,
+    "Count": "0"
+   },
+   {
+    "Start": 0.138584063,
+    "End": 0.148004863,
+    "Percent": 96.25,
+    "Count": "1"
+   },
+   {
+    "Start": 0.148004863,
+    "End": 0.148004863,
+    "Percent": 100,
+    "Count": "0"
+   }
+  ],
+  "Min": 0.024088575,
+  "Max": 0.148004863,
+  "Sum": 1.199209475,
+  "Avg": 0.047968379,
+  "StdDev": 0.039058392,
+  "Percentiles": [
+   {
+    "Percentile": 50,
+    "Value": 0.026267647
+   },
+   {
+    "Percentile": 75,
+    "Value": 0.055091199
+   },
+   {
+    "Percentile": 80,
+    "Value": 0.076689407
+   },
+   {
+    "Percentile": 90,
+    "Value": 0.112869375
+   },
+   {
+    "Percentile": 95,
+    "Value": 0.138584063
+   }
+  ]
+ },
+ "RetCodes": {
+  "200": "0"
+ },
+ "URL": "https://www.github.com",
+ "Version": "0.3.0",
+ "Jitter": false,
+ "RunType": "HTTP",
+ "Sizes": {
+  "Count": "25",
+  "Data": [],
+  "Min": 0,
+  "Max": 0,
+  "Sum": 0,
+  "Avg": 0,
+  "StdDev": 0,
+  "Percentiles": []
+ },
+ "HeaderSizes": {
+  "Count": "25",
+  "Data": [],
+  "Min": 52,
+  "Max": 52,
+  "Sum": 1300,
+  "Avg": 52,
+  "StdDev": 0,
+  "Percentiles": []
+ },
+ "BytesSent": "1575",
+ "BytesReceived": "2100",
+ "StartTime": "2020-07-26T03:45:38.190799729Z",
+ "RequestedDuration": "5s"
+}
