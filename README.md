@@ -1,6 +1,26 @@
 # Nighthawk-go for Meshery
 
-Nighthawk adapter to run load-test with Meshery.
+Nighthawk adapter to run service mesh load tests with Meshery.
+
+## Load Generators in Meshery
+
+Users may prefer to use one load generator over the next given the difference of capabilities between load generators, so Meshery provides a load generator interface (a gRPC interface) behind which a load generator can be implemented. Meshery provides users with choice of which load generator they prefer to use for a given performance test. Users may set their configure their own preference of load generator different that the default load generator.
+
+### What function do load generators in Meshery provide?
+
+Load generators will provide the capability to run load tests from Meshery. As of today the load generators are embedded as libraries in Meshery and Meshery invokes the load generators APIs with the right load test options to run the load test. At the moment, Meshery has support for HTTP load generators. Support for GRPC and TCP load testing is on the roadmap. Meshery has functional integration with `fortio`, `wrk2`, and `nighthawk`.
+
+### Why support multiple load generators?
+
+Different use cases and different opinions call for different approaches to statistical analysis of the performance results. For example, wrk2 accounts for a concept called Coordinated Omission.
+
+### Which are currently supported?
+
+`fortio` - Fortio load testing library, command line tool, advanced echo server and web UI in go (golang). Allows to specify a set query-per-second load and record latency histograms and other useful stats.
+`wrk2` - A constant throughput, correct latency recording variant of wrk.
+`nighthawk` - Enables users to run distributed performance tests to better mimic real-world, distributed systems scenarios.
+
+
 
 
 <div>&nbsp;</div>
