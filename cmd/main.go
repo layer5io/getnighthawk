@@ -18,6 +18,8 @@ func init() {
 	// Output to stdout instead of the default stderr
 	log.SetOutput(os.Stdout)
 
+	log.SetLevel(log.WarnLevel)
+
 }
 
 // func runNighthawk(duration int, qps int, c int, url string) []byte {
