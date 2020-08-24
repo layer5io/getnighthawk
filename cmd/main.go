@@ -3,9 +3,8 @@ package main
 import (
 	"fmt"
 	"os"
-	"os/exec"
-	"strconv"
 
+	"github.com/layer5io/nighthawk-go/api"
 	"github.com/pkg/errors"
 	log "github.com/sirupsen/logrus"
 )
@@ -17,30 +16,29 @@ func init() {
 	// Output to stdout instead of the default stderr
 	log.SetOutput(os.Stdout)
 
-}
-
-func runNighthawk(duration int, qps int, c int, url string) []byte {
-
-	out, err := exec.Command("docker", "run", "envoyproxy/nighthawk-dev:latest", "nighthawk_client", "--rps "+strconv.Itoa(qps), "--concurrency "+strconv.Itoa(c), "--duration "+strconv.Itoa(duration), url, "--output-format json").Output()
-	if err != nil {
-		log.Fatal(err)
-		err = errors.Wrapf(err, "unable to run nighthawk")
-		log.Fatal(err)
-	}
-
-	return out
+	// Output to only for logs above warn level
+	log.SetLevel(log.WarnLevel)
 
 }
+
 func main() {
 
 	//Duration in seconds nighthawk default format
-	var duration int = 15
-	var qps int = 50
-	var c int = 10
-	var url string = "https://www.github.com"
+	testConfig := &api.NighthawkConfig{
+		Thread:            1,
+		DurationInSeconds: 5,
+		QPS:               1,
+		URL:               "https://www.github.com",
+	}
 
-	result := runNighthawk(duration, qps, c, url)
+	result, err := api.NighthawkRun(testConfig)
 
-	fmt.Printf(string(result))
+	if err != nil {
+		msg := "Failed to run load-test"
+		err = errors.Wrapf(err, msg)
+		log.Fatal(err)
+	}
+
+	fmt.Print(string(result))
 
 }
