@@ -24,7 +24,7 @@ func NighthawkRun (config *NighthawkConfig) ([]byte, error) {
 	if err != nil {
 		msg := "Setup nighthawk image before executing load-test"
 		err = errors.Wrapf(err, msg)
-		log.Fatal(err)
+		log.Error(err)
 		return nil, err
 	}
 
@@ -32,7 +32,7 @@ func NighthawkRun (config *NighthawkConfig) ([]byte, error) {
 	rURL, _ := url.Parse(config.URL)
 	if !rURL.IsAbs() {
 		err := fmt.Errorf("Please give a valid URL %s", config.URL)
-		log.Fatal(err)
+		log.Error(err)
 		return nil, err
 	}
 
@@ -56,7 +56,7 @@ func NighthawkRun (config *NighthawkConfig) ([]byte, error) {
 	if err != nil {
 		msg := "Unable to run load-test"
 		err = errors.Wrapf(err, msg)
-		log.Fatal(err)
+		log.Error(err)
 		return nil, err
 	}
 
