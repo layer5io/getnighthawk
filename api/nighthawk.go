@@ -10,6 +10,7 @@ import (
 	log "github.com/sirupsen/logrus"
 )
 
+// NighthawkConfig describes the configuration structure for loadtest
 type NighthawkConfig struct {
 	Thread                  int
 	DurationInSeconds       int
@@ -17,6 +18,7 @@ type NighthawkConfig struct {
 	URL                     string
 }
 
+// NighthawkRun function runs the nighthawk loadtest
 func NighthawkRun (config *NighthawkConfig) ([]byte, error) {
 
 	imageName := "envoyproxy/nighthawk-dev"
