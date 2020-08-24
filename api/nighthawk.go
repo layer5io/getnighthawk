@@ -42,7 +42,7 @@ func NighthawkRun (config *NighthawkConfig) ([]byte, error) {
 
 	args := []string{"--rps "+qps, "--concurrency "+c,"--duration "+duration,rURL.String(),"--output-format json"}
 	
-	log.Info("Received arguments for run %s", args)
+	log.Info("Received arguments for run", args)
 
 	out, err := exec.Command("docker", "run",
 	 						"envoyproxy/nighthawk-dev:latest",

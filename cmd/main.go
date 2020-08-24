@@ -39,6 +39,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-	fmt.Printf(string(result))
+	fmt.Print(string(result))
 
 }
