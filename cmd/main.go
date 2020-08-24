@@ -18,12 +18,9 @@ func init() {
 
 	// Output to only for logs above warn level
 	log.SetLevel(log.WarnLevel)
-
 }
-
 func main() {
-
-	//Duration in seconds nighthawk default format
+	// Duration in seconds nighthawk default format
 	testConfig := &api.NighthawkConfig{
 		Thread:            1,
 		DurationInSeconds: 5,
@@ -40,5 +37,4 @@ func main() {
 	}
 
 	fmt.Print(string(result))
-
 }
