@@ -1,5 +1,5 @@
-// Package api defines nighthawk runner and config
-package api
+// Package apinighthawk defines nighthawk runner and config
+package apinighthawk
 
 import (
 	"fmt"
@@ -14,8 +14,8 @@ import (
 // NighthawkConfig describes the configuration structure for loadtest
 type NighthawkConfig struct {
 	Thread            int
-	DurationInSeconds int
-	QPS               int
+	DurationInSeconds float64
+	QPS               float64
 	URL               string
 }
 
@@ -37,8 +37,8 @@ func NighthawkRun(config *NighthawkConfig) ([]byte, error) {
 		return nil, err
 	}
 
-	duration := strconv.Itoa(config.DurationInSeconds)
-	qps := strconv.Itoa(config.QPS)
+	duration := strconv.FormatFloat(config.DurationInSeconds, 'f', -1, 64)
+	qps := strconv.FormatFloat(config.QPS, 'f', -1, 64)
 	c := strconv.Itoa(config.Thread)
 
 	args := []string{"--rps " + qps, "--concurrency " + c, "--duration " + duration, rURL.String(), "--output-format json"}
