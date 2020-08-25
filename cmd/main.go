@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/layer5io/nighthawk-go/api"
+	"github.com/layer5io/nighthawk-go/apinighthawk"
 	"github.com/pkg/errors"
 	log "github.com/sirupsen/logrus"
 )
@@ -21,14 +21,14 @@ func init() {
 }
 func main() {
 	// Duration in seconds nighthawk default format
-	testConfig := &api.NighthawkConfig{
+	testConfig := &apinighthawk.NighthawkConfig{
 		Thread:            1,
 		DurationInSeconds: 5,
 		QPS:               1,
 		URL:               "https://www.github.com",
 	}
 
-	result, err := api.NighthawkRun(testConfig)
+	result, err := apinighthawk.NighthawkRun(testConfig)
 
 	if err != nil {
 		msg := "Failed to run load-test"
