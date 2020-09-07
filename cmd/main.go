@@ -3,8 +3,11 @@ package main
 import (
 	"fmt"
 	"os"
+	"encoding/json"
 
 	"github.com/layer5io/nighthawk-go/apinighthawk"
+	"fortio.org/fortio/fhttp"
+	"fortio.org/fortio/periodic"
 	"github.com/pkg/errors"
 	log "github.com/sirupsen/logrus"
 )
@@ -35,6 +38,33 @@ func main() {
 		err = errors.Wrapf(err, msg)
 		log.Fatal(err)
 	}
+	res1 := string(result)
+
+	var result1 periodic.RunnerResults
+	var bd []byte
+
+	hres, _ := res1.(*fhttp.HTTPRunnerResults)
+	bd, err = json.Marshal(hres)
+	result1 = hres.Result()
+
+	// err = json.Unmarshal([]byte(result), &result1)
+
+	// if err != nil {
+	// 	err = errors.Wrap(err, "Error while unmarshaling  Nighthawk results to the FortioHTTPRunner")
+	// 	// logrus.Error(err)
+	// 	log.Fatal(err)
+	// }
+
+	resultsMap := map[string]interface{}{}
+	err = json.Unmarshal(result, &resultsMap)
+
+	if err != nil {
+		err = errors.Wrap(err, "Error while unmarshaling Nighthawk results to map")
+		// log.Error(err)
+		log.Fatal(err)
+	}
+
+	log.Debugf("Mapped version of the test: %+#v", resultsMap)
 
 	fmt.Print(string(result))
 }
