@@ -41,7 +41,7 @@ func NighthawkRun(config *NighthawkConfig) ([]byte, error) {
 	qps := strconv.FormatFloat(config.QPS, 'f', -1, 64)
 	c := strconv.Itoa(config.Thread)
 
-	args := []string{"--rps " + qps, "--concurrency " + c, "--duration " + duration, rURL.String(), "--output-format json"}
+	args := []string{"--rps " + qps, "--concurrency " + c, "--duration " + duration, rURL.String(), "--output-format fortio"}
 
 	log.Info("Received arguments for run", args)
 
@@ -52,7 +52,7 @@ func NighthawkRun(config *NighthawkConfig) ([]byte, error) {
 		"--concurrency "+c,
 		"--duration "+duration,
 		rURL.String(),
-		"--output-format json").Output()
+		"--output-format fortio").Output()
 
 	if err != nil {
 		msg := "Unable to run load-test"
