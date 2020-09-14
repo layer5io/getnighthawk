@@ -1,0 +1,109 @@
+{
+  "RunType": "HTTP",
+  "Labels": "test",
+  "StartTime": "2020-09-08T16:29:19.35507+05:30",
+  "RequestedQPS": "100",
+  "RequestedDuration": "5s",
+  "ActualQPS": 59.9799880886016,
+  "ActualDuration": 5101701580,
+  "NumThreads": 8,
+  "Version": "1.6.8",
+  "DurationHistogram": {
+    "Count": 306,
+    "Min": 0.114543168,
+    "Max": 0.436206912,
+    "Sum": 40.422087638,
+    "Avg": 0.1320983256143791,
+    "StdDev": 0.03333137761133907,
+    "Data": [
+      {
+        "Start": 0.114543168,
+        "End": 0.2,
+        "Percent": 97.38562091503267,
+        "Count": 298
+      },
+      {
+        "Start": 0.2,
+        "End": 0.3,
+        "Percent": 99.34640522875817,
+        "Count": 6
+      },
+      {
+        "Start": 0.3,
+        "End": 0.4,
+        "Percent": 99.67320261437908,
+        "Count": 1
+      },
+      {
+        "Start": 0.4,
+        "End": 0.436206912,
+        "Percent": 100,
+        "Count": 1
+      }
+    ],
+    "Percentiles": [
+      {
+        "Percentile": 50,
+        "Value": 0.15827865104377106
+      },
+      {
+        "Percentile": 75,
+        "Value": 0.1802902592861953
+      },
+      {
+        "Percentile": 90,
+        "Value": 0.19349722423164983
+      },
+      {
+        "Percentile": 99,
+        "Value": 0.28233333333333327
+      },
+      {
+        "Percentile": 99.9,
+        "Value": 0.42512759692800084
+      }
+    ]
+  },
+  "Exactly": 0,
+  "Jitter": false,
+  "RetCodes": {
+    "200": 306
+  },
+  "Sizes": {
+    "Count": 306,
+    "Min": 14152,
+    "Max": 15026,
+    "Sum": 4356836,
+    "Avg": 14238.02614379085,
+    "StdDev": 52.37209101996212,
+    "Data": [
+      {
+        "Start": 14152,
+        "End": 15026,
+        "Percent": 100,
+        "Count": 306
+      }
+    ],
+    "Percentiles": null
+  },
+  "HeaderSizes": {
+    "Count": 306,
+    "Min": 0,
+    "Max": 0,
+    "Sum": 0,
+    "Avg": 0,
+    "StdDev": 0,
+    "Data": [
+      {
+        "Start": 0,
+        "End": 0,
+        "Percent": 100,
+        "Count": 306
+      }
+    ],
+    "Percentiles": null
+  },
+  "URL": "https://www.google.com",
+  "SocketCount": 0,
+  "AbortOn": 0
+}
