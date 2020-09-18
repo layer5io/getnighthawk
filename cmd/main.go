@@ -1,9 +1,8 @@
 package main
 
 import (
-	"fmt"
-	"os"
 	"encoding/json"
+	"os"
 
 	"github.com/layer5io/nighthawk-go/apinighthawk"
 	// "fortio.org/fortio/fhttp"
@@ -19,8 +18,8 @@ func init() {
 	// Output to stdout instead of the default stderr
 	log.SetOutput(os.Stdout)
 
-	// Output to only for logs above warn level
-	log.SetLevel(log.WarnLevel)
+	// // Output to only for logs above warn level
+	// log.SetLevel(log.WarnLevel)
 }
 func main() {
 	// Duration in seconds nighthawk default format
@@ -39,8 +38,8 @@ func main() {
 		log.Fatal(err)
 	}
 
-	fmt.Print(string(result))
-	// res1 := string(result)
+	// fmt.Print(string(result))
+	// // res1 := string(result)
 
 	var result1 periodic.RunnerResults
 	// var bd []byte
@@ -66,7 +65,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-	log.Debugf("Mapped version of the test: %+#v", resultsMap)
-
+	log.Infof("Mapped version of the test: %+#v", resultsMap)
 
 }
