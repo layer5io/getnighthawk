@@ -52,7 +52,7 @@ func NighthawkRun(config *NighthawkConfig) ([]byte, error) {
 		"--concurrency "+c,
 		"--duration "+duration,
 		rURL.String(),
-		"--output-format fortio").Output()
+		"--output-format experimental_fortio_pedantic").Output()
 
 	if err != nil {
 		msg := "Unable to run load-test"
