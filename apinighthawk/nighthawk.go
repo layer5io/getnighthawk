@@ -42,7 +42,7 @@ func NighthawkRun(config *NighthawkConfig) ([]byte, error) {
 	c := strconv.Itoa(config.Thread)
 
 	args := []string{"--rps " + qps,
-		"--concurrency " + c,
+		"--connections " + c,
 		"--duration " + duration,
 		rURL.String(),
 		"--output-format experimental_fortio_pedantic"}
