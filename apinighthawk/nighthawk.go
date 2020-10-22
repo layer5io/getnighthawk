@@ -53,7 +53,8 @@ func NighthawkRun(config *NighthawkConfig) ([]byte, error) {
 		"envoyproxy/nighthawk-dev:latest",
 		"nighthawk_client",
 		"--rps "+qps,
-		"--concurrency "+c,
+		"--concurrency 1",
+		"--connections "+c,
 		"--duration "+duration,
 		rURL.String(),
 		"--output-format experimental_fortio_pedantic").Output()
