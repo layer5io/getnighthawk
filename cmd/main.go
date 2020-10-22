@@ -21,9 +21,9 @@ func init() {
 func main() {
 	// Duration in seconds nighthawk default format
 	testConfig := &apinighthawk.NighthawkConfig{
-		Thread:            1,
+		Thread:            2,
 		DurationInSeconds: 5,
-		QPS:               1,
+		QPS:               2,
 		URL:               "https://www.github.com",
 	}
 
