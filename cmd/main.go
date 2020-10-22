@@ -17,9 +17,6 @@ func init() {
 
 	// Output to stdout instead of the default stderr
 	log.SetOutput(os.Stdout)
-
-	// // Output to only for logs above warn level
-	// log.SetLevel(log.WarnLevel)
 }
 func main() {
 	// Duration in seconds nighthawk default format
@@ -38,21 +35,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	// fmt.Print(string(result))
-	// // res1 := string(result)
-
 	var result1 periodic.RunnerResults
-	// var bd []byte
 
-	// hres, _ := res1.(*fhttp.HTTPRunnerResults)
-	// bd, err = json.Marshal(hres)
-	// result1 = hres.Result()
-
-	err = json.Unmarshal([]byte(result), &result1)
+	err = json.Unmarshal(result, &result1)
 
 	if err != nil {
 		err = errors.Wrap(err, "Error while unmarshaling  Nighthawk results to the FortioHTTPRunner")
-		// logrus.Error(err)
 		log.Fatal(err)
 	}
 
@@ -61,10 +49,8 @@ func main() {
 
 	if err != nil {
 		err = errors.Wrap(err, "Error while unmarshaling Nighthawk results to map")
-		// log.Error(err)
 		log.Fatal(err)
 	}
 
 	log.Infof("Mapped version of the test: %+#v", resultsMap)
-
 }

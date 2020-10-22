@@ -41,7 +41,11 @@ func NighthawkRun(config *NighthawkConfig) ([]byte, error) {
 	qps := strconv.FormatFloat(config.QPS, 'f', -1, 64)
 	c := strconv.Itoa(config.Thread)
 
-	args := []string{"--rps " + qps, "--concurrency " + c, "--duration " + duration, rURL.String(), "--output-format experimental_fortio_pedantic"}
+	args := []string{"--rps " + qps,
+		"--concurrency " + c,
+		"--duration " + duration,
+		rURL.String(),
+		"--output-format experimental_fortio_pedantic"}
 
 	log.Info("Received arguments for run", args)
 
