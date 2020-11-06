@@ -48,4 +48,5 @@ jobs:
         /usr/local/bin/bazel version
         bazel version
         git clone https://github.com/envoyproxy/nighthawk
+        cd nighthawk
         bazel build -c opt //:nighthawk
