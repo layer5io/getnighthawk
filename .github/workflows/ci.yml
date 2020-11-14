@@ -47,6 +47,10 @@ jobs:
         ./ci/build.sh
         /usr/local/bin/bazel version
         bazel version
-        git clone https://github.com/envoyproxy/nighthawk
-        cd nighthawk
-        bazel build -c opt //:nighthawk
+        go get -u github.com/bazelbuild/buildtools/buildifier
+        export BUILDIFIER_BIN=$GOPATH/bin/buildifier
+        go get -u github.com/bazelbuild/buildtools/buildozer
+        export BUILDOZER_BIN=$GOPATH/bin/buildozer
+        git clone https://github.com/envoyproxy/envoy
+        cd envoy
+        bazel build //source/exe:envoy-static -c opt
