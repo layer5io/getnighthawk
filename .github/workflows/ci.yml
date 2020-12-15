@@ -29,23 +29,52 @@ jobs:
 
           # Optional: show only new issues if it's a pull request. The default value is `false`.
           only-new-issues: true
-  tests:
-    name: Tests
-    runs-on: ubuntu-latest
+  build:
+    strategy:
+      matrix:
+        go-version: [1.14.x]
+        platform: [ubuntu-latest]
+    runs-on: ${{ matrix.platform }}
     steps:
     - name: Check out code
-      uses: actions/checkout@master
+      uses: actions/checkout@v2
       with:
         fetch-depth: 1
     - name: Setup Go
-      uses: actions/setup-go@v1
+      uses: actions/setup-go@v2
       with:
-        go-version: ${{ secrets.GO_VERSION }}
-    - name: Setup Cache
-      uses: actions/cache@v1
+        go-version: ${{ matrix.go-version }}
+    - name: start build
+      run: |
+        chmod +x ./ci/build.sh
+        ./ci/build.sh
+        /usr/local/bin/bazel version
+        bazel version
+        go get -u github.com/bazelbuild/buildtools/buildifier
+        export BUILDIFIER_BIN=$GOPATH/bin/buildifier
+        go get -u github.com/bazelbuild/buildtools/buildozer
+        export BUILDOZER_BIN=$GOPATH/bin/buildozer
+        git clone https://github.com/envoyproxy/envoy
+        cd envoy
+        bazel build //source/exe:envoy-static -c opt
+  test-assets:
+    strategy:
+      matrix:
+        go-version: [1.14.x]
+        platform: [ubuntu-latest]
+    runs-on: ${{ matrix.platform }}
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
       with:
-        path: ~/go/pkg/mod
-        key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
-        restore-keys: |
-          ${{ runner.os }}-go-        
-    - run: GOPROXY=direct GOSUMDB=off GO111MODULE=on go test -tags draft ./...
+        fetch-depth: 1
+    - name: Setup Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: ${{ matrix.go-version }}
+    - name: start build
+      run: |
+        chmod +x ./apinighthawk/bin/nighthawk_client
+        cd apinighthawk/bin
+        chmod +x nighthawk_client
+        ./nighthawk_client --rps 3 --concurrency 5 --duration 30 https://github.com

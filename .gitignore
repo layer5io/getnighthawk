@@ -16,3 +16,5 @@
 
 # Ignore OS-X Trash
 *.DS_Store
+
+.idea/
