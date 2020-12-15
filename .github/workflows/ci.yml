@@ -72,7 +72,8 @@ jobs:
     - name: start build
       run: |
         chmod +x ./apinighthawk/bin/nighthawk_client
-        cd apinighthawk/bin
+        cd apinighthawk
+        export PATH=$PATH:$(pwd)/bin
+        cd bin
         chmod +x nighthawk_client
-        export PATH="$PATH:/"
         nighthawk_client --rps 3 --concurrency 5 --duration 30 https://github.com --output-format experimental_fortio_pedantic
