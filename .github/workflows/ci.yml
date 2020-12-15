@@ -16,10 +16,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: golangci-lint
-        uses: golangci/golangci-lint-action@v1
+        uses: golangci/golangci-lint-action@v2
         with:
           # Required: the version of golangci-lint is required and must be specified without patch version: we always use the latest patch version.
-          version: v1.29
+          version: v1.32
 
           # Optional: working directory, useful for monorepos
           # working-directory: somedir
@@ -54,9 +54,6 @@ jobs:
         export BUILDIFIER_BIN=$GOPATH/bin/buildifier
         go get -u github.com/bazelbuild/buildtools/buildozer
         export BUILDOZER_BIN=$GOPATH/bin/buildozer
-        git clone https://github.com/envoyproxy/envoy
-        cd envoy
-        bazel build //source/exe:envoy-static -c opt
   test-assets:
     strategy:
       matrix:
@@ -75,6 +72,8 @@ jobs:
     - name: start build
       run: |
         chmod +x ./apinighthawk/bin/nighthawk_client
-        cd apinighthawk/bin
+        cd apinighthawk
+        export PATH=$PATH:$(pwd)/bin
+        cd bin
         chmod +x nighthawk_client
-        ./nighthawk_client --rps 3 --concurrency 5 --duration 30 https://github.com
+        nighthawk_client --rps 3 --concurrency 5 --duration 30 https://github.com --output-format experimental_fortio_pedantic

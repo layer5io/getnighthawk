@@ -21,18 +21,9 @@ type NighthawkConfig struct {
 
 // NighthawkRun function runs the nighthawk loadtest
 func NighthawkRun(config *NighthawkConfig) ([]byte, error) {
-	imageName := "envoyproxy/nighthawk-dev"
-	_, err := exec.Command("docker", "inspect", imageName).Output()
-	if err != nil {
-		msg := "Setup nighthawk image before executing load-test"
-		err = errors.Wrapf(err, msg)
-		log.Error(err)
-		return nil, err
-	}
-
 	rURL, _ := url.Parse(config.URL)
 	if !rURL.IsAbs() {
-		err = fmt.Errorf("please give a valid URL %s", config.URL)
+		err := fmt.Errorf("please give a valid URL %s", config.URL)
 		log.Error(err)
 		return nil, err
 	}
@@ -49,9 +40,7 @@ func NighthawkRun(config *NighthawkConfig) ([]byte, error) {
 
 	log.Info("Received arguments for run", args)
 
-	out, err := exec.Command("docker", "run",
-		"envoyproxy/nighthawk-dev:latest",
-		"nighthawk_client",
+	out, err := exec.Command("nighthawk_client",
 		"--rps "+qps,
 		"--concurrency 1",
 		"--connections "+c,
