@@ -57,3 +57,24 @@ jobs:
         git clone https://github.com/envoyproxy/envoy
         cd envoy
         bazel build //source/exe:envoy-static -c opt
+  test-assets:
+    strategy:
+      matrix:
+        go-version: [1.14.x]
+        platform: [ubuntu-latest]
+    runs-on: ${{ matrix.platform }}
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 1
+    - name: Setup Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: ${{ matrix.go-version }}
+    - name: start build
+      run: |
+        chmod +x ./apinighthawk/bin/nighthawk_client
+        cd apinighthawk/bin
+        chmod +x nighthawk_client
+        ./nighthawk_client --rps 3 --concurrency 5 --duration 30 https://github.com
