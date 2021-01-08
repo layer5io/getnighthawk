@@ -65,7 +65,7 @@ body {
     -ms-flex-direction: column;
     flex-direction: column;
     font-size: 62.5%;
-    font-family: Camphor, Open Sans, Segoe UI, sans-serif;
+    font-family: OpenSans, Open Sans, Segoe UI, sans-serif;
     font-weight: 400;
     font-style: normal;
     -webkit-text-size-adjust: 100%;
@@ -84,7 +84,7 @@ body {
 }
 
 html[lang=ja] body {
-    font-family: Camphor, Meiryo, Hiragino Sans, sans-serif
+    font-family: OpenSans, Meiryo, Hiragino Sans, sans-serif
 }
 
 code, pre {
@@ -97,52 +97,52 @@ code, pre {
 // }
 
 @font-face {
-    font-family: Camphor;
+    font-family: OpenSans;
     font-weight: 300;
     src: url("/fonts/OpenSans-Light.ttf") format("ttf"), url("/fonts/OpenSans-Light.ttf") format("ttf")
 }
 
 @font-face {
-    font-family: Camphor;
+    font-family: OpenSans;
     font-weight: 300;
     font-style: italic;
     src: url("/fonts/OpenSans-LightItalic.ttf") format("ttf"), url("/fonts/OpenSans-LightItalic.ttf") format("ttf")
 }
 
 @font-face {
-    font-family: Camphor;
+    font-family: OpenSans;
     font-weight: 400;
     src: url("/fonts/OpenSans-Regular.ttf") format("ttf"), url("/fonts/OpenSans-Regular.ttf") format("ttf")
 }
 
 @font-face {
-    font-family: Camphor;
+    font-family: OpenSans;
     font-weight: 400;
     font-style: italic;
     src: url("/fonts/OpenSans-Italic.ttf") format("ttf"), url("/fonts/OpenSans-Italic.ttf") format("ttf")
 }
 
 @font-face {
-    font-family: Camphor;
+    font-family: OpenSans;
     font-weight: 500;
     src: url("/fonts/OpenSans-Semibold.ttf") format("ttf"), url("/fonts/OpenSans-Semibold.ttf") format("ttf")
 }
 
 @font-face {
-    font-family: Camphor;
+    font-family: OpenSans;
     font-weight: 500;
     font-style: italic;
     src: url("/fonts/OpenSans-SemiboldItalic.ttf") format("ttf"), url("/fonts/OpenSans-SemiboldItalic.ttf") format("ttf")
 }
 
 @font-face {
-    font-family: Camphor;
+    font-family: OpenSans;
     font-weight: 600;
     src: url("/fonts/OpenSans-Boldttf") format("ttf"), url("/fonts/OpenSans-Bold.ttf") format("ttf")
 }
 
 @font-face {
-    font-family: Camphor;
+    font-family: OpenSans;
     font-weight: 600;
     font-style: italic;
     src: url("/fonts/OpenSans-BoldItalic.ttf") format("ttf"), url("/fonts/OpenSans-BoldItalic.ttf") format("ttf")
@@ -1435,7 +1435,7 @@ code, pre {
 }
 
 .globalNav {
-    font-family: Camphor, Open Sans, Segoe UI, sans-serif;
+    font-family: OpenSans, Open Sans, Segoe UI, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     position: absolute;
@@ -2474,7 +2474,7 @@ code, pre {
 }
 
 .productNav {
-    font-family: Camphor, Open Sans, Segoe UI, sans-serif;
+    font-family: OpenSans, Open Sans, Segoe UI, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     position: absolute;
@@ -2627,7 +2627,7 @@ html[lang=ja] .productNav ul {
 }
 
 .globalFooter {
-    font-family: Camphor, Open Sans, Segoe UI, sans-serif;
+    font-family: OpenSans, Open Sans, Segoe UI, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background: #f6f9fc;
@@ -3027,7 +3027,7 @@ a.globalFooterCard.card-environment, div.globalFooterCard.card-environment {
 .globalFooterCTA--collect .collect-error {
     width: 100%;
     text-align: center;
-    font: 400 15px Camphor;
+    font: 400 15px OpenSans;
     color: #6b7c93;
     position: absolute;
     right: 0;
@@ -3790,7 +3790,7 @@ a.globalFooterCard.card-environment, div.globalFooterCard.card-environment {
     -ms-flex-align: center;
     align-items: center;
     color: #fff;
-    font: 600 11px Camphor;
+    font: 600 11px OpenSans;
     text-transform: uppercase;
     border: 2px solid;
     -webkit-transition: all .3s cubic-bezier(.25, .46, .45, .94);
@@ -3799,14 +3799,14 @@ a.globalFooterCard.card-environment, div.globalFooterCard.card-environment {
 
 @media (min-width: 420px) {
     .diagram-product {
-        font: 600 13px Camphor
+        font: 600 13px OpenSans
     }
 }
 
 @media (min-width: 880px) {
     .diagram-product {
         border-radius: 12px;
-        font: 600 15px Camphor
+        font: 600 15px OpenSans
     }
 }
 
@@ -4033,7 +4033,7 @@ a.globalFooterCard.card-environment, div.globalFooterCard.card-environment {
     -webkit-transform: translate(-50%, 100%) translateY(5px);
     transform: translate(-50%, 100%) translateY(5px);
     text-transform: uppercase;
-    font: 600 19px Camphor;
+    font: 600 19px OpenSans;
     letter-spacing: .025em;
     padding: 3px 10px;
     opacity: 0;
@@ -4321,7 +4321,7 @@ a.globalFooterCard.card-environment, div.globalFooterCard.card-environment {
 }
 
 .chart svg text {
-    font: 600 13px Camphor;
+    font: 600 13px OpenSans;
     fill: #aab7c4
 }
 
@@ -4363,7 +4363,7 @@ a.globalFooterCard.card-environment, div.globalFooterCard.card-environment {
     -ms-flex-align: start;
     align-items: flex-start;
     margin: 45px 20px 0;
-    font: 600 15px Camphor;
+    font: 600 15px OpenSans;
     text-transform: uppercase;
     color: #8898aa
 }
@@ -4620,9 +4620,9 @@ a.globalFooterCard.card-environment, div.globalFooterCard.card-environment {
 
 .today-title {
     margin: 0 0 16px;
-    font: 400 26px Camphor;
+    font: 400 26px OpenSans-Light;
     line-height: 1.4;
-    color: #32325d
+    color: $charcoal;
 }
 
 .today-content {
@@ -4978,7 +4978,7 @@ a.globalFooterCard.card-environment, div.globalFooterCard.card-environment {
 }
 
 .about-stripe-title {
-    font: 400 26px Camphor;
+    font: 400 26px OpenSans;
     line-height: 1.4;
     color: #32325d
 }
@@ -5017,7 +5017,7 @@ a.globalFooterCard.card-environment, div.globalFooterCard.card-environment {
 }
 
 .about-stripe-stat-number {
-    font: 500 22px Camphor;
+    font: 500 22px OpenSans;
     color: #3297d3;
     margin: 0 0 5px
 }
