@@ -1,0 +1,73 @@
+title: GetNighthawk
+author: Layer5 Authors
+email: community@layer5.io
+name:  Layer5
+description: "the Nighthawk distribution for service mesh performance characterization.
+ Integrating Service Mesh Performance (SMP) and Meshery"
+url: "https://getnighthawk.dev"
+baseurl: /docs
+
+#Contact / Social
+github: https://github.com/layer5io/getnighthawk
+slack: http://slack.layer5.io/
+blog: https://layer5.io/blog
+docker: https://hub.docker.com/u/layer5/
+youtube: https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1
+twitter:
+  card: summary
+  username: layer5
+  url: "https://twitter.com/layer5"
+  image: "https://layer5.io/assets/images/layer5/5-dark-bg.png"
+
+# Google tracking, if both are filled, tag manager will prevail. Set up GA through GTM in that case
+tag_manager_id: # This looks something like GTM-XXXXXXX
+google_analytics_tracking_id: UA-2969471-4 # This looks something like UA-000000000-0 Head over to https://analytics.google.com/ to setup.
+
+# Build settings
+# theme: minima
+paginate: 5
+markdown: kramdown
+permalink: pretty
+plugins:
+  - jekyll-feed
+  - jekyll-assets
+  - jekyll-minifier
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-redirect-from
+  - jekyll-archives
+
+# This logic is included based on differences of the handling of trailing slashes between Jekyll and GitHub Pages
+# permalinks:
+#  - docs: "/docs"
+
+collections_dir: collections
+collections:
+  blogs:
+    output: true
+    permalink: /blog/:categories/:title
+  pages:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/images/layer5/layer5-tag-linkedin.png
+  - scope:
+      type: pages
+      path: ""
+
+
+# Colors
+getnighthawk:
+  charcoal: "#3c494f"
+  caribeangreen: "#00b39f"
+  keppel: "#00d3a9"
+  saffron: "#EBC017"
+  dark-jungle-green: "#1E2117"
+  gray: "#a0aaaa"
+
+
+## Reference - OSS this site uses:
+
