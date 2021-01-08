@@ -76,4 +76,6 @@ jobs:
         export PATH=$PATH:$(pwd)/bin
         cd bin
         chmod +x nighthawk_client
-        nighthawk_client --rps 3 --concurrency 5 --duration 30 https://github.com --output-format experimental_fortio_pedantic
+        nighthawk_client --rps 3 --concurrency 5 --duration 30 https://github.com/layer5io/meshery --output-format experimental_fortio_pedantic
+        exit 0
+        
