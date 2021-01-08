@@ -1,3 +1,5 @@
+# Building GetNighthawk
+
 setup:
 	docker pull envoyproxy/nighthawk-dev; cd cmd; go mod tidy;
 run:

@@ -1,3 +1,25 @@
+// Custom colors
+
+$charcoal: #3c494f;
+$caribbeangreen: #00b39f;
+$keppel: #00d3a9;
+$saffron: #EBC017;
+$saffronlight: #FFF3C5;
+$saffronlightest: #FFF7D8;
+$dark-jungle-green: #1E2117;
+$gray: #a0aaaa;
+$tealblue: #477e96;
+
+/* SCSS HEX */
+$keppel: #00b39fff;
+$viridian-green: #20969cff;
+$metallic-seaweed: #30879bff;
+$lightseagreen: #10A59E;
+$blue-munsell: #358a9eff;
+$blue-munsell-2: #3a8da0ff;
+$blue-munsell-3: #4392a4ff;
+
+
 * {
     -webkit-box-sizing: border-box;
     box-sizing: border-box
@@ -69,88 +91,88 @@ code, pre {
     font-family: Source Code Pro, Consolas, Menlo, monospace
 }
 
+// @font-face {
+//     font-family: StripeIcons;
+//     src: url("/fonts/stripe-icons.ttf") format("ttf"), url("/fonts/stripe-icons.ttf") format("ttf")
+// }
+
 @font-face {
-    font-family: StripeIcons;
-    src: url("/fonts/stripe-icons.woff2") format("woff2"), url("/fonts/stripe-icons.woff") format("woff")
+    font-family: Camphor;
+    font-weight: 300;
+    src: url("/fonts/OpenSans-Light.ttf") format("ttf"), url("/fonts/OpenSans-Light.ttf") format("ttf")
 }
 
 @font-face {
     font-family: Camphor;
     font-weight: 300;
-    src: url("/fonts/camphor-ss/300-light.woff2") format("woff2"), url("/fonts/camphor-ss/300-light.woff") format("woff")
-}
-
-@font-face {
-    font-family: Camphor;
-    font-weight: 300;
     font-style: italic;
-    src: url("/fonts/camphor-ss/300-light-italic.woff2") format("woff2"), url("/fonts/camphor-ss/300-light-italic.woff") format("woff")
+    src: url("/fonts/OpenSans-LightItalic.ttf") format("ttf"), url("/fonts/OpenSans-LightItalic.ttf") format("ttf")
 }
 
 @font-face {
     font-family: Camphor;
     font-weight: 400;
-    src: url("/fonts/camphor-ss/400-regular.woff2") format("woff2"), url("/fonts/camphor-ss/400-regular.woff") format("woff")
+    src: url("/fonts/OpenSans-Regular.ttf") format("ttf"), url("/fonts/OpenSans-Regular.ttf") format("ttf")
 }
 
 @font-face {
     font-family: Camphor;
     font-weight: 400;
     font-style: italic;
-    src: url("/fonts/camphor-ss/400-regular-italic.woff2") format("woff2"), url("/fonts/camphor-ss/400-regular-italic.woff") format("woff")
+    src: url("/fonts/OpenSans-Italic.ttf") format("ttf"), url("/fonts/OpenSans-Italic.ttf") format("ttf")
 }
 
 @font-face {
     font-family: Camphor;
     font-weight: 500;
-    src: url("/fonts/camphor-ss/500-medium.woff2") format("woff2"), url("/fonts/camphor-ss/500-medium.woff") format("woff")
+    src: url("/fonts/OpenSans-Semibold.ttf") format("ttf"), url("/fonts/OpenSans-Semibold.ttf") format("ttf")
 }
 
 @font-face {
     font-family: Camphor;
     font-weight: 500;
     font-style: italic;
-    src: url("/fonts/camphor-ss/500-medium-italic.woff2") format("woff2"), url("/fonts/camphor-ss/500-medium-italic.woff") format("woff")
+    src: url("/fonts/OpenSans-SemiboldItalic.ttf") format("ttf"), url("/fonts/OpenSans-SemiboldItalic.ttf") format("ttf")
 }
 
 @font-face {
     font-family: Camphor;
     font-weight: 600;
-    src: url("/fonts/camphor-ss/600-bold.woff2") format("woff2"), url("/fonts/camphor-ss/600-bold.woff") format("woff")
+    src: url("/fonts/OpenSans-Boldttf") format("ttf"), url("/fonts/OpenSans-Bold.ttf") format("ttf")
 }
 
 @font-face {
     font-family: Camphor;
     font-weight: 600;
     font-style: italic;
-    src: url("/fonts/camphor-ss/600-bold-italic.woff2") format("woff2"), url("/fonts/camphor-ss/600-bold-italic.woff") format("woff")
+    src: url("/fonts/OpenSans-BoldItalic.ttf") format("ttf"), url("/fonts/OpenSans-BoldItalic.ttf") format("ttf")
 }
 
 @font-face {
     font-family: Source Code Pro;
     font-weight: 400;
-    src: url("/fonts/sourcecodepro-ss/SourceCodePro-Medium.woff2") format("woff2"), url("/fonts/sourcecodepro-ss/SourceCodePro-Medium.woff") format("woff")
+    src: url("/fonts/sourcecodepro-ss/SourceCodePro-Medium.ttf") format("ttf"), url("/fonts/sourcecodepro-ss/SourceCodePro-Medium.ttf") format("ttf")
 }
 
 @font-face {
     font-family: Source Code Pro;
     font-weight: 600;
-    src: url("/fonts/sourcecodepro-ss/SourceCodePro-Bold.woff2") format("woff2"), url("/fonts/sourcecodepro-ss/SourceCodePro-Bold.woff") format("woff")
+    src: url("/fonts/sourcecodepro-ss/SourceCodePro-Bold.ttf") format("ttf"), url("/fonts/sourcecodepro-ss/SourceCodePro-Bold.ttf") format("ttf")
 }
 
 @font-face {
     font-family: Flow-Block;
-    src: url("/fonts/flow/flow-block.woff") format("woff")
+    src: url("/fonts/flow/flow-block.ttf") format("ttf")
 }
 
 @font-face {
     font-family: Flow-Rounded;
-    src: url("/fonts/flow/flow-rounded.woff") format("woff")
+    src: url("/fonts/flow/flow-rounded.ttf") format("ttf")
 }
 
 @font-face {
     font-family: Flow-Circular;
-    src: url("/fonts/flow/flow-circular.woff") format("woff")
+    src: url("/fonts/flow/flow-circular.ttf") format("ttf")
 }
 
 .container, .container-fluid, .container-lg, .container-wide, .container-xl {
@@ -171,7 +193,7 @@ code, pre {
     font-weight: 300;
     font-size: 45px;
     line-height: 55px;
-    color: #32325d;
+    color: $charcoal;
     letter-spacing: -.01em
 }
 
@@ -186,7 +208,7 @@ code, pre {
     font-weight: 400;
     font-size: 34px;
     line-height: 43px;
-    color: #32325d
+    color: $tealblue;
 }
 
 @media (min-width: 670px) {
@@ -200,7 +222,7 @@ code, pre {
     font-weight: 300;
     font-size: 34px;
     line-height: 43px;
-    color: #6772e5
+    color: $caribbeangreen;
 }
 
 @media (min-width: 670px) {
@@ -214,7 +236,7 @@ code, pre {
     font-weight: 300;
     font-size: 21px;
     line-height: 31px;
-    color: #424770
+    color: $dark-jungle-green;
 }
 
 @media (min-width: 670px) {
@@ -228,7 +250,7 @@ code, pre {
     font-weight: 300;
     font-size: 21px;
     line-height: 31px;
-    color: #424770
+    color: $dark-jungle-green;
 }
 
 @media (min-width: 670px) {
@@ -242,14 +264,14 @@ code, pre {
     font-weight: 500;
     font-size: 19px;
     line-height: 28px;
-    color: #32325d
+    color: $dark-jungle-green;
 }
 
 .common-BodyText {
     font-weight: 400;
     font-size: 17px;
     line-height: 28px;
-    color: #525f7f
+    color: $dark-jungle-green;
 }
 
 .common-BodyTextSmall {
@@ -263,7 +285,7 @@ code, pre {
     font-weight: 400;
     font-size: 19px;
     line-height: 32px;
-    color: #525f7f
+    color: $dark-jungle-green;
 }
 
 .common-UppercaseTitle {
@@ -393,7 +415,7 @@ code, pre {
 }
 
 .common-Link {
-    color: #6772e5;
+    color: $keppel;
     font-weight: 500;
     -webkit-transition: color .1s ease;
     transition: color .1s ease;
@@ -407,7 +429,7 @@ code, pre {
 }
 
 .common-Link:focus, .common-Link:hover {
-    color: #32325d
+    color: $caribbeangreen;
 }
 
 .common-Link:active {
@@ -482,7 +504,7 @@ code, pre {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: .025em;
-    color: #6772e5;
+    color: $tealblue;
     text-decoration: none;
     -webkit-transition: all .15s ease;
     transition: all .15s ease
@@ -495,7 +517,7 @@ code, pre {
 }
 
 .common-Button:focus, .common-Button:hover {
-    color: #7795f8;
+    color: $saffronlight;
     -webkit-transform: translateY(-1px);
     transform: translateY(-1px);
     -webkit-box-shadow: 0 7px 14px rgba(50, 50, 93, .1), 0 3px 6px rgba(0, 0, 0, .08);
@@ -503,7 +525,7 @@ code, pre {
 }
 
 .common-Button:active {
-    color: #555abf;
+    color: $saffronlightest;
     background-color: #f6f9fc;
     -webkit-transform: translateY(1px);
     transform: translateY(1px);
@@ -513,17 +535,17 @@ code, pre {
 
 .common-Button--default {
     color: #fff;
-    background: #6772e5
+    background: $saffron;
 }
 
 .common-Button--default:focus, .common-Button--default:hover {
     color: #fff;
-    background-color: #7795f8
+    background-color: $saffronlight
 }
 
 .common-Button--default:active {
     color: #e6ebf1;
-    background-color: #555abf
+    background-color: $saffronlightest
 }
 
 .common-Button--dark {
@@ -1438,7 +1460,7 @@ code, pre {
 .globalNav a {
     text-decoration: none;
     -webkit-tap-highlight-color: transparent;
-    color: #6772e5;
+    color: $tealblue;
     -webkit-transition: color .1s;
     transition: color .1s
 }
@@ -1585,7 +1607,7 @@ code, pre {
 }
 
 .globalNav .colorize {
-    color: #6772e5;
+    color: $tealblue;
     -webkit-transition: color .1s ease;
     transition: color .1s ease
 }
@@ -1801,7 +1823,7 @@ code, pre {
 
 .globalNav .linkTitle {
     margin: 0;
-    color: #6772e5;
+    color: $tealblue;
     font-size: 16px;
     line-height: 22px;
     text-transform: uppercase;
@@ -1882,7 +1904,7 @@ code, pre {
     font-size: 10px;
     line-height: 1;
     font-weight: 700;
-    background: #6772e5;
+    background: $tealblue;
     -webkit-transition: background .15s;
     transition: background .15s;
     border-radius: 10px;
@@ -1935,7 +1957,7 @@ code, pre {
 
 .globalNav .productsGroupPrimary svg {
     width: 48px;
-    height: 48px
+    height: 48px;
 }
 
 .globalNav .productsGroupPrimary .productLinkContent {
@@ -1952,7 +1974,7 @@ code, pre {
     flex-direction: column;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
-    justify-content: center
+    justify-content: center;
 }
 
 .globalNav .productsGroupSecondary .linkContainer {
@@ -2125,13 +2147,13 @@ code, pre {
     text-underline-position: under
 }
 
-.globalNav .blogPosts .new-badge {
-    vertical-align: -1px
-}
+// .globalNav .blogPosts .new-badge {
+//     vertical-align: -1px
+// }
 
-.globalNav .blogPosts a:hover .new-badge. .globalNav .blogPosts a:focus .new-badge {
-    background: #32325d
-}
+// .globalNav .blogPosts a:hover .new-badge. .globalNav .blogPosts a:focus .new-badge {
+//     background: #32325d
+// }
 
 .globalNav .navSection.mobile .rootLink {
     cursor: pointer;
@@ -2239,7 +2261,7 @@ code, pre {
 .globalNav .popupCloseButton:after, .globalNav .popupCloseButton:before {
     content: "";
     position: absolute;
-    background: #6772e5;
+    background: $tealblue;
     border-radius: 1px;
     left: 14px;
     right: 14px;
@@ -2568,7 +2590,7 @@ code, pre {
 .productNav a {
     text-decoration: none;
     -webkit-tap-highlight-color: transparent;
-    color: #6772e5;
+    color: $tealblue;
     -webkit-transition: color .1s;
     transition: color .1s;
     white-space: nowrap
@@ -2591,7 +2613,7 @@ code, pre {
 }
 
 .productNav .colorize {
-    color: #6772e5;
+    color: $tealblue;
     -webkit-transition: color .1s ease;
     transition: color .1s ease
 }
@@ -2856,7 +2878,7 @@ a.globalFooterCard.card-environment, div.globalFooterCard.card-environment {
 
 .globalFooterCTA .subtitle {
     font-weight: 300;
-    color: #6772e5;
+    color: $tealblue;
     display: block
 }
 
@@ -2949,7 +2971,7 @@ a.globalFooterCard.card-environment, div.globalFooterCard.card-environment {
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: .025em;
-    color: #6772e5;
+    color: $tealblue;
     cursor: pointer;
     position: relative;
     -webkit-transition: all .15s ease;
@@ -2972,11 +2994,11 @@ a.globalFooterCard.card-environment, div.globalFooterCard.card-environment {
 }
 
 .globalFooterCTA--collect .collect-input .submit-button:hover {
-    color: #7795f8
+    color: $saffronlight
 }
 
 .globalFooterCTA--collect .collect-input .submit-button:active {
-    color: #555abf;
+    color: $saffronlightest;
     background-color: #f6f9fc
 }
 
@@ -3133,7 +3155,7 @@ a.globalFooterCard.card-environment, div.globalFooterCard.card-environment {
 }
 
 .globalFooterNav .metaNav .rootLink {
-    color: #6772e5;
+    color: $tealblue;
     font-weight: 600;
     cursor: pointer
 }
@@ -3474,7 +3496,7 @@ a.globalFooterCard.card-environment, div.globalFooterCard.card-environment {
     line-height: 36px;
     padding: 0 15px;
     text-transform: uppercase;
-    color: #6772e5;
+    color: $tealblue;
     font-size: 14px;
     font-weight: 600;
     letter-spacing: .025em
@@ -3505,7 +3527,7 @@ a.globalFooterCard.card-environment, div.globalFooterCard.card-environment {
 
 .globalFooterNav .globalLink strong {
     display: block;
-    color: #6772e5;
+    color: $tealblue;
     font-weight: 500;
     -webkit-transition: color .1s;
     transition: color .1s
@@ -3858,7 +3880,7 @@ a.globalFooterCard.card-environment, div.globalFooterCard.card-environment {
 }
 
 .diagram-infra-service {
-    border: 2px dashed #7795f8;
+    border: 2px dashed $saffronlight;
     border-radius: 8px;
     opacity: .5
 }
@@ -4517,7 +4539,7 @@ a.globalFooterCard.card-environment, div.globalFooterCard.card-environment {
 .header .common-StripeGrid .stripeContainer .stripe:nth-child(2) {
     grid-row: -9;
     grid-column: 4/span 2;
-    background-color: #c4f0ff;
+    background-color: $blue-munsell;
     margin-top: -2px
 }
 
@@ -4525,7 +4547,7 @@ a.globalFooterCard.card-environment, div.globalFooterCard.card-environment {
     grid-row: -8;
     grid-row: -6;
     grid-column: span 2/right-gutter-end;
-    background-color: #87bbfd
+    background-color: $blue-munsell;
 }
 
 .header .common-StripeGrid .stripeContainer .stripe:nth-child(4) {
@@ -4538,31 +4560,31 @@ a.globalFooterCard.card-environment, div.globalFooterCard.card-environment {
 .header .common-StripeGrid .stripeContainer .stripe:nth-child(5) {
     grid-row: -4;
     grid-column: left-gutter-start/span 3;
-    background-color: #87bbfd
+    background-color: $blue-munsell-3;
 }
 
 .header .common-StripeGrid .stripeContainer .stripe:nth-child(6) {
     grid-row: -3;
     grid-column: viewport-start/span 6;
-    background-color: #424770
+    background-color:$lightseagreen;
 }
 
 .header .common-StripeGrid .stripeContainer .stripe:nth-child(7) {
     grid-row: -2;
     grid-column: 3/span 3;
-    background-color: #c4f0ff
+    background-color: $blue-munsell;
 }
 
 .header .common-StripeGrid .stripeContainer .stripe:nth-child(8) {
     grid-row: -2;
     grid-column: 6/span 3;
-    background-color: #6772e5
+    background-color: $metallic-seaweed;
 }
 
 .header .common-StripeGrid .stripeContainer .stripe:nth-child(9) {
     grid-row: -2;
     grid-column: span 3/right-gutter-end;
-    background-color: #6772e5
+    background-color: $viridian-green;
 }
 
 .today {
@@ -5040,7 +5062,7 @@ a.globalFooterCard.card-environment, div.globalFooterCard.card-environment {
 .about-stripe .common-StripeGrid .stripeContainer .stripe:nth-child(3) {
     grid-row: -12;
     grid-column: viewport-start/span 3;
-    background-color: #6772e5;
+    background-color: $tealblue;
     z-index: 2
 }
 

@@ -5,7 +5,7 @@ name:  Layer5
 description: "The Nighthawk distribution for service mesh performance characterization.
  Integrating Meshery and Service Mesh Performance (SMP)."
 url: "https://getnighthawk.dev"
-baseurl: /docs
+#baseurl: /docs
 
 #Contact / Social
 github: https://github.com/layer5io/getnighthawk
@@ -25,17 +25,12 @@ google_analytics_tracking_id: UA-2969471-4 # This looks something like UA-000000
 
 # Build settings
 # theme: minima
-paginate: 5
+# paginate: 5
 markdown: kramdown
 permalink: pretty
-plugins:
-  - jekyll-feed
-  - jekyll-assets
-  - jekyll-minifier
-  - jekyll-sitemap
-  - jekyll-seo-tag
-  - jekyll-redirect-from
-  - jekyll-archives
+sass:
+  sass_dir: _sass
+  # style: compact  
 
 # This logic is included based on differences of the handling of trailing slashes between Jekyll and GitHub Pages
 # permalinks:
@@ -43,26 +38,26 @@ plugins:
 
 collections_dir: collections
 collections:
-  blogs:
-    output: true
-    permalink: /blog/:categories/:title
+  # blogs:
+  #   output: true
+  #   permalink: /blog/:categories/:title
   pages:
     output: true
 
-defaults:
-  - scope:
-      path: ""
-    values:
-      image: /assets/images/layer5/layer5-tag-linkedin.png
-  - scope:
-      type: pages
-      path: ""
+# defaults:
+#   - scope:
+#       path: ""
+    #values:
+     # image: /assets/images/layer5/layer5-tag-linkedin.png
+  # - scope:
+  #     type: pages
+  #     path: ""
 
 
 # Colors
 getnighthawk:
   charcoal: "#3c494f"
-  caribeangreen: "#00b39f"
+  caribbeangreen: "#00b39f"
   keppel: "#00d3a9"
   saffron: "#EBC017"
   dark-jungle-green: "#1E2117"
