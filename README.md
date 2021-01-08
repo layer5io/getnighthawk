@@ -1,15 +1,19 @@
 # GetNighthawk
 
 - Project site: https://getnighthawk.dev
-- Project doc: https://docs.google.com/document/d/1lHfMo4iIx2WXFZIspfHyxTsPR1T63_2IV5NUkgxoo0w/edit# 
+- Project doc: https://docs.google.com/document/d/1lHfMo4iIx2WXFZIspfHyxTsPR1T63_2IV5NUkgxoo0w/edit#
 - Project Slack: http://slack.layer5.io
+
 ## What is Nighthawk?
+
 Nighthawk is a Layer 7 (HTTP/HTTPS/HTTP2) performance characterization tool. Nighthawk is Envoy’s load generator and is written in C++. 
 
 ## Nighthawk and Meshery
+
 Meshery integrates Nighthawk as one of (currently) three choices of load generator for characterizing and managing the performance of service meshes and their workloads. 
 
 ## Why GetNighthawk?
+
 Nighthawk is growing in popularity, but the core project only builds to one architecture / one Docker image. Recently, Nighthawk is being improved so that it can be horizontally scalable - such that multiple instances will be cognizant of one another and able to coordinate amongst each other. Nighthawk is a subproject of Envoy. Nighthawk is growing in popularity with Google, Red Hat, and AWS are investing into it. Istio is considering switching from Fortio to Nighthawk.
 
 ---
