@@ -45,8 +45,8 @@ collections:
   # blogs:
   #   output: true
   #   permalink: /blog/:categories/:title
-  pages:
-    output: true
+  # pages:
+  #   output: true
 
 # defaults:
 #   - scope:
@@ -94,6 +94,17 @@ defaults:
       path: "contact.html"
     values:
       full_width: true
+
+jekyll-archives:
+  enabled:
+    - categories
+
+plugins:
+  - jekyll-archives
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-paginate
 
 exclude:
   - Gemfile
