@@ -23,6 +23,8 @@ twitter:
 tag_manager_id: # This looks something like GTM-XXXXXXX
 google_analytics_tracking_id: UA-2969471-4 # This looks something like UA-000000000-0 Head over to https://analytics.google.com/ to setup.
 
+timezone: Etc/UTC
+
 # Build settings
 # theme: minima
 # paginate: 5
@@ -38,6 +40,8 @@ sass:
 
 collections_dir: collections
 collections:
+  pages:
+    output: true 
   # blogs:
   #   output: true
   #   permalink: /blog/:categories/:title
@@ -53,6 +57,60 @@ collections:
   #     type: pages
   #     path: ""
 
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "plain"
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      _options:
+        content:
+          width: 1500
+          height: 2500
+  -
+    scope:
+      path: ""
+    values:
+      layout: "page"
+  -
+    scope:
+      path: "programs.html"
+    values:
+      layout: "default"
+  -
+    scope:
+      path: "index.html"
+    values:
+      layout: "default"
+  -
+    scope:
+      path: "contact.html"
+    values:
+      full_width: true
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
+
+social_icons:
+  - Facebook
+  - Google Plus
+  - Instagram
+  - LinkedIn
+  - Pinterest
+  - Tumblr
+  - Twitter
+  - YouTube
+  - RSS
 
 # Colors
 getnighthawk:
