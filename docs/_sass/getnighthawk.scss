@@ -19,6 +19,87 @@ $blue-munsell: #358a9eff;
 $blue-munsell-2: #3a8da0ff;
 $blue-munsell-3: #4392a4ff;
 
+// hero-section-div starts
+
+.hero-section-div {
+  background: #F8FAFF;
+  text-align: center;
+  margin-top: 8rem;
+  padding-top: 1rem;
+  padding-bottom: 15rem;
+  height: 100%;
+}
+.hero-section-header {
+  text-align: center !important;
+  margin: 2rem auto 2rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-section-logo-span {
+  font-size: 50px;
+  line-height: 50px;
+  font-weight: 700;
+  text-align: center;
+}
+.hero-section-para {
+  text-align: center;
+  margin: 2rem auto 2rem auto;
+}
+.hero-section-para p {
+  font-size: 21px;
+  line-height: 21px;
+  font-weight: 400px;
+}
+.hero-section-button-div {
+  text-align: center;
+  margin: 2rem auto 2rem auto;
+}
+.hero-section-button {
+  width: 200px;
+  height: 74px;
+  background: #EBC017;
+  border-radius: 20px;
+  outline: none;
+}
+.hero-section-button:focus {
+  outline: none;
+}
+.hero-section-button-text {
+  color: #FFFFFF;
+  font-weight: 600px;
+  font-size: 21px;
+  line-height: 21px;
+}
+.hero-section-logo {
+  text-align: center;
+  margin: 6rem auto 4rem auto;
+}
+.hero-section-img {
+  width: 70px;
+  height: 70px;
+  margin-right: 10px;
+}
+.slanted-div {
+  position: relative;
+  padding: 10px 0;
+  background: white;
+  overflow: visible;
+  z-index: 1;
+}
+.slanted-div:before, .slanted-div:after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: inherit;
+  z-index: -1;
+  top: 0;
+  transform-origin: left top;
+  transform: skewY(-8deg);
+}
+
+// hero-section-div ends
 
 * {
     -webkit-box-sizing: border-box;
@@ -654,6 +735,7 @@ code, pre {
     position: absolute;
     width: 100%;
     height: 100%;
+    background-color: #F8FAFF;
     -webkit-transform: skewY(-12deg);
     transform: skewY(-12deg)
 }
@@ -666,7 +748,8 @@ code, pre {
 .common-StripeGrid .backgroundContainer .background {
     grid-row: 1/-1;
     grid-column: 1/-1;
-    z-index: -1
+    z-index: -1;
+    background-color: #F8FAFF;
 }
 
 .common-StripeGrid .stripeContainer {
