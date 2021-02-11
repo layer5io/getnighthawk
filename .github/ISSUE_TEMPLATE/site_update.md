@@ -13,5 +13,5 @@ A brief description of the change you are requesting.
 
 ---
 **Contributor Resources**
-- See the [Contributing to Meshery.io Website](https://github.com/layer5io/meshery.io#contributing-to-the-mesheryio-website) section of the readme.md.
+- See the [Contributing to getnighthawk.dev Website](https://github.com/layer5io/getnighthawk)
 - See the Project Site section of [GetNighthawk project doc](https://docs.google.com/document/d/1lHfMo4iIx2WXFZIspfHyxTsPR1T63_2IV5NUkgxoo0w)
