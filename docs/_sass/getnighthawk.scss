@@ -101,6 +101,45 @@ $blue-munsell-3: #4392a4ff;
 
 // hero-section-div ends
 
+// Newsletter-signup starts
+
+.newsletter-signup {
+  text-align: center;
+  background: #F6F9FC;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+.newsletter-signup-logo {
+  width: 25rem;
+  height: auto;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.newsletter-signup-button{
+  background: #EBC017;
+  width: 240px;
+  height: 74px;
+  border-radius: 20px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.newsletter-span {
+  font-size: 21px;
+  line-height: 21px;
+  font-weight: 600;
+  color: #FFFFFF;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.newsletter-para {
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 550;
+  color: #000000;
+}
+
+// Newsletter-signup ends
+
 * {
     -webkit-box-sizing: border-box;
     box-sizing: border-box
