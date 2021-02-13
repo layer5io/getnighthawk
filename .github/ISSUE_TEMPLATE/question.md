@@ -14,5 +14,5 @@ assignees: ""
 
 **Contributor Resources**
 
-- See the [Contributing to getnighthawk.dev Website](https://github.com/layer5io/getnighthawk)
+- See the [Contributing to getnighthawk.dev Website](https://github.com/layer5io/getnighthawk/blob/master/CONTRIBUTING.md)
 - See the Project Site section of [GetNighthawk project doc](https://docs.google.com/document/d/1lHfMo4iIx2WXFZIspfHyxTsPR1T63_2IV5NUkgxoo0w)
