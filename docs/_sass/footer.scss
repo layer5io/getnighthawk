@@ -1,12 +1,13 @@
+.container{
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	font-size: 0.8rem;
+}
 .footer-links {
-	width: 100%;
-	margin: 10px;
+	
+	margin: 0rem 1rem;
 	padding: 0;
-
-	@media #{$tablet} {
-		-webkit-flex: 1 0 180px;
-		flex: 1 0 180px;
-	}
 
 	li {
 		list-style: none;
@@ -76,8 +77,8 @@
 			}
 		}
 	}
+	
 }
-
 .feed {
 	width: 100%;
 	margin: 10px;
@@ -104,7 +105,38 @@ footer {
 	position: relative;
 	background: #1E2117;
 	color: #fff;
+	
+	.getnighthawk-logo{
+		display: flex;
+		align-items: center;
+		a{
+			display:block;
+			
+			img{
+				width:3rem;
+				vertical-align: middle;
+			}
+			p{
+				display: inline-block;
+				color:white;
+				font-size: 1.1rem;
+				font-weight: bolder;
+				margin:0rem 0.2rem;
+			}	
+		}
+		a:hover{
+			text-decoration: none;
 
+		}
+	}
+	.copyright-cont{
+		
+		display: flex;
+		align-items: center;
+		p{
+			color:white;
+		}
+	}
 	.copyright {
 		font-size: .8em;
 		margin: 0 auto;
@@ -124,13 +156,14 @@ footer {
 		font-size: 1.2em;
 		margin: 30px 0;
 		margin: 15px auto;
-		color: #ccc;
-		font-weight: bold;
+		color: #fff;
+		font-weight: bolder;
 	}
 
 	.footer-columns {
 		@extend %flexbox;
 		@include flex-flow(wrap);
+		justify-content: center;
 	}
 
 	a {
@@ -150,5 +183,28 @@ footer {
 		a {
 			font-weight: 600;
 		}
+	}
+}
+
+
+@media(max-width:660px)
+{
+	.container{
+		flex-direction: column;
+	}
+	.getnighthawk-logo{
+		justify-content: center;
+		margin: 1rem 0rem;
+	}
+	.copyright-cont{
+		justify-content: center;
+		margin: 1rem 0rem;
+	}
+}
+
+@media(max-width:350px)
+{
+	.container{
+		flex-direction: column;
 	}
 }

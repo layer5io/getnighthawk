@@ -1,10 +1,13 @@
 <footer>
 			<div class="container">
 				<p class="editor-link"><a href="cloudcannon:collections/_data/footer.yml" class="btn"><strong>&#9998;</strong> Edit footer</a></p>
+				<div class="getnighthawk-logo">
+					<a href="/" target="_blank" rel="noopener noreferrer"><img src="../images/logos/getnighthawk-Logo.svg" alt="getnighthawk-Logo"> <p>GetNighthawk</p></a>
+				</div>
 				<div class="footer-columns">
 					{% for column in site.data.footer %}
 					<ul class="footer-links">
-						<li><h2>{{ column.title }}</h2></li>
+						<li><h2><strong>{{ column.title }}</strong></h2></li>
 						{% for link in column.links %}
 							<li><a {% if link.new_window %}target="_blank"{% endif %} href="{% include relative-src.html src=link.link %}" {% if link.social_icon %}class="{{ link.social_icon || downcase }}-icon"{% endif %}>
 								{% if link.social_icon %}
@@ -16,7 +19,9 @@
 					{% endfor %}
 					
 				</div>
-				
+				<div class="copyright-cont">
+					<p>2021 <span class="copyright">&#169;</span> Layer5, Inc.</p>
+				</div>
 			</div>
 		</footer>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
