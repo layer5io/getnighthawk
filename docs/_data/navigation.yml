@@ -3,20 +3,16 @@
   link: /
   new_window: false
   highlight: false
-- name: About
-  link: /about
-  new_window: false
-  highlight: false
 - name: Docs
   link: /docs
   new_window: false
   highlight: false
-- name: Blog
-  link: /blog
+- name: Community
+  link: https://layer5.io/community
   new_window: false
   highlight: false
-- name: Community
-  link: 
+- name: GitHub
+  link: https://github.com/layer5io/getnighthawk
   new_window: false
   highlight: false
 
