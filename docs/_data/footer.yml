@@ -1,20 +1,3 @@
-# - title: DOCS
-#   link: https://getnighthawk.dev/docs
-#   new_window: false
-#   highlight: false
-# - title: GITHUB
-#   link: https://github.com/layer5io/getnighthawk
-#   new_window: true
-#   highlight: false
-# - title: TWITTER
-#   link: https://twitter.com/layer5io
-#   new_window: true
-#   highlight: false
-# - title: SLACK
-#   link: http://layer5io.slack.com
-#   new_window: true
-#   highlight: false
-
 #getnighthawk.dev footer data
 - title: Community
   links:

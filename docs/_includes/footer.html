@@ -2,7 +2,7 @@
 			<div class="container">
 				<p class="editor-link"><a href="cloudcannon:collections/_data/footer.yml" class="btn"><strong>&#9998;</strong> Edit footer</a></p>
 				<div class="getnighthawk-logo">
-					<a href="/" target="_blank" rel="noopener noreferrer"><img src="../images/logos/getnighthawk-Logo.svg" alt="getnighthawk-Logo"> <p>GetNighthawk</p></a>
+					<a href="/" target="_blank" rel="noopener noreferrer"><img src="{{ site.baseurl }}/assets/images/logos/getnighthawk-Logo.svg" alt="getnighthawk-Logo"> <p>GetNighthawk</p></a>
 				</div>
 				<div class="footer-columns">
 					{% for column in site.data.footer %}
@@ -26,12 +26,12 @@
 		</footer>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		{% if jekyll.environment == 'production' %}
-       		<script src="{{ site.baseurl }}/js/stellarnav.min.js"></script>
+       		<script src="{{ site.baseurl }}/assets/js/stellarnav.min.js"></script>
         {% else %}
-		<script src="{{ site.baseurl }}/js/stellarnav.js"></script>
+		<script src="{{ site.baseurl }}/assets/js/stellarnav.js"></script>
 	    {% endif %}
 		
-		<script src="{{ site.baseurl }}/js/main.js"></script>
+		<script src="{{ site.baseurl }}/assets/js/main.js"></script>
 
 		<!-- Site Navigation Menu -->
 		<script type="text/javascript">
