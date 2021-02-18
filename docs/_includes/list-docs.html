@@ -1,0 +1,10 @@
+{% for doc in site.docs %}
+	<li class="doc-page">
+		<h3><a href="{% include relative-src.html src=doc.url %}">{{ doc.title }}</a></h3>
+		{% include docs-title.html doc=page %}
+		<div class="doc-content">
+			{{ doc.excerpt }}
+			<div class="button"><a href="{% include relative-src.html src=doc.url %}">Read More</a></div>
+		</div>
+	</li>
+{% endfor %}

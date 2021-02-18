@@ -1,0 +1,125 @@
+.doc-pages {
+	list-style: none;
+	padding: 0;
+
+	li {
+		margin: 100px 0;
+	}
+}
+
+.doc-page {
+	.author {
+		padding: 30px 0 0 0;
+		border: 1px solid #eee;
+		margin: 30px 0;
+		font-size: .8em;
+
+		.square-image {
+			width: 125px;
+			height: 125px;
+			margin-top: 0;
+		}
+		.blurb {
+			text-align: center;
+		}
+	}
+
+	h3 {
+		margin: 0;
+		a {
+			color: #000;
+			text-decoration: none;
+			font-weight: normal;
+			font-size: 1.3em;
+		}
+	}
+
+	h2 {
+		text-align: left;
+	}
+
+	.blog-navigation {
+		font-size: 14px;
+		display: block;
+		width: auto;
+		overflow: hidden;
+		a {
+			display: block;
+			width: 50%;
+			float: left;
+			margin: 1em 0;
+		}
+
+		.next {
+			text-align: right;
+		}
+	}
+
+	.doc-details {
+		border-bottom: 1px solid #eee;
+		font-size: .9em;
+
+		.doc-filter {
+			display: inline-block;
+			text-align: left;
+
+			a {
+				position: relative;
+				top: -5px;
+			}
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+		.doc-date {
+			float: right;
+		}
+
+		&:after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+	}
+
+	.doc-content {
+		.button {
+			margin: 30px 0 0 0;
+		}
+	}
+}
+
+.pagination {
+	text-align: center;
+}
+
+.doc-filter {
+	text-align: center;
+	a {
+		background: #eee;
+    padding: 3px 5px;
+    font-size: .8em;
+    border-radius: 5px;
+    color: #888;
+		transition: .2s ease-in-out;
+
+		&:hover {
+			color: #555;
+			text-decoration: none;
+		}
+	}
+}
+
+.doc-filter.cross a {
+	padding-right: 8px;
+
+	&:after {
+		content: "x";
+		font-size: .5em;
+		position: relative;
+		bottom: 4px;
+		right: -3px;
+	}
+}

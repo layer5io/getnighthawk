@@ -1,0 +1,8 @@
+<p class="doc-details">
+	{% for category in include.docs.categories %}
+		<span class="doc-filter">
+			<a href="{{ site.baseurl }}/category/{{ category | slugify }}/">{{ category | capitalize }}</a>
+		</span>
+	{% endfor %}
+	<span class="doc-date">{{ include.docs.date | date: "%B %d, %Y" }}</span>
+</p>
