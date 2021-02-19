@@ -5,15 +5,32 @@ All contributors are welcome. Please see the [newcomers welcome guide](https://d
 
 Not sure where to start? First, see the [newcomers welcome guide](https://docs.google.com/document/d/17OPtDE_rdnPQxmk2Kauhm3GwXF1R5dZ3Cj8qZLKdo5E/edit). Grab an open issue with the [help-wanted label](../../labels/help%20wanted) and jump in. Join the [Slack account](http://slack.layer5.io) and engage in conversation. Create a [new issue](/../../issues/new/choose) if needed.  All [pull requests](/../../pulls) should reference an open [issue](/../../issues). Include keywords in your pull request descriptions, as well as commit messages, to [automatically close issues in GitHub](https://help.github.com/en/github/managing-your-work-on-github/closing-issues-using-keywords).
 
-**Sections**
-- <a name="contributing">General Contribution Flow</a>
-  - <a href="#commit-signing">Developer Certificate of Origin</a>
 
-Relevant coding style guidelines are the Go Code Review Comments and the Formatting and style section of Peter Bourgon's Go: Best Practices for Production Environments.
+# <a name="getnighthawk">About GetNightHawk?</a>
+GetNighthawk aims to provide generally-available distributions of Nighthawk under different architectures and platforms and easy-to-use tooling for installation and operation. This will include creating distributions of Nighthawk as well as augmenting existing tooling, Meshery, to retrieve these arch-specific packages and update their deployments.
+
+
+# <a name="contribute">How to Contribute?</a>
+You can contribute to the GetNightHawk main project and documentation or you could help in building and contributing to the site which is running on Jekyll, a static site generator(SSG).
+
+## Steps to contribute to GetNightHawk project
+1. Visit the [Project documentation](https://docs.google.com/document/d/1lHfMo4iIx2WXFZIspfHyxTsPR1T63_2IV5NUkgxoo0w/edit#) 
+2. Suggest requests, changes, or features by creating an issue on the repository
+3. Look at existing issues to tackle and get involved with
+
+
+## Steps to build GetNightHawk site
+1. `cd` into the getnighthawk repo
+2. `cd docs` To get into the getnighthawk jekyll website codebase
+3. Run the following code in your terminal `Bundle install`.
+4. Run `make site` in order to serve the jekyll website on your machine at `http://127.0.0.1:4000/`
+( `bundle exec jekyll serve` can also be used for spining up the jekyll website at `http://127.0.0.1:4000/`)
+
+
 
 # <a name="contributing">General Contribution Flow</a>
 
-In order to contribute to Meshery, please follow the fork-and-pull request workflow described [here](./CONTRIBUTING-gitflow.md).
+In order to contribute to GetNightHawk, please follow the fork-and-pull request workflow described [here](./CONTRIBUTING-gitflow.md).
 
 ## <a name="commit-signing">Signing-off on Commits (Developer Certificate of Origin)</a>
 
@@ -50,36 +67,7 @@ Or you may configure your IDE, for example, Visual Studio Code to automatically 
 
 <a href="https://user-images.githubusercontent.com/7570704/64490167-98906400-d25a-11e9-8b8a-5f465b854d49.png" ><img src="https://user-images.githubusercontent.com/7570704/64490167-98906400-d25a-11e9-8b8a-5f465b854d49.png" width="50%"><a>
 
-## <a name="contributing-docs">Documentation Contribution Flow</a>
-Please contribute! Layer5 documentation uses Jekyll and GitHub Pages to host docs sites. Learn more about [Layer5's documentation framework](https://docs.google.com/document/d/17guuaxb0xsfutBCzyj2CT6OZiFnMu9w4PzoILXhRXSo/edit?usp=sharing). The process of contributing follows this flow:
 
-1. Create a fork, if you have not already, by following the steps described [here](./CONTRIBUTING-gitflow.md)
-1. In the local copy of your fork, navigate to the docs folder.
-`cd docs`
-1. Create and checkout a new branch to make changes within
-`git checkout -b <my-changes>`
-1. Edit/add documentation.
-`vi <specific page>.md`
-1. Run site locally to preview changes.
-`make site`
-1. Commit, [sign-off](#commit-signing), and push changes to your remote branch.
-`git push origin <my-changes>`
-1. Open a pull request (in your web browser) against the repo.
-
-
-#### Tests
-Users can now test their code on their local machine against the CI checks implemented using `make run-tests`.
-
-To test code changes on your local machine, run the following command:
-```
-make run-tests
-```
-
-#### Building Docker image
-To build a Docker image of the project, please ensure you have `Docker` installed to be able to build the image. Now, run the following command to build the Docker image:
-```sh
-make docker
-```
 
 ### UI Lint Rules
 
