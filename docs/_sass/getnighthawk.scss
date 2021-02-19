@@ -26,8 +26,6 @@ $blue-munsell-3: #4392a4ff;
   text-align: center;
   margin-top: 8rem;
   padding-top: 1rem;
-  padding-bottom: 15rem;
-  height: 100%;
 }
 .hero-section-header {
   text-align: center !important;
@@ -73,7 +71,7 @@ $blue-munsell-3: #4392a4ff;
 }
 .hero-section-logo {
   text-align: center;
-  margin: 6rem auto 4rem auto;
+  margin: 6rem auto auto auto;
 }
 .hero-section-img {
   width: 70px;
@@ -81,22 +79,8 @@ $blue-munsell-3: #4392a4ff;
   margin-right: 10px;
 }
 .slanted-div {
-  position: relative;
-  padding: 10px 0;
-  background: white;
-  overflow: visible;
-  z-index: 1;
-}
-.slanted-div:before, .slanted-div:after {
-  content: '';
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background: inherit;
-  z-index: -1;
-  top: 0;
-  transform-origin: left top;
-  transform: skewY(-8deg);
+  background: linear-gradient(to right bottom, #F8FAFF 50%, white 50%);
+  height: 10rem;
 }
 
 // hero-section-div ends
@@ -139,6 +123,52 @@ $blue-munsell-3: #4392a4ff;
 }
 
 // Newsletter-signup ends
+
+// nighthawk-description startups
+.nighthawk-description-div {
+  margin: auto auto 3rem auto;
+  z-index: 1;
+}
+.description-div {
+  text-align: center;
+}
+.nighthawk-desc-text {
+  display: inline-block;
+  text-align: left;
+  padding-top: 3rem;
+  padding-left: 3rem;
+}
+.nighthawk-desc-text-meshery {
+  display: inline-block;
+  text-align: left;
+  padding-top: 2rem;
+  padding-left: 2rem;
+}
+.nighthawk-desc-img {
+  width: 160px;
+  height: 160px;
+  margin: auto 2rem 2rem auto;
+}
+.nighthawk-meshery-logo {
+  width: 446px;
+  height: 410px;
+}
+.nighthawk-meshery-div {
+  margin: 4rem auto auto auto;
+}
+.desc-h1 {
+  font-size: 45px;
+  line-height: 45px;
+  font-weight: 600;
+  color: #000000;
+}
+.des-para {
+  font-size: 18px;
+  line-height: 22px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+// nighthawk-description ends
 
 * {
     -webkit-box-sizing: border-box;
