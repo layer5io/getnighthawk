@@ -42,11 +42,10 @@ collections_dir: collections
 collections:
   pages:
     output: true 
-  # blogs:
-  #   output: true
-  #   permalink: /blog/:categories/:title
-  # pages:
-  #   output: true
+  docs:
+    output: true
+    permalink: /docs/:title
+
 
 # defaults:
 #   - scope:
@@ -74,6 +73,16 @@ defaults:
         content:
           width: 1500
           height: 2500
+  -
+    scope:
+      path: ""
+      type: "docs"
+    values:
+      layout: "doc"
+      _options:
+        content:
+          width: 1500
+          height: 2500          
   -
     scope:
       path: ""
