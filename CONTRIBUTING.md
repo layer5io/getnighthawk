@@ -20,8 +20,9 @@ You can contribute to the GetNightHawk main project and documentation or you cou
 
 
 ## Steps to build GetNightHawk site
+
 1. `cd` into the getnighthawk repo
-2. `cd docs` To get into the getnighthawk jekyll website codebase
+2. `cd docs` to access the getnighthawk jekyll website codebase
 3. Run the following code in your terminal `Bundle install`.
 4. Run `make site` in order to serve the jekyll website on your machine at `http://127.0.0.1:4000/`
 ( `bundle exec jekyll serve` can also be used for spining up the jekyll website at `http://127.0.0.1:4000/`)
