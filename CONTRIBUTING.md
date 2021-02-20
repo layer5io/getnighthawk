@@ -50,36 +50,29 @@ Or you may configure your IDE, for example, Visual Studio Code to automatically 
 
 <a href="https://user-images.githubusercontent.com/7570704/64490167-98906400-d25a-11e9-8b8a-5f465b854d49.png" ><img src="https://user-images.githubusercontent.com/7570704/64490167-98906400-d25a-11e9-8b8a-5f465b854d49.png" width="50%"><a>
 
-## <a name="contributing-docs">Documentation Contribution Flow</a>
-Please contribute! Layer5 documentation uses Jekyll and GitHub Pages to host docs sites. Learn more about [Layer5's documentation framework](https://docs.google.com/document/d/17guuaxb0xsfutBCzyj2CT6OZiFnMu9w4PzoILXhRXSo/edit?usp=sharing). The process of contributing follows this flow:
-
-1. Create a fork, if you have not already, by following the steps described [here](./CONTRIBUTING-gitflow.md)
-1. In the local copy of your fork, navigate to the docs folder.
-`cd docs`
-1. Create and checkout a new branch to make changes within
-`git checkout -b <my-changes>`
-1. Edit/add documentation.
-`vi <specific page>.md`
-1. Run site locally to preview changes.
-`make site`
-1. Commit, [sign-off](#commit-signing), and push changes to your remote branch.
-`git push origin <my-changes>`
-1. Open a pull request (in your web browser) against the repo.
+# <a name="getnighthawk">About GetNightHawk?</a>
+GetNighthawk aims to provide generally-available distributions of Nighthawk under different architectures and platforms and easy-to-use tooling for installation and operation. This will include creating distributions of Nighthawk as well as augmenting existing tooling, Meshery, to retrieve these arch-specific packages and update their deployments.
 
 
-#### Tests
-Users can now test their code on their local machine against the CI checks implemented using `make run-tests`.
+# <a name="contribute">How to Contribute?</a>
+You can contribute to the GetNightHawk main project and documentation or you could help in building and contributing to the site which is running on Jekyll, a static site generator(SSG).
 
-To test code changes on your local machine, run the following command:
-```
-make run-tests
-```
+## Steps to contribute to GetNightHawk project
+1. Visit the [Project documentation](https://docs.google.com/document/d/1lHfMo4iIx2WXFZIspfHyxTsPR1T63_2IV5NUkgxoo0w/edit#) 
+2. Suggest requests, changes, or features by creating an issue on the repository
+3. Look at existing issues to tackle and get involved with
 
-#### Building Docker image
-To build a Docker image of the project, please ensure you have `Docker` installed to be able to build the image. Now, run the following command to build the Docker image:
-```sh
-make docker
-```
+
+## Steps to build GetNightHawk site
+
+1. Fork this repository
+2. Clone your forked copy to your local computer
+3.`cd` into the getnighthawk repo
+4. `cd docs` to access the GetNighthawk Jekyll website codebase
+5. Run the following code in your terminal `bundle install`.
+6. Run `make site` in order to serve the jekyll website on your machine at `http://127.0.0.1:4000/`
+( `bundle exec jekyll serve` can also be used for spinning up the Jekyll website at `http://127.0.0.1:4000/`)
+
 
 ### UI Lint Rules
 
