@@ -24,7 +24,7 @@ $blue-munsell-3: #4392a4ff;
 .hero-section-div {
   background: #F8FAFF;
   text-align: center;
-  margin-top: 8rem;
+  margin-top: 6rem;
   padding-top: 1rem;
 }
 .hero-section-header {
@@ -89,7 +89,6 @@ $blue-munsell-3: #4392a4ff;
 
 .newsletter-signup {
   text-align: center;
-  background: #F6F9FC;
   padding-top: 3rem;
   padding-bottom: 3rem;
 }
@@ -120,6 +119,11 @@ $blue-munsell-3: #4392a4ff;
   line-height: 20px;
   font-weight: 550;
   color: #000000;
+}
+.organised-by-h5 {
+  font-size: 25px;
+  line-height: 25px;
+  font-weight: 600;
 }
 
 // Newsletter-signup ends
@@ -169,6 +173,33 @@ $blue-munsell-3: #4392a4ff;
 }
 
 // nighthawk-description ends
+
+// stewared by section startups
+
+.stewarded-by-div {
+  background: #F6F9FC;
+  margin: 1rem auto;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+  text-align: center;
+}
+.stewarded-text {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.stewarded-h5 {
+  font-size: 25px;
+  line-height: 25px;
+  font-weight: 600;
+}
+.stewarded-img {
+  max-width: 250px;
+  max-height: 75px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+// stewarded by section ends
 
 * {
     -webkit-box-sizing: border-box;
