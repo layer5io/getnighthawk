@@ -3879,7 +3879,7 @@ a.globalFooterCard.card-environment, div.globalFooterCard.card-environment {
     }
 }
 
-.section-intro .common-IntroText {
+.section-cust-head .common-IntroText {
     max-width: 800px;
     margin: 0 auto
 }
@@ -5445,5 +5445,113 @@ a.globalFooterCard.card-environment, div.globalFooterCard.card-environment {
 .globalNav .colorize.item-home:hover {
     color: #32325d
 }
+// why-nighthawk-car-section
+.section-cust-head{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.card-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    
+    margin: 2rem 0rem;
+    padding: 2rem 0rem;
+    .card-item{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius:5px;
+        margin:0rem 1rem;
+        height: 22rem;
+        box-shadow:0 2px 10px rgba(0,0,0,0.4);
+        .card-head{
+            padding-top: 3rem ;
+            img{
+                width:5rem;
+            }
+        }
+        .card-cust-body{
+            padding: 1rem 0rem;
+            margin-top: auto;
+            h4 , p{
+                padding: 0.5rem 1rem;
+            }
+            h4{
+                font-weight: bolder;
+            }   
+        }
+    }
+
+    .card-item:after {
+        display:block;
+        content: '';
+        border-bottom: 0.3rem solid $saffron;
+        transform: scaleX(0);  
+        transition: transform 350ms ease-in-out;
+        width: 100%;
+        margin-top: auto;
+    }
+    
+    .card-item:hover:after {
+        transform: scaleX(1);
+    }
+    
+    @media screen and (max-width:800px)
+    {
+        .card-item{
+            margin: 1.3rem 1rem;
+        }
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        .item-3{
+            grid-column: 1/ span 2;
+        }
+        
+    }
+    @media screen and (max-width:600px)
+    {
+        .card-item{
+            margin: 1.3rem 0.5rem;
+        }
+        
+    }
+    @media screen and (max-width:500px)
+    {
+        .card-item{
+            margin: 1.3rem 0rem;
+        }
+        grid-template-columns: 1fr;
+        .item-3{
+            grid-column: unset;
+        }
+    }
+    @media screen and (max-width:400px)
+    {
+        .card-item{
+            margin: 1.3rem 0rem;
+        }
+        grid-template-columns: 88vw;
+        .item-3{
+            grid-column: unset;
+        }
+    }
+}
+
+@media screen and (max-width:400px){
+    .section-cust-head{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 90vw;
+    }
+}
+
+
 
 /*# sourceMappingURL=about-44bbf7b0a0c8887c2697.min.css.map*/
+
+
