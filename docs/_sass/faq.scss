@@ -1,0 +1,30 @@
+.container-faq {
+    max-width: 1040px;
+    margin: 50px auto;
+}
+
+.title {
+    text-align: center;
+    font-weight: 700;
+    font-size: 50px;
+}
+
+.accordion-body{
+    color: #737373;
+}
+
+#faq-title{
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.side{
+    width: 200px;
+    margin: 0 auto;
+    h4{
+        color: #151439;
+    }
+    button{
+        margin: 20px 0;
+    }
+}
