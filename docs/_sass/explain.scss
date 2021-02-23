@@ -1,0 +1,22 @@
+.blk-container{
+    min-height: 1120px;
+    background-color: #1E2117;
+    text-align: center;
+    h1{
+        color: white;
+        padding-top: 150px;
+        font-weight: 700;
+        font-size: 60px;
+    }
+    p{
+        color: rgba(255, 255, 255,0.7);
+        font-size: 21px;
+        max-width: 1040px;
+        margin: 40px auto;
+    }
+}
+
+#img-cont{
+    max-width: 1040px;
+    margin: 20px auto;
+}

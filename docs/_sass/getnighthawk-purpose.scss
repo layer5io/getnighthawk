@@ -1,0 +1,38 @@
+.container-g{
+    max-width: 1040px;
+    margin: 20px auto;
+}
+
+.title-g{
+    text-align: center;
+    font-weight: 700;
+    font-size: 50px;
+}
+
+#list {
+    margin-top: 40px;
+
+    .title-list{
+        font-size: 24px;
+        padding-left: 15px;
+        margin-bottom: 10px;
+    }
+    p{
+        font-size: 20px;
+        padding-left: 15px;
+    }
+
+    li {
+        margin-bottom: 40px;
+    }
+
+    #marker{
+        float: left;
+        height: 50px;
+        width: 10px;
+    }
+    // ul {
+    //     list-style-image: url("../images/Rectangle.png");
+    // }
+}
+

@@ -10,8 +10,10 @@ GEM
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
     eventmachine (1.2.7)
+    eventmachine (1.2.7-x64-mingw32)
     execjs (2.7.0)
     ffi (1.14.2)
+    ffi (1.14.2-x64-mingw32)
     forwardable-extended (2.6.0)
     htmlcompressor (0.4.0)
     http_parser.rb (0.6.0)
@@ -76,8 +78,15 @@ GEM
     safe_yaml (1.0.5)
     sassc (2.4.0)
       ffi (~> 1.9)
+    sassc (2.4.0-x64-mingw32)
+      ffi (~> 1.9)
     terminal-table (1.8.0)
       unicode-display_width (~> 1.1, >= 1.1.1)
+    thread_safe (0.3.6)
+    tzinfo (1.2.9)
+      thread_safe (~> 0.1)
+    tzinfo-data (1.2021.1)
+      tzinfo (>= 1.0.0)
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
     unicode-display_width (1.7.0)
@@ -85,6 +94,7 @@ GEM
 
 PLATFORMS
   ruby
+  x64-mingw32
 
 DEPENDENCIES
   jekyll (~> 4.1.1)
@@ -95,7 +105,9 @@ DEPENDENCIES
   jekyll-redirect-from
   jekyll-seo-tag
   jekyll-sitemap
+  tzinfo (~> 1.2)
+  tzinfo-data
   webrick (~> 1.7)
 
 BUNDLED WITH
-   2.2.7
+   2.2.9
