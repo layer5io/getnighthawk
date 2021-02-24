@@ -129,6 +129,7 @@ $blue-munsell-3: #4392a4ff;
 // Newsletter-signup ends
 
 // nighthawk-description startups
+
 .nighthawk-description-div {
   margin: auto auto 3rem auto;
   z-index: 1;
@@ -145,20 +146,23 @@ $blue-munsell-3: #4392a4ff;
 .nighthawk-desc-text-meshery {
   display: inline-block;
   text-align: left;
-  padding-top: 2rem;
-  padding-left: 2rem;
+  margin-top: 2rem;
 }
 .nighthawk-desc-img {
-  width: 160px;
-  height: 160px;
-  margin: auto 2rem 2rem auto;
+  width: 155px;
+  height: 155px;
+  margin: auto;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 1rem;
 }
 .nighthawk-meshery-logo {
   width: 446px;
   height: 410px;
+  padding-left: 2rem;
 }
 .nighthawk-meshery-div {
-  margin: 4rem auto auto auto;
+  margin-top: 7rem;
 }
 .desc-h1 {
   font-size: 45px;
@@ -167,9 +171,10 @@ $blue-munsell-3: #4392a4ff;
   color: #000000;
 }
 .des-para {
-  font-size: 24px;
-  line-height: 30px;
+  font-size: 20px;
+  line-height: 10px;
   color:#737373;
+  font-weight: 490;
   margin-bottom: 20px;
 }
 
@@ -5467,7 +5472,7 @@ a.globalFooterCard.card-environment, div.globalFooterCard.card-environment {
         margin:0rem 0.5rem;
         height: 22rem;
         box-shadow:0 0.5px 0.5px rgba(0, 0, 0, 0.4);
-        
+
         .card-head{
             padding-top: 3rem ;
             img{
@@ -5482,7 +5487,7 @@ a.globalFooterCard.card-environment, div.globalFooterCard.card-environment {
             }
             h4{
                 font-weight: 900;
-            }   
+            }
         }
     }
     .card-item:hover{
@@ -5493,16 +5498,16 @@ a.globalFooterCard.card-environment, div.globalFooterCard.card-environment {
         display:block;
         content: '';
         border-bottom: 0.4rem solid $saffron;
-        transform: scaleX(0);  
+        transform: scaleX(0);
         transition: transform 350ms ease-in-out;
         width: 100%;
         margin-top: auto;
     }
-    
+
     .card-item:hover:after {
         transform: scaleX(1);
     }
-    
+
     @media screen and (max-width:800px)
     {
         .card-item{
@@ -5513,14 +5518,14 @@ a.globalFooterCard.card-environment, div.globalFooterCard.card-environment {
         .item-3{
             grid-column: 1/ span 2;
         }
-        
+
     }
     @media screen and (max-width:600px)
     {
         .card-item{
             margin: 1.3rem 0.5rem;
         }
-        
+
     }
     @media screen and (max-width:500px)
     {
@@ -5556,5 +5561,3 @@ a.globalFooterCard.card-environment, div.globalFooterCard.card-environment {
 
 
 /*# sourceMappingURL=about-44bbf7b0a0c8887c2697.min.css.map*/
-
-
