@@ -5,7 +5,7 @@ on:
       version:
         description: 'Version to be released'
         required: true
-        default: 'stale'
+        default: 'stable'
 
 jobs:
   release:
@@ -16,7 +16,7 @@ jobs:
       id: create_release
       uses: actions/create-release@v1
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+        GITHUB_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }} # This token is provided by Actions, you do not need to create your own token
       with:
         tag_name: ${{ github.event.inputs.version }}
         release_name: GetNighthawk Release for ${{ github.event.inputs.version }}
