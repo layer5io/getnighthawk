@@ -35,7 +35,7 @@ jobs:
         distribution: [client, server, test_server]
     steps:
     - name: Build and release artifacts to Release
-      uses: layer5/getnighthawk-release@master
+      uses: layer5io/getnighthawk@master
       with:
         repo: layer5/getnighthawk
         version: ${{ github.event.inputs.version }}
