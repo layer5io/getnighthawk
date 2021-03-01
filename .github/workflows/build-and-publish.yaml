@@ -1,0 +1,45 @@
+name: Build and Publish Assets
+on: 
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to be released'
+        required: true
+        default: 'stale'
+
+jobs:
+  release:
+    name: create release
+    runs-on: ubuntu-latest
+    steps:
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+      with:
+        tag_name: ${{ github.event.inputs.version }}
+        release_name: GetNighthawk Release for ${{ github.event.inputs.version }}
+        body: |
+          Changes in this Release
+          - None
+        draft: false
+        prerelease: false
+  build-and-publish:
+    name: build and publish packages
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-18.04]
+        architecture: [amd64]
+        distribution: [client, server, test_server]
+    steps:
+    - name: Build and release artifacts to Release
+      uses: layer5/getnighthawk-release@master
+      with:
+        repo: layer5/getnighthawk
+        version: ${{ github.event.inputs.version }}
+        token: ${{ secrets.GLOBAL_PAT }}
+        os: ${{ matrix.os }}
+        architecture: ${{ matrix.architecture }}
+        distribution: ${{ matrix.distribution }}

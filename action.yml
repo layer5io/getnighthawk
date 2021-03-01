@@ -1,0 +1,45 @@
+name: 'Replicate Github Release Asset'
+description: 'Replicates a Github release to another repository'
+
+inputs:
+  repo:
+    description: 'org/repo to publish actions to'
+    required: false
+    default: ''
+  version:
+    description: 'version of the release'
+    required: false
+    default: 'latest'
+  token:
+    description: 'optional Personal Access Token to access external repository'
+    required: false
+    default: ''
+  os:
+    description: 'Build Operating System. Eg: ubuntu-18.04, macos-latest....'
+    required: false
+  architecture:
+    description: 'Build Architecture. Eg: amd64,arm...'
+    required: false
+  distribution:
+    description: 'Build Distribution. Eg: Client/Server..'
+    required: false
+
+runs:
+  using: "composite"
+  steps:
+    - run: ${{ github.action_path }}/scripts/setup.sh
+      shell: bash
+    - run: ${{ github.action_path }}/scripts/build.sh
+      shell: bash
+    - run: ${{ github.action_path }}/scripts/verify.sh
+      shell: bash
+    - run: ${{ github.action_path }}/scripts/publish.sh
+      shell: bash
+
+outputs:
+  version:
+    description: 'The version of the release or tag'
+
+branding:
+  icon: 'download-cloud'
+  color: 'blue'
