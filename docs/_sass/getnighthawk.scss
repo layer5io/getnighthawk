@@ -207,6 +207,38 @@ $blue-munsell-3: #4392a4ff;
 
 // stewarded by section ends
 
+// new-footer starts
+
+.footer-div {
+  background: #1E2117;
+  margin: 1rem auto;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  text-align: center;
+}
+.footer-text {
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+.footer-anchor {
+  text-decoration: none;
+}
+.footer-anchor:hover {
+  text-decoration: none;
+}
+.footer-copyright {
+  font-size: 17px;
+  line-height: 17px;
+  font-weight: 300;
+  color: #FFFFFF;
+  position: absolute;
+  right: 7rem;
+}
+
+// new-footer ends
+
 * {
     -webkit-box-sizing: border-box;
     box-sizing: border-box
