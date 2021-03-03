@@ -3,6 +3,11 @@
   link: /
   new_window: false
   highlight: false
+- name: About
+  link: /about
+  new_window: false
+  highlight: false
+
 - name: Docs
   link: /docs
   new_window: false
@@ -15,6 +20,7 @@
   link: https://github.com/layer5io/getnighthawk
   new_window: false
   highlight: false
+
 
 # meshery.io nav data
 

@@ -1,7 +1,7 @@
 .container{
 	display: flex;
 	justify-content: space-evenly;
-	align-items: center;
+	
 	font-size: 0.8rem;
 }
 .footer-links {
@@ -189,7 +189,7 @@ footer {
 
 @media(max-width:660px)
 {
-	.container{
+	.foot-container{
 		flex-direction: column;
 	}
 	.getnighthawk-logo{
@@ -204,7 +204,7 @@ footer {
 
 @media(max-width:350px)
 {
-	.container{
+	.foot-container{
 		flex-direction: column;
 	}
 }

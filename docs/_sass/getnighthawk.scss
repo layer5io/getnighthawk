@@ -5543,12 +5543,22 @@ a.globalFooterCard.card-environment, div.globalFooterCard.card-environment {
     }
 }
 
-@media screen and (max-width:400px){
+@media screen and (max-width:450px){
     .section-cust-head{
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
         width: 90vw;
+    }
+    .hero-section-button-div{
+        width: 99vw;
+    }
+    .hero-section-img{
+        width: 40px;
+        height: 40px;
+    }
+    .hero-section-logo-span{
+        font-size: 40px;
     }
 }
 
