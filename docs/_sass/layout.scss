@@ -443,7 +443,7 @@ hr {
 	display: flex;
 	align-items: center;	
 	.nav-text {
-		font-size: 0.8rem !important;
+		font-size: 1rem !important;
 		@media (min-width: 768px) {
 			padding: 0.8rem !important;
 			margin: 0px 3px; 
@@ -454,6 +454,10 @@ hr {
 
 .custom-nav-cont-1,.custom-nav-cont-2{
 	display: flex;	
+	justify-content: center;
+}
+.project-name{
+	text-align: center;
 }
   
 

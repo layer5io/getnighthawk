@@ -1,9 +1,10 @@
+
 .container{
 	display: flex;
-	justify-content: space-evenly;
-	
+	justify-content: space-evenly;	
 	font-size: 0.8rem;
 }
+
 .footer-links {
 	
 	margin: 0rem 1rem;
@@ -206,5 +207,11 @@ footer {
 {
 	.foot-container{
 		flex-direction: column;
+	}
+}
+@media (min-width:769px){
+	.custom-nav-container{
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
 	}
 }
