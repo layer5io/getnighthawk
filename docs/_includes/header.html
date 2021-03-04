@@ -63,14 +63,22 @@
     {% else %}
     <header id="mainHeader">
     {% endif %}
-      <div class="container nav-container">
+      <div class="container nav-container custom-nav-container">
+        <div class="custom-nav-cont-1">
+          <li class="nav-item">
+            <a href="/" class="nav-text active">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a href="/about" class="nav-text">ABOUT</a>
+          </li>
+        </div>
         <div class="project-name">
           <a href="{{ site.baseurl }}/">
             <img
               src="{{ site.baseurl }}/assets/images/logos/getnighthawk-logo.svg"
               alt="GetNighthawk Logo"
               height="45"
-            />&nbsp;GetNighthawk
+            />&nbsp;
             <!-- <img
               src="{{ site.baseurl }}/assets/images/logos/getnighthawk-logo.svg"
               alt="GetNighthawk Logo"
@@ -78,7 +86,19 @@
             /> -->
           </a>
         </div>
-        {% include navigation.html %}
+        <div class="custom-nav-cont-2">
+          <li class="nav-item">
+            <a href="/docs" class="nav-text">DOCS</a>
+          </li>
+          <li class="nav-item">
+            <a href="https://layer5.io/community" class="nav-text">COMMUNITY</a>
+          </li>
+          <li class="nav-item">
+            <a href="https://github.com/layer5io/getnighthawk" class="nav-text">GITHUB</a>
+          </li>
+        </div>
+        
+        {% include navigation.html%}
       </div>
     </header>
   </body>

@@ -1,9 +1,10 @@
+
 .container{
 	display: flex;
-	justify-content: space-evenly;
-	align-items: center;
+	justify-content: space-evenly;	
 	font-size: 0.8rem;
 }
+
 .footer-links {
 	
 	margin: 0rem 1rem;
@@ -189,7 +190,7 @@ footer {
 
 @media(max-width:660px)
 {
-	.container{
+	.foot-container{
 		flex-direction: column;
 	}
 	.getnighthawk-logo{
@@ -204,7 +205,13 @@ footer {
 
 @media(max-width:350px)
 {
-	.container{
+	.foot-container{
 		flex-direction: column;
+	}
+}
+@media (min-width:769px){
+	.custom-nav-container{
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
 	}
 }

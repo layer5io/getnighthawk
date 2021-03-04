@@ -26,12 +26,12 @@ nav {
 	@media (min-width: 840px) {
 		padding: 0.8rem !important;
 		margin: 0px 3px; 
-		color: rgba(255,255,255,.8) !important;
+		color: rgba(0,0,0,.8) !important;
 	}
 }
 
 a.nav-text:hover {
-	color: rgba(255,255,255,1) !important;
+	color: rgba(0,0,0,0.7) !important;
 }
 
 .subnav-item {
@@ -43,7 +43,7 @@ a.subnav-item:hover {
 }
 
 .active {
-	color: white !important;
+	color: black !important;
 	font-weight: bold;
 }
 
@@ -57,3 +57,22 @@ a.highlight:hover {
 	color: $brand-color !important;
 }
 
+
+.stellarnav .menu-toggle span.bars span{
+	background: black;
+}
+.stellarnav a{
+	color:black;
+}
+
+.navmenu-container
+{
+	display: none;
+}
+@media only screen and (max-width:768px)
+{
+	.navmenu-container{
+		display: flex;
+	}
+	
+}
