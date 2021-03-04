@@ -177,6 +177,24 @@ $blue-munsell-3: #4392a4ff;
   font-weight: 490;
   margin-bottom: 20px;
 }
+.why-getnighthawk {
+  text-align: center;
+}
+.why-getnighthawk-h2 {
+  font-size: 50px;
+  line-height: 50px;
+  font-weight: 700;
+  color: #000000;
+}
+.why-getnighthawk-p {
+  font-size: 20px;
+  line-height: 15px;
+  font-weight: 400;
+  color: #000000 60%;
+}
+.why-getnighthawk-p-div {
+  margin-top: 2rem;
+}
 
 // nighthawk-description ends
 
@@ -3834,12 +3852,12 @@ a.globalFooterCard.card-environment, div.globalFooterCard.card-environment {
 }
 
 .section--padding {
-    padding: 60px 0
+    padding: 10px 0
 }
 
 @media (min-width: 670px) {
     .section--padding {
-        padding: 80px 0
+        padding: 10px 0
     }
 }
 
