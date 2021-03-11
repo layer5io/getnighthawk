@@ -17,12 +17,16 @@
 						{% endfor %}
 					</ul>
 					{% endfor %}
-					
+
 				</div>
-				<div class="copyright-cont">
-					<p>2021 <span class="copyright">&#169;</span> Layer5, Inc.</p>
-				</div>
+
+
 			</div>
+			<hr>
+			<div class="container">
+				<p class="copyright-text">Copyright <span class="copyright">&#169;</span> Layer5, Inc. 2021 </p>
+			</div>
+
 		</footer>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		{% if jekyll.environment == 'production' %}
@@ -30,7 +34,7 @@
         {% else %}
 		<script src="{{ site.baseurl }}/assets/js/stellarnav.js"></script>
 	    {% endif %}
-		
+
 		<script src="{{ site.baseurl }}/assets/js/main.js"></script>
 
 		<!-- Site Navigation Menu -->
@@ -43,12 +47,12 @@
 		<!--Script for Copy to Clipboard-->
 		<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
 		<script>
-		
+
 		function resetCopyText(element) {
 			let childElements = element.childNodes
 			childElements[3].innerHTML="Copy to clipboard";
 		}
-		
+
 		var clipboard = new ClipboardJS('.btn');
 		clipboard.on('success', function(e) {
 			console.info('Action:', e.action);
