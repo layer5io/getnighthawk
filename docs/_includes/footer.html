@@ -20,12 +20,27 @@
 
 				</div>
 
-
 			</div>
 			<hr>
-			<div class="container">
-				<p class="copyright-text">Copyright <span class="copyright">&#169;</span> Layer5, Inc. 2021 </p>
+			<div class="row footer-social-row">
+				<div class="col-lg-6">
+					<p class="copyright-text">Copyright <span class="copyright">&#169;</span> Layer5, Inc. 2021 </p>
+				</div>
+				<div class="col-lg-6 footer-social-div">
+					{% for column in site.data.footer-social %}
+					<ul class="footer-social-links">
+						{% for link in column.links %}
+							<li><a {% if link.new_window %}target="_blank"{% endif %} href="{% include relative-src.html src=link.link %}" {% if link.social_icon %}class="{{ link.social_icon || downcase }}-icon"{% endif %}>
+								{% if link.social_icon %}
+									{% include social-icon.html icon=link.social_icon %}
+								{% endif %}
+								</a></li>
+						{% endfor %}
+					</ul>
+					{% endfor %}
+				</div>
 			</div>
+
 
 		</footer>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
