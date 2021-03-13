@@ -1,5 +1,5 @@
-name: 'Replicate Github Release Asset'
-description: 'Replicates a Github release to another repository'
+name: 'Getnighthawk Layer5'
+description: 'Publish getnighthawk assets'
 
 inputs:
   repo:
