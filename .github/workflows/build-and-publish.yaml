@@ -38,7 +38,7 @@ jobs:
       uses: actions/checkout@v2
       with:
         repository: 'envoyproxy/nighthawk'
-        ref: '${{ github.event.inputs.version }}'
+        ref: latest
     - name: Setup Golang
       uses: actions/setup-go@v2
       with:
@@ -60,7 +60,7 @@ jobs:
       uses: actions/checkout@v2
       with:
         repository: 'envoyproxy/nighthawk'
-        ref: '${{ github.event.inputs.version }}'
+        ref: latest
     - name: Docker login
       if: github.event_name != 'pull_request' && (startsWith(github.ref, 'refs/tags/') || github.ref == 'refs/heads/master') && success()
       uses: azure/docker-login@v1
