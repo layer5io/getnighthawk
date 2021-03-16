@@ -6,6 +6,10 @@ on:
         description: 'Version to be released'
         required: true
         default: 'stable'
+      nighthawk_version:
+        description: 'Version of the nighthawk project'
+        required: true
+        default: 'latest'
 
 jobs:
   release:
