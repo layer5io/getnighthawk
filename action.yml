@@ -30,12 +30,20 @@ runs:
     - run: ${{ github.action_path }}/scripts/setup.sh
       env:
         INPUT_OS: ${{ inputs.os }}
+        INPUT_ARCHITECTURE: ${{ inputs.architecture }}
       shell: bash
     - run: ${{ github.action_path }}/scripts/build.sh
       shell: bash
     - run: ${{ github.action_path }}/scripts/verify.sh
       shell: bash
     - run: ${{ github.action_path }}/scripts/publish.sh
+      env:
+        INPUT_REPO: ${{ inputs.repo }}
+        INPUT_VERSION: ${{ inputs.version }}
+        INPUT_TOKEN: ${{ inputs.token }}
+        INPUT_OS: ${{ inputs.os }}
+        INPUT_ARCHITECTURE: ${{ inputs.architecture }}
+        INPUT_DISTRIBUTION: ${{ inputs.distribution }}
       shell: bash
 
 outputs:
