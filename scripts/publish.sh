@@ -3,9 +3,9 @@ ARCH=$INPUT_ARCHITECTURE
 DISTRO=""
 OS=$INPUT_OS
 
-if [ "$OS" = *"ubuntu"* ]; then
+if [[ "$OS" = *"ubuntu"* ]]; then
   DISTRO="ubuntu"
-elif [ "$OS" = *"macos"* ]; then
+elif [[ "$OS" = *"macos"* ]]; then
   DISTRO="darwin"
 else
   printf "ERROR\tOperating system %s not supported\n" "$OS"
@@ -36,15 +36,15 @@ if ! [[ -z ${INPUT_TOKEN} ]]; then
   TOKEN=$INPUT_TOKEN
 fi
 
-if ![ -f "$CLIENT_BINARY" ]; then
+if ![[ -f "$CLIENT_BINARY" ]]; then
     printf "$CLIENT_BINARY does not exist"
 fi
 
-if ![ -f "$SERVICE_BINARY" ]; then
+if ![[ -f "$SERVICE_BINARY" ]]; then
     printf "$SERVICE_BINARY does not exist"
 fi
 
-if ![ -f "$TEST_SERVER_BINARY" ]; then
+if ![[ -f "$TEST_SERVER_BINARY" ]]; then
     printf "$TEST_SERVER_BINARY does not exist"
 fi
 

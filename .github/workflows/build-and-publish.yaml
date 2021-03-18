@@ -31,6 +31,7 @@ jobs:
         prerelease: false
   build-and-publish:
     name: build and publish packages
+    needs: [release]
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -58,6 +59,7 @@ jobs:
         distribution: ${{ matrix.distribution }}
   docker-publish:
     name: docker build and publish images
+    needs: [release]
     runs-on: ubuntu-latest
     steps:
     - name: Checkout nighthawk
