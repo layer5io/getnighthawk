@@ -28,6 +28,8 @@ runs:
   using: "composite"
   steps:
     - run: ${{ github.action_path }}/scripts/setup.sh
+      env:
+        INPUT_OS: ${{ inputs.os }}
       shell: bash
     - run: ${{ github.action_path }}/scripts/build.sh
       shell: bash
