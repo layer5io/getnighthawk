@@ -17,9 +17,11 @@ if [ -z "$DISTRO" ]; then
   exit 1
 fi
 
-ASSET_NAME="nighthawk-$DISTRO-$ARCH-$INPUT_RELEASE_VERSION.tar.gz"
+ASSET_NAME="nighthawk-$DISTRO-$ARCH-$INPUT_VERSION.tar.gz"
 
-ROOT_FOLDER="../nighthawk/bazel-nighthawk/bazel-out/$PREFIX-opt"
+ls -R /home/runner/work/getnighthawk/getnighthawk/bazel-nighthawk/bazel-out/
+
+ROOT_FOLDER="/home/runner/work/getnighthawk/getnighthawk/bazel-nighthawk/bazel-out/$PREFIX-opt"
 CLIENT_BINARY="$ROOT_FOLDER/nighthawk_client"
 SERVICE_BINARY="$ROOT_FOLDER/nighthawk_service"
 TEST_SERVER_BINARY="$ROOT_FOLDER/nighthawk_test_server"
@@ -36,15 +38,15 @@ if ! [[ -z ${INPUT_TOKEN} ]]; then
   TOKEN=$INPUT_TOKEN
 fi
 
-if ![[ -f "$CLIENT_BINARY" ]]; then
+if ! [[ -f "$CLIENT_BINARY" ]]; then
     printf "$CLIENT_BINARY does not exist"
 fi
 
-if ![[ -f "$SERVICE_BINARY" ]]; then
+if ! [[ -f "$SERVICE_BINARY" ]]; then
     printf "$SERVICE_BINARY does not exist"
 fi
 
-if ![[ -f "$TEST_SERVER_BINARY" ]]; then
+if ! [[ -f "$TEST_SERVER_BINARY" ]]; then
     printf "$TEST_SERVER_BINARY does not exist"
 fi
 
@@ -54,14 +56,14 @@ if ! type "tar" > /dev/null 2>&1; then
   exit 1;
 fi
 
-if !tar -zcvf $ASSET_NAME $ROOT_FOLDER; then
+if ! tar -zcvf $ASSET_NAME $ROOT_FOLDER; then
     printf "ERROR\tUnable to create bundle\n"
 fi
 
 # Upload artifact
 GITHUB_API_URL="api.github.com"
 RELEASE_URL="https://$GITHUB_API_URL/repos/$REPO/releases"
-RELEASE_UPLOAD_URL=$(curl -H "Authorization: token $TOKEN" $RELEASE_URL?tag_name=${INPUT_RELEASE_VERSION} | jq -r ".[].upload_url")
+RELEASE_UPLOAD_URL=$(curl -H "Authorization: token $TOKEN" $RELEASE_URL?tag_name=${INPUT_VERSION} | jq -r '.[] | select(.tag_name == "v1.0.0")' | jq -r .upload_url)
 pattern="{?"
 RELEASE_ASSET_URL="${RELEASE_UPLOAD_URL%$pattern*}"
 curl \

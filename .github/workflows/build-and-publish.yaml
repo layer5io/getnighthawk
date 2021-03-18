@@ -76,7 +76,7 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
     - name: Docker build & tag
       run: |
-        DOCKER_BUILDKIT=1 docker build --no-cache -t ${{ secrets.IMAGE_NAME }}:latest /home/runner/work/getnighthawk/getnighthawk/ci/docker/Dockerfile-nighthawk
+        DOCKER_BUILDKIT=1 docker build --no-cache -t ${{ secrets.IMAGE_NAME }}:latest /home/runner/work/getnighthawk/getnighthawk/ci/docker/.
         docker tag ${{ secrets.IMAGE_NAME }}:latest ${{ secrets.IMAGE_NAME }}:${{ github.event.inputs.version }}
     - name: Docker push
       run: |
