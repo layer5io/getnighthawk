@@ -8,7 +8,8 @@ function ubuntu() {
   curl -fsSL https://bazel.build/bazel-release.pub.gpg | gpg --dearmor > bazel.gpg
   mv bazel.gpg /etc/apt/trusted.gpg.d/
   echo "deb [arch=amd64] https://storage.googleapis.com/bazel-apt stable jdk1.8" | tee /etc/apt/sources.list.d/bazel.list
-  DEBIAN_FRONTEND="noninteractive" apt-get install -y libtool cmake automake autoconf make ninja-build curl unzip virtualenv bazel=$BAZEL_VERSION
+  DEBIAN_FRONTEND="noninteractive" apt-get install -y libtool cmake automake autoconf make ninja-build curl unzip virtualenv 
+  DEBIAN_FRONTEND="noninteractive" apt-get install -y bazel=$BAZEL_VERSION
 }
 
 function fedora() {
