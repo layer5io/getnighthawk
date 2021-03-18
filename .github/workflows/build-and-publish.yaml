@@ -42,7 +42,7 @@ jobs:
       uses: actions/checkout@v2
       with:
         repository: 'envoyproxy/nighthawk'
-        ref: latest
+        ref: ${{ github.event.inputs.nighthawk_version }}
     - name: Setup Golang
       uses: actions/setup-go@v2
       with:
