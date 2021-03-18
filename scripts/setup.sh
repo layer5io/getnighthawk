@@ -25,13 +25,13 @@ function darwin() {
   ./bazel-${BAZEL_VERSION}-installer-darwin-x86_64.sh --user
 }
 
-if [ "$OS" = *"ubuntu"* ]; then
+if [[ "$OS" = *"ubuntu"* ]]; then
   ubuntu
   if [ $? -eq 1 ]; then
     printf "ERROR\tUnable to setup ubuntu environment\n"
       exit 1
   fi
-elif [ "$OS" = *"macos"* ]; then
+elif [[ "$OS" = *"macos"* ]]; then
   darwin 
   if [ $? -eq 1 ]; then
     printf "ERROR\tUnable to setup darwin environment\n"
