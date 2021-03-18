@@ -1,5 +1,4 @@
-NIGHTHAWK_DIR="/home/runner/work/"
-ls -R $NIGHTHAWK_DIR
+NIGHTHAWK_DIR="/home/runner/work/getnighthawk/getnighthawk/"
 cd $NIGHTHAWK_DIR
 
 if ! bazel build -c opt //:nighthawk_client; then
