@@ -4,12 +4,11 @@ printf "INFO\tOperating System set to $INPUT_OS!\n"
 
 function ubuntu() {
   apt update
-  apt install -y curl gnupg
-  curl -fsSL https://bazel.build/bazel-release.pub.gpg | gpg --dearmor > bazel.gpg
-  mv bazel.gpg /etc/apt/trusted.gpg.d/
-  echo "deb [arch=amd64] https://storage.googleapis.com/bazel-apt stable jdk1.8" | tee /etc/apt/sources.list.d/bazel.list
   DEBIAN_FRONTEND="noninteractive" apt-get install -y libtool cmake automake autoconf make ninja-build curl unzip virtualenv 
+  curl -fLO "https://github.com/bazelbuild/bazel/releases/download/${BAZEL_VERSION}/bazel-${BAZEL_VERSION}-installer-linux-x86_64.sh"
   DEBIAN_FRONTEND="noninteractive" apt-get install -y bazel=$BAZEL_VERSION
+  chmod +x "bazel-${BAZEL_VERSION}-installer-linux-x86_64.sh"
+  ./bazel-${BAZEL_VERSION}-installer-linux-x86_64.sh --user
 }
 
 function fedora() {
