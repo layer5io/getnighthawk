@@ -6,7 +6,6 @@ function ubuntu() {
   sudo apt update
   DEBIAN_FRONTEND="noninteractive" sudo apt-get install -y libtool cmake automake autoconf make ninja-build curl unzip virtualenv 
   curl -fLO "https://github.com/bazelbuild/bazel/releases/download/${BAZEL_VERSION}/bazel-${BAZEL_VERSION}-installer-linux-x86_64.sh"
-  DEBIAN_FRONTEND="noninteractive" sudo apt-get install -y bazel=$BAZEL_VERSION
   sudo chmod +x "bazel-${BAZEL_VERSION}-installer-linux-x86_64.sh"
   ./bazel-${BAZEL_VERSION}-installer-linux-x86_64.sh --user
 }
