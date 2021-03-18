@@ -1,7 +1,6 @@
 BAZEL_VERSION="3.7.2"
-OS=$INPUT_OS
 
-printf "INFO\tOperating System set to $OS!\n"
+printf "INFO\tOperating System set to $INPUT_OS!\n"
 
 function ubuntu() {
   apt update
@@ -25,13 +24,13 @@ function darwin() {
   ./bazel-${BAZEL_VERSION}-installer-darwin-x86_64.sh --user
 }
 
-if [[ "$OS" = *"ubuntu"* ]]; then
+if [[ "$INPUT_OS" = *"ubuntu"* ]]; then
   ubuntu
   if [ $? -eq 1 ]; then
     printf "ERROR\tUnable to setup ubuntu environment\n"
       exit 1
   fi
-elif [[ "$OS" = *"macos"* ]]; then
+elif [[ "$INPUT_OS" = *"macos"* ]]; then
   darwin 
   if [ $? -eq 1 ]; then
     printf "ERROR\tUnable to setup darwin environment\n"
