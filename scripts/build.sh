@@ -1,4 +1,5 @@
-cd ../nighthawk
+NIGHTHAWK_DIR="/home/runner/work/getnighthawk/getnighthawk/nighthawk"
+cd $NIGHTHAWK_DIR
 
 if ! bazel build -c opt //:nighthawk_client; then
   printf "ERROR\tUnable to build nighthawk client\n"
