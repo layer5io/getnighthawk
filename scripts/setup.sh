@@ -3,24 +3,24 @@ BAZEL_VERSION="3.7.2"
 printf "INFO\tOperating System set to $INPUT_OS!\n"
 
 function ubuntu() {
-  apt update
-  DEBIAN_FRONTEND="noninteractive" apt-get install -y libtool cmake automake autoconf make ninja-build curl unzip virtualenv 
+  sudo apt update
+  DEBIAN_FRONTEND="noninteractive" sudo apt-get install -y libtool cmake automake autoconf make ninja-build curl unzip virtualenv 
   curl -fLO "https://github.com/bazelbuild/bazel/releases/download/${BAZEL_VERSION}/bazel-${BAZEL_VERSION}-installer-linux-x86_64.sh"
-  DEBIAN_FRONTEND="noninteractive" apt-get install -y bazel=$BAZEL_VERSION
-  chmod +x "bazel-${BAZEL_VERSION}-installer-linux-x86_64.sh"
+  DEBIAN_FRONTEND="noninteractive" sudo apt-get install -y bazel=$BAZEL_VERSION
+  sudo chmod +x "bazel-${BAZEL_VERSION}-installer-linux-x86_64.sh"
   ./bazel-${BAZEL_VERSION}-installer-linux-x86_64.sh --user
 }
 
 function fedora() {
-  dnf install dnf-plugins-core cmake libtool libstdc++ libstdc++-static libatomic ninja-build lld patch aspell-en
-  dnf copr enable vbatts/bazel
-  dnf install bazel3-$BAZEL_VERSION
+  sudo dnf install dnf-plugins-core cmake libtool libstdc++ libstdc++-static libatomic ninja-build lld patch aspell-en
+  sudo dnf copr enable vbatts/bazel
+  sudo dnf install bazel3-$BAZEL_VERSION
 }
 
 function darwin() {
-  brew install coreutils wget cmake libtool automake ninja clang-format autoconf aspell
+  sudo brew install coreutils wget cmake libtool automake ninja clang-format autoconf aspell
   curl -fLO "https://github.com/bazelbuild/bazel/releases/download/${BAZEL_VERSION}/bazel-${BAZEL_VERSION}-installer-darwin-x86_64.sh"
-  chmod +x "bazel-${BAZEL_VERSION}-installer-darwin-x86_64.sh"
+  sudo chmod +x "bazel-${BAZEL_VERSION}-installer-darwin-x86_64.sh"
   ./bazel-${BAZEL_VERSION}-installer-darwin-x86_64.sh --user
 }
 
