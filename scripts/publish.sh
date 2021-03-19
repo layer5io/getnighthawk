@@ -63,7 +63,7 @@ fi
 # Upload artifact
 GITHUB_API_URL="api.github.com"
 RELEASE_URL="https://$GITHUB_API_URL/repos/$REPO/releases"
-RELEASE_UPLOAD_URL=$(curl -H "Authorization: token $TOKEN" $RELEASE_URL?tag_name=${INPUT_VERSION} | jq -r '.[] | select(.tag_name == "v1.0.0")' | jq -r .upload_url)
+RELEASE_UPLOAD_URL=$(curl -H "Authorization: token $TOKEN" $RELEASE_URL | jq -r '.[] | select(.tag_name == '${INPUT_VERSION}')' | jq -r .upload_url)
 pattern="{?"
 RELEASE_ASSET_URL="${RELEASE_UPLOAD_URL%$pattern*}"
 curl \
