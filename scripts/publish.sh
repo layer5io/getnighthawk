@@ -19,8 +19,7 @@ fi
 
 ASSET_NAME="nighthawk-$DISTRO-$ARCH-$INPUT_VERSION.tar.gz"
 
-ls -R /home/runner/work/getnighthawk/getnighthawk/bazel-nighthawk/bazel-out/
-printf "BAZEL FOLDER"
+printf "INFO\tBAZEL FOLDER\n"
 bazel info -c opt bazel-bin
 
 ROOT_FOLDER=$(bazel info -c opt bazel-bin)
@@ -58,14 +57,14 @@ if ! type "tar" > /dev/null 2>&1; then
   exit 1;
 fi
 
-if ! tar -zcvf $ASSET_NAME $ROOT_FOLDER; then
+if ! tar -zcvf $ASSET_NAME $CLIENT_BINARY $SERVICE_BINARY $TEST_SERVER_BINARY; then
     printf "ERROR\tUnable to create bundle\n"
 fi
 
 # Upload artifact
 GITHUB_API_URL="api.github.com"
 RELEASE_URL="https://$GITHUB_API_URL/repos/$REPO/releases"
-RELEASE_UPLOAD_URL=$(curl -H "Authorization: token $TOKEN" $RELEASE_URL | jq -r '.[] | select(.tag_name == '${INPUT_VERSION}')' | jq -r .upload_url)
+RELEASE_UPLOAD_URL=$(curl -H "Authorization: token $TOKEN" $RELEASE_URL | jq -r '.[] | select(.tag_name == '"${INPUT_VERSION}"')' | jq -r .upload_url)
 pattern="{?"
 RELEASE_ASSET_URL="${RELEASE_UPLOAD_URL%$pattern*}"
 curl \

@@ -77,7 +77,8 @@ jobs:
     - name: Docker build & tag
       run: |
         cd /home/runner/work/getnighthawk/getnighthawk/ci/docker
-        DOCKER_BUILDKIT=1 docker build -f "Dockerfile-nighthawk" -t "${{ secrets.IMAGE_NAME }}:latest" .
+        ./docker_build.sh
+        docker tag envoyproxy/nighthawk-dev:latest ${{ secrets.IMAGE_NAME }}:latest
         docker tag ${{ secrets.IMAGE_NAME }}:latest ${{ secrets.IMAGE_NAME }}:${{ github.event.inputs.version }}
     - name: Docker push
       run: |
