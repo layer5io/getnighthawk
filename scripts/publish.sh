@@ -67,6 +67,8 @@ RELEASE_URL="https://$GITHUB_API_URL/repos/$REPO/releases"
 RELEASE_UPLOAD_URL=$(curl -H "Authorization: token $TOKEN" $RELEASE_URL | jq -r '.[] | select(.tag_name == "'${INPUT_VERSION}'")' | jq -r .upload_url)
 pattern="{?"
 RELEASE_ASSET_URL="${RELEASE_UPLOAD_URL%$pattern*}"
+printf "INFO\tUploading to ${RELEASE_ASSET_URL}\n"
+
 curl \
     -X POST \
     -H "Content-Type: application/tar" \
