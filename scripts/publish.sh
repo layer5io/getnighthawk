@@ -20,8 +20,10 @@ fi
 ASSET_NAME="nighthawk-$DISTRO-$ARCH-$INPUT_VERSION.tar.gz"
 
 ls -R /home/runner/work/getnighthawk/getnighthawk/bazel-nighthawk/bazel-out/
+printf "BAZEL FOLDER"
+bazel info -c opt bazel-bin
 
-ROOT_FOLDER="/home/runner/work/getnighthawk/getnighthawk/bazel-nighthawk/bazel-out/$PREFIX-opt"
+ROOT_FOLDER=$(bazel info -c opt bazel-bin)
 CLIENT_BINARY="$ROOT_FOLDER/nighthawk_client"
 SERVICE_BINARY="$ROOT_FOLDER/nighthawk_service"
 TEST_SERVER_BINARY="$ROOT_FOLDER/nighthawk_test_server"
