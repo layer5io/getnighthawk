@@ -38,7 +38,7 @@ jobs:
       matrix:
         os: [ubuntu-18.04]
         architecture: [amd64]
-        distribution: [client, server, test_server]
+        distribution: [client, server, test_server, nighthawk_output_transform]
     steps:
     - name: Checkout nighthawk
       uses: actions/checkout@v2

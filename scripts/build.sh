@@ -15,3 +15,8 @@ if ! bazel build -c opt //:nighthawk_test_server; then
   printf "ERROR\tUnable to build nighthawk test server\n"
   exit 1;
 fi
+
+if ! bazel build -c opt //:nighthawk_output_transform; then
+  printf "ERROR\tUnable to build nighthawk output transform\n"
+  exit 1;
+fi
