@@ -52,22 +52,12 @@ jobs:
     - name: Build and release artifacts to Release
       uses: layer5io/getnighthawk@master
       with:
-        repo: layer5/getnighthawk
+        repo: layer5io/getnighthawk
         version: ${{ github.event.inputs.version }}
         token: ${{ secrets.GLOBAL_PAT }}
         os: ${{ matrix.os }}
         architecture: ${{ matrix.architecture }}
         distribution: ${{ matrix.distribution }}
-  docker-publish:
-    name: docker build and publish images
-    needs: [release]
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout nighthawk
-      uses: actions/checkout@v2
-      with:
-        repository: 'envoyproxy/nighthawk'
-        ref: ${{ github.event.inputs.nighthawk_version }}
     - name: Docker login
       if: github.event_name != 'pull_request' && (startsWith(github.ref, 'refs/tags/') || github.ref == 'refs/heads/master') && success()
       uses: azure/docker-login@v1
