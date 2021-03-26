@@ -1,19 +1,3 @@
-#getnighthawk.dev footer data
-# - title: Community
-#   links:
-#   - name: Blog
-#     link: https://layer5.io/blog
-#   - name: Contributors
-#     link: https://layer5.io/community/members
-#   - name: Events
-#     link: https://layer5.io/events
-#     new_window: true
-#   - name: Slack
-#     link: http://slack.layer5.io/
-#     new_window: true
-#   - name: GitHub
-#     link: https://github.com/layer5io/getnighthawk/
-#     new_window: true
 - title: Getting Started
   links:
   - name: Features
@@ -24,9 +8,6 @@
   - name: Docs
     link: /docs
     new_window: true
-  # - name: Powered by Netlify
-  #   link: https://www.netlify.com
-  #   new_window: true
 - title: Resources
   links:
   - name: Service Mesh Performance
