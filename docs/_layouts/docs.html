@@ -1,6 +1,5 @@
 ---
 layout: default
-permalink: /docs
 ---
 
 <html>
@@ -53,27 +52,7 @@ permalink: /docs
         </div>
       </nav>    
   </div>
-  <div class="col-lg-9">
-      <div class="hero-section-header">
-         <img src="{{ site.baseurl }}/assets/images/logos/getnighthawk-logo.svg" alt="getnighthawk-logo" class="hero-section-img"><span class="hero-section-logo-span">GetNighthawk</span>
-      </div>
-      <div class="hero-section-para">
-         <p>The easiest way to get started with Nighthawk on any cloud or platform</p>
-      </div>
-      <div class="newsletter-signup newsletter-div container-g">
-        <div>
-          <h4>
-            Why GetNighthawk?
-          </h4>
-        </div>
-        <div class="why-getnighthawk-p-div">
-          <p >
-            Nighthawk is growing in popularity, but the core project only builds to one architecture / one
-            Docker image. Recently, Nighthawk is being improved so that it can be horizontally scalable - such
-            that multiple instances will be cognizant of one another and able to coordinate amongst each
-            other. Nighthawk is a subproject of Envoy. Nighthawk is growing in popularity with Google, Red
-            Hat, and AWS are investing into it. Istio is considering switching from Fortio to Nighthawk.
-          </p>
-        </div>
-      </div>
+  <div class="col-lg-9 container-g">
+    {{content}}
+  </div>
 </div>

@@ -1,0 +1,9 @@
+<ul>
+    <h4>Documentation</h4>
+    {% for doc in site.docs %}
+        <li>
+            <h5 ><a class="doc-link" href="{% include relative-src.html src=doc.url %}">{{ doc.title }}</a></h5>
+        </li>
+    {% endfor %}
+</ul>
+
