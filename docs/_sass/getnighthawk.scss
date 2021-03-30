@@ -140,8 +140,7 @@ $blue-munsell-3: #4392a4ff;
 .nighthawk-desc-text {
   display: inline-block;
   text-align: left;
-  padding-top: 3rem;
-  padding-left: 3rem;
+  padding: 3rem 2rem;
 }
 .nighthawk-desc-text-meshery {
   display: inline-block;
@@ -157,12 +156,17 @@ $blue-munsell-3: #4392a4ff;
   padding-top: 1rem;
 }
 .nighthawk-meshery-logo {
-  width: 446px;
-  height: 410px;
-  padding-left: 2rem;
+    max-width: 100%;
+    height: auto;
 }
 .nighthawk-meshery-div {
-  margin-top: 7rem;
+  margin: 2rem;
+  
+}
+.nighthawk-meshery-div-columns {
+    padding: 5rem 2rem;
+    max-width: 100%;
+    height: auto;
 }
 .desc-h1 {
   font-size: 45px;
@@ -171,7 +175,7 @@ $blue-munsell-3: #4392a4ff;
   color: #000000;
 }
 .des-para {
-  font-size: 20px;
+  font-size: 19px;
   line-height: 10px;
   color:#737373;
   font-weight: 490;
@@ -5488,7 +5492,7 @@ a.globalFooterCard.card-environment, div.globalFooterCard.card-environment {
         justify-content: center;
         border-radius:5px;
         margin:0rem 0.5rem;
-        height: 22rem;
+        height: 24rem;
         box-shadow:0 0.5px 0.5px rgba(0, 0, 0, 0.4);
 
         .card-head{
@@ -5498,7 +5502,7 @@ a.globalFooterCard.card-environment, div.globalFooterCard.card-environment {
             }
         }
         .card-cust-body{
-            padding: 1rem 0rem;
+            
             margin-top: auto;
             h4 , p{
                 padding: 0.5rem 1rem;
@@ -5687,4 +5691,40 @@ a.globalFooterCard.card-environment, div.globalFooterCard.card-environment {
 
 .doc-heading {
     margin-left: 20px;
+}
+@media only screen and (max-width:1200px){
+    .des-para {
+        font-size: 18px;
+        line-height: 10px;
+        color:#737373;
+        font-weight: 490;
+        margin-bottom: 20px;
+    }
+    .nighthawk-meshery-div-columns {
+        padding: 5rem 1rem;
+    }
+}
+@media only screen and (max-width:992px){
+    .nighthawk-desc-text {
+        padding: 4rem 1rem;
+      }
+      .des-para{
+		font-size: 20px;
+	}
+    .nighthawk-meshery-div-columns {
+        padding: 0;
+    }
+    .nighthawk-meshery-div
+    {
+        margin: 0 ;
+    }
+
+}
+@media only screen and (max-width:500px){
+    .nighthawk-desc-text {
+        padding: 4rem 0rem;
+      }
+      .des-para{
+		font-size: 14px;
+	}
 }
