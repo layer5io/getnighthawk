@@ -66,14 +66,6 @@ RELEASE_URL="https://$GITHUB_API_URL/repos/$INPUT_REPO/releases"
 RELEASE_UPLOAD_URL=$(curl -H "Authorization: token $TOKEN" $RELEASE_URL | jq -r '.[] | select(.tag_name == "'${INPUT_VERSION}'")' | jq -r .upload_url)
 pattern="{?"
 RELEASE_ASSET_URL="${RELEASE_UPLOAD_URL%$pattern*}"
-printf "INFO\tJQ VERSION \n"
-jq --version
-printf "INFO\tRELEASE UPLOAD URL ${RELEASE_URL}\n"
-printf "INFO\tRELEASE UPLOAD URL ${TOKEN}\n"
-printf "INFO\tRELEASE UPLOAD URL ${INPUT_VERSION}\n"
-printf "INFO\tRELEASE UPLOAD URL ${RELEASE_UPLOAD_URL}\n"
-printf "INFO\tRelease URL ${RELEASE_URL}\n"
-printf "INFO\tUploading to ${RELEASE_ASSET_URL}\n"
 
 curl \
     -X POST \

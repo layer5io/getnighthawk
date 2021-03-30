@@ -54,7 +54,7 @@ jobs:
       with:
         repo: layer5io/getnighthawk
         version: ${{ github.event.inputs.version }}
-        token: ${{ secrets.GLOBAL_PAT }}
+        token: ${{ secrets.GH_ACCESS_TOKEN }}
         os: ${{ matrix.os }}
         architecture: ${{ matrix.architecture }}
         distribution: ${{ matrix.distribution }}
