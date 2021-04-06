@@ -1,0 +1,66 @@
+.hero-section-smp {
+}
+.hero-section-header {
+  margin: 0;
+}
+.hero-section {
+  padding: 0px;
+}
+.hero-section-smp {
+  width: 80%;
+  height: 100%;
+}
+.text {
+  font-size: 20px;
+
+  text-align: left;
+}
+.hero-main .text {
+padding: 0 100px;
+}
+.whyGetnighthawk {
+  flex-direction: row;
+  display: flex;
+  padding-top: 40px;
+}
+
+.whyGetnighthawk .text {
+  padding: 0px 100px;
+}
+.fig {
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+}
+.figbox{
+  margin: 0px 40px;
+
+}
+.fig img {
+  padding: 0px 30px;
+  object-fit: cover;
+  width: 450px;
+  height: 100%;
+  border-radius: 20px;
+}
+.whyGetnighthawk-bold {
+  padding: 40px 100px;
+  font-family: Qanelas Soft;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 34px;
+  line-height: 34px;
+  color: #000000;
+  overflow-wrap: normal;
+}
+
+.hero-section-header-bold {
+  font-family: Qanelas Soft;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 45px;
+  line-height: 50px;
+  text-align: center;
+  color: #000000;
+  padding-top: 30px;
+}
