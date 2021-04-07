@@ -1,50 +1,56 @@
-.hero-section-smp {
-}
-.hero-section-header {
-  margin: 0;
-}
 .hero-section {
   padding: 0px;
 }
+.hero-section_header {
+  margin: 0;
+}
 .hero-section-smp {
-  width: 80%;
+  width: 85%;
   height: 100%;
 }
-.text {
+.whyGetnighthawk-text {
   font-size: 20px;
-
   text-align: left;
 }
-.hero-main .text {
-padding: 0 100px;
+.hero-section_content .text {
+  font-weight: normal;
+  font-size: 20px;
+  text-align: left;
+  padding: 10px 95px;
+  font-family: Open Sans;
 }
 .whyGetnighthawk {
-  flex-direction: row;
+  justify-content: space-around;
   display: flex;
   padding-top: 40px;
+  padding-left: 30px;
 }
 
 .whyGetnighthawk .text {
-  padding: 0px 100px;
+  padding: 0px 30px;
+  text-align: left;
+  font-family: Open Sans;
+  font-size: 20px;
 }
-.fig {
+.nighthawk-meshery-fig {
   display: flex;
   justify-content: center;
   padding-top: 40px;
 }
-.figbox{
+.figbox {
   margin: 0px 40px;
-
+  padding: 20px 0px;
 }
-.fig img {
+.nighthawk-meshery-fig img {
   padding: 0px 30px;
   object-fit: cover;
   width: 450px;
   height: 100%;
   border-radius: 20px;
 }
-.whyGetnighthawk-bold {
-  padding: 40px 100px;
+
+.whyGetnighthawk-bold h4 {
+  width: 430px;
   font-family: Qanelas Soft;
   font-style: normal;
   font-weight: 600;
@@ -54,7 +60,7 @@ padding: 0 100px;
   overflow-wrap: normal;
 }
 
-.hero-section-header-bold {
+.hero-section_bold {
   font-family: Qanelas Soft;
   font-style: normal;
   font-weight: bold;
@@ -63,4 +69,21 @@ padding: 0 100px;
   text-align: center;
   color: #000000;
   padding-top: 30px;
+}
+
+@media only screen and (max-width: 768px) {
+  .whyGetnighthawk {
+    flex-wrap: wrap;
+    padding: 50px;
+  }
+  .nighthawk-meshery-fig {
+  flex-wrap: wrap;
+    padding: 0px;
+
+}
+.hero-section {
+  
+  margin: 20px;
+}
+
 }
