@@ -5,52 +5,49 @@
   margin: 0;
 }
 .hero-section-smp {
-  width: 85%;
+  width: 88%;
   height: 100%;
 }
-.whyGetnighthawk-text {
-  font-size: 20px;
+
+.hero-section_content,
+.text {
+  font-size: 21px;
   text-align: left;
+  padding-left: 0px;
+  padding-top: 10px;
+  padding: 0px 40px;
+  line-height: 32px;
+  align-items: center;
 }
-.hero-section_content .text {
-  font-weight: normal;
-  font-size: 20px;
-  text-align: left;
-  padding: 10px 95px;
-  font-family: Open Sans;
+.hero-section_bold {
+  font-family: Qanelas Soft;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 45px;
+  line-height: 50px;
+  text-align: center;
+  color: #000000;
+  padding: 20px 0px;
 }
+
 .whyGetnighthawk {
   justify-content: space-around;
   display: flex;
-  padding-top: 40px;
-  padding-left: 30px;
+  margin-top: 70px;
+  padding-left: 85px;
+  align-self: center;
 }
 
-.whyGetnighthawk .text {
-  padding: 0px 30px;
-  text-align: left;
-  font-family: Open Sans;
-  font-size: 20px;
-}
-.nighthawk-meshery-fig {
+.whyGetnighthawk,
+.text2 {
+  font-size: 21px;
+  line-height: 32px;
   display: flex;
-  justify-content: center;
-  padding-top: 40px;
-}
-.figbox {
-  margin: 0px 40px;
-  padding: 20px 0px;
-}
-.nighthawk-meshery-fig img {
-  padding: 0px 30px;
-  object-fit: cover;
-  width: 450px;
-  height: 100%;
-  border-radius: 20px;
+  text-align: left;
 }
 
-.whyGetnighthawk-bold h4 {
-  width: 430px;
+.whyGetnighthawk-bold {
+  width: 400px;
   font-family: Qanelas Soft;
   font-style: normal;
   font-weight: 600;
@@ -60,27 +57,51 @@
   overflow-wrap: normal;
 }
 
-.hero-section_bold {
-  font-family: Qanelas Soft;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 45px;
-  line-height: 50px;
-  text-align: center;
-  color: #000000;
+.nighthawk-meshery-fig {
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+}
+.figbox {
+  margin: 0px 60px;
   padding-top: 30px;
+  width: 450px;
+}
+.figbox2 {
+  margin: 0px 10px;
+  padding: 10px 0px;
+  width: 450px;
+}
+.nighthawk-meshery-fig,
+img {
+  text-align: center;
+  border-radius: 20px;
 }
 
 @media only screen and (max-width: 768px) {
   .whyGetnighthawk {
     flex-wrap: wrap;
     padding: 50px;
+    text-align: center;
+  }
+  .whyGetnighthawk .text2 {
+    padding: 30px;
+    text-align: left;
   }
   .nighthawk-meshery-fig {
     flex-wrap: wrap;
     padding: 0px;
   }
   .hero-section {
-    margin: 20px;
+    margin: 100px;
+  }
+  .figbox {
+    width: 100%;
+    padding: 30px;
+  }
+  .figbox2 {
+    width: 80%;
+    padding: 30px;
+    margin: 0;
   }
 }
