@@ -64,13 +64,14 @@
 }
 .figbox {
   margin: 0px 60px;
-  padding-top: 30px;
-  width: 450px;
+  padding: 0px 30px;
+  width: 60%;
 }
 .figbox2 {
   margin: 0px 10px;
-  padding: 10px 0px;
-  width: 450px;
+  padding: 0px 50px;
+  width: 70%;
+  padding-top: 32px;
 }
 .nighthawk-meshery-fig,
 img {
@@ -100,7 +101,7 @@ img {
     padding: 30px;
   }
   .figbox2 {
-    width: 80%;
+    width: 100%;
     padding: 30px;
     margin: 0;
   }
