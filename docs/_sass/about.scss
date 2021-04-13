@@ -1,0 +1,108 @@
+.hero-section {
+  padding: 0px;
+}
+.hero-section_header {
+  margin: 0;
+}
+.hero-section-smp {
+  width: 88%;
+  height: 100%;
+}
+
+.hero-section_content,
+.text {
+  font-size: 21px;
+  text-align: left;
+  padding-left: 0px;
+  padding-top: 10px;
+  padding: 0px 40px;
+  line-height: 32px;
+  align-items: center;
+}
+.hero-section_bold {
+  font-family: Qanelas Soft;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 45px;
+  line-height: 50px;
+  text-align: center;
+  color: #000000;
+  padding: 20px 0px;
+}
+
+.whyGetnighthawk {
+  justify-content: space-around;
+  display: flex;
+  margin-top: 70px;
+  padding-left: 85px;
+  align-self: center;
+}
+
+.whyGetnighthawk,
+.text2 {
+  font-size: 21px;
+  line-height: 32px;
+  display: flex;
+  text-align: left;
+}
+
+.whyGetnighthawk-bold {
+  width: 400px;
+  font-family: Qanelas Soft;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 34px;
+  line-height: 34px;
+  color: #000000;
+  overflow-wrap: normal;
+}
+
+.nighthawk-meshery-fig {
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+}
+.figbox {
+  margin: 0px 60px;
+  padding: 0px 30px;
+  width: 60%;
+}
+.figbox2 {
+  margin: 0px 10px;
+  padding: 0px 50px;
+  width: 70%;
+  padding-top: 32px;
+}
+.nighthawk-meshery-fig,
+img {
+  text-align: center;
+  border-radius: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+  .whyGetnighthawk {
+    flex-wrap: wrap;
+    padding: 50px;
+    text-align: center;
+  }
+  .whyGetnighthawk .text2 {
+    padding: 30px;
+    text-align: left;
+  }
+  .nighthawk-meshery-fig {
+    flex-wrap: wrap;
+    padding: 0px;
+  }
+  .hero-section {
+    margin: 100px;
+  }
+  .figbox {
+    width: 100%;
+    padding: 30px;
+  }
+  .figbox2 {
+    width: 100%;
+    padding: 30px;
+    margin: 0;
+  }
+}
