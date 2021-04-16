@@ -1,5 +1,6 @@
 ---
 layout: docs
-title: Using GetNighthawk
+title: GetNighthawk
+section: "Section 1"
 ---
 Test

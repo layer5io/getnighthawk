@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Overview
-section: "Section 1"
+section: "Section 2"
 ---
 
-Test section 1
+Test section 2

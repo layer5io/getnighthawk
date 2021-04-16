@@ -5972,3 +5972,9 @@ div.globalFooterCard.card-environment {
     font-size: 14px;
   }
 }
+.accordion-button {
+  border: 0px !important;
+}
+.accordion-button::after {
+  margin-left: 10px  !important;
+}
