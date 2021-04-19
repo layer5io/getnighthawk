@@ -18,17 +18,15 @@ jobs:
     steps:
     - name: Create Release
       id: create_release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+      uses: ncipollo/release-action@v1
+      if: startsWith(github.ref, 'refs/tags/') && success()
       with:
-        tag_name: ${{ github.event.inputs.version }}
-        release_name: GetNighthawk Release for ${{ github.event.inputs.version }}
-        body: |
-          Changes in this Release
-          - None
-        draft: false
-        prerelease: false
+        token: ${{ secrets.GH_ACCESS_TOKEN }}
+        tag:  ${{ github.event.inputs.version }}
+        name: GetNighthawk ${{ github.event.inputs.version }}
+        allowUpdates: true
+        omitNameDuringUpdate: true
+        replacesArtifacts: true
   build-and-publish:
     name: build and publish packages
     needs: [release]
