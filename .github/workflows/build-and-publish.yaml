@@ -30,13 +30,13 @@ jobs:
   build-and-publish:
     name: build and publish packages
     needs: [release]
-    runs-on: ubuntu-latest
     strategy:
       max-parallel: 10
       matrix:
-        os: [ubuntu-18.04, macos-latest]
+        os: [ubuntu-latest]
         architecture: [amd64]
         distribution: [client, server, test_server, nighthawk_output_transform]
+    runs-on: ${{ matrix.os }}
     steps:
     - name: Checkout nighthawk
       uses: actions/checkout@v2
