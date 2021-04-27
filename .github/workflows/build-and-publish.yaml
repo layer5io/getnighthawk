@@ -33,7 +33,7 @@ jobs:
     strategy:
       max-parallel: 10
       matrix:
-        os: [ubuntu-latest]
+        os: [ubuntu-latest, macos-latest]
         architecture: [amd64]
         distribution: [client, server, test_server, nighthawk_output_transform]
     runs-on: ${{ matrix.os }}
