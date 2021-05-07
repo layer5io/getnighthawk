@@ -7,10 +7,12 @@ import (
 const (
 	ErrGRPCDialCode        = "1000"
 	ErrInvalidEndpointCode = "1001"
+	ErrResponseNilCode     = "1002"
 )
 
 var (
 	ErrInvalidEndpoint = errors.NewDefault(ErrInvalidEndpointCode, "Endpoint not reachable")
+	ErrResponseNil     = errors.NewDefault(ErrResponseNilCode, "Response is nil from the generator")
 )
 
 func ErrGRPCDial(err error) error {

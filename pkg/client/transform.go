@@ -121,64 +121,9 @@ type TransformResult struct {
 }
 
 func Transform(res *nighthawk_client.ExecutionResponse, typ string) ([]byte, error) {
-
-	//dur, err := time.ParseDuration(fmt.Sprintf("%ds%dµs", res.Output.Timestamp.Seconds, res.Output.Timestamp.Nanos))
-	//if err != nil {
-	//	return nil, err
-	//}
-
-	results := make([]Result, 0)
-
-	for _, r := range res.Output.Results {
-		statistics := make([]Statistic, 0)
-		counters := make([]Counter, 0)
-		for _, c := range r.Counters {
-			counters = append(counters, Counter{
-				Name:  c.Name,
-				Value: strconv.Itoa(int(c.Value)),
-			})
-		}
-
-		for _, s := range r.Statistics {
-			percentiles := make([]Percentile, 0)
-			for _, p := range s.Percentiles {
-				percentiles = append(percentiles, Percentile{
-					Percentile: int(p.Percentile),
-					Count:      strconv.Itoa(int(p.Count)),
-					Duration:   formatToNs(p.GetDuration()),
-				})
-			}
-
-			sts := Statistic{
-				Count:       strconv.Itoa(int(s.Count)),
-				ID:          s.Id,
-				Percentiles: percentiles,
-				Mean:        formatToNs(s.GetMean()),
-				Pstdev:      formatToNs(s.GetPstdev()),
-				Min:         formatToNs(s.GetMin()),
-				Max:         formatToNs(s.GetMax()),
-			}
-			if sts.Mean == "" {
-				sts.RawMean = int(s.GetRawMean())
-			}
-			if sts.Pstdev == "" {
-				sts.RawPstdev = int(s.GetRawPstdev())
-			}
-			if sts.Min == "" {
-				sts.RawMin = strconv.Itoa(int(s.GetRawMin()))
-			}
-			if sts.Max == "" {
-				sts.RawMax = strconv.Itoa(int(s.GetRawMax()))
-			}
-			statistics = append(statistics, sts)
-		}
-		results = append(results, Result{
-			Name:              r.Name,
-			ExecutionStart:    r.ExecutionStart.AsTime(),
-			ExecutionDuration: formatToNs(r.ExecutionDuration),
-			Statistics:        statistics,
-			Counters:          counters,
-		})
+	results, err := constructResults(res)
+	if err != nil {
+		return nil, err
 	}
 
 	expStrategy := res.Output.Options.ExperimentalH1ConnectionReuseStrategy.String()
@@ -241,20 +186,118 @@ func Transform(res *nighthawk_client.ExecutionResponse, typ string) ([]byte, err
 	if err != nil {
 		return nil, err
 	}
-	fmt.Println("input: ", input)
 
-	command := "/private/var/tmp/_bazel_abishekk/eaf1167d72f4772496616c435b301da8/execroot/nighthawk/bazel-out/darwin-opt/bin/nighthawk_output_transform"
+	command := "./nighthawk_output_transform"
 	cmd := exec.Command(command, "--output-format", "fortio")
 	cmd.Stdin = strings.NewReader(input)
 	out, err := cmd.Output()
 	if err != nil {
 		return nil, err
 	}
-	fmt.Println("output: ", string(out))
 
 	// Hack due to bug in nighthawk
+	outputFinal, err := hackFormat(out)
+	if err != nil {
+		return nil, err
+	}
+
+	return outputFinal, nil
+}
+
+func constructResults(res *nighthawk_client.ExecutionResponse) ([]Result, error) {
+	results := make([]Result, 0)
+	if res == nil {
+		return nil, ErrResponseNil
+	}
+
+	for _, r := range res.Output.Results {
+		statistics := make([]Statistic, 0)
+		counters := make([]Counter, 0)
+		for _, c := range r.Counters {
+			counters = append(counters, Counter{
+				Name:  c.Name,
+				Value: strconv.Itoa(int(c.Value)),
+			})
+		}
+
+		for _, s := range r.Statistics {
+			percentiles := make([]Percentile, 0)
+			for _, p := range s.Percentiles {
+				percentiles = append(percentiles, Percentile{
+					Percentile: int(p.Percentile),
+					Count:      strconv.Itoa(int(p.Count)),
+					Duration:   formatToNs(p.GetDuration()),
+				})
+			}
+
+			sts := Statistic{
+				Count:       strconv.Itoa(int(s.Count)),
+				ID:          s.Id,
+				Percentiles: percentiles,
+				Mean:        formatToNs(s.GetMean()),
+				Pstdev:      formatToNs(s.GetPstdev()),
+				Min:         formatToNs(s.GetMin()),
+				Max:         formatToNs(s.GetMax()),
+			}
+			if sts.Mean == "" {
+				sts.RawMean = int(s.GetRawMean())
+			}
+			if sts.Pstdev == "" {
+				sts.RawPstdev = int(s.GetRawPstdev())
+			}
+			if sts.Min == "" {
+				sts.RawMin = strconv.Itoa(int(s.GetRawMin()))
+			}
+			if sts.Max == "" {
+				sts.RawMax = strconv.Itoa(int(s.GetRawMax()))
+			}
+			statistics = append(statistics, sts)
+		}
+		results = append(results, Result{
+			Name:              r.Name,
+			ExecutionStart:    r.ExecutionStart.AsTime(),
+			ExecutionDuration: formatToNs(r.ExecutionDuration),
+			Statistics:        statistics,
+			Counters:          counters,
+		})
+	}
+	return results, nil
+}
+
+func formatToNs(s *duration.Duration) string {
+	ss := s.AsDuration().String()
+	if strings.Contains(ss, "ms") {
+		sep := strings.Split(ss, "m")
+		f, _ := strconv.ParseFloat(sep[0], 64)
+		f /= 1000
+		st := fmt.Sprintf("%f", f)
+		sep[0] = st
+		ss = strings.Join(sep, "")
+	} else if strings.Contains(ss, "µs") {
+		sep := strings.Split(ss, "µ")
+		f, _ := strconv.ParseFloat(sep[0], 64)
+		f /= 1000000
+		st := fmt.Sprintf("%f", f)
+		sep[0] = st
+		ss = strings.Join(sep, "")
+	} else if strings.Contains(ss, "ns") {
+		sep := strings.Split(ss, "n")
+		f, _ := strconv.ParseFloat(sep[0], 64)
+		f /= 10000000
+		st := fmt.Sprintf("%f", f)
+		sep[0] = st
+		ss = strings.Join(sep, "")
+	}
+	return ss
+}
+
+func hackFormat(out []byte) ([]byte, error) {
 	m := map[string]interface{}{}
-	err = json.Unmarshal(out, &m)
+	err := json.Unmarshal(out, &m)
+	if err != nil {
+		return nil, err
+	}
+
 	m["RequestedQPS"] = fmt.Sprint(m["RequestedQPS"].(float64))
 
 	if m["DurationHistogram"] != nil {
@@ -298,35 +341,5 @@ func Transform(res *nighthawk_client.ExecutionResponse, typ string) ([]byte, err
 		}
 		m["Sizes"].(map[string]interface{})["Count"] = h
 	}
-
-	outTemp, _ := json.Marshal(m)
-
-	return outTemp, nil
-}
-
-func formatToNs(s *duration.Duration) string {
-	ss := s.AsDuration().String()
-	if strings.Contains(ss, "ms") {
-		sep := strings.Split(ss, "m")
-		f, _ := strconv.ParseFloat(sep[0], 64)
-		f = f / 1000
-		st := fmt.Sprintf("%f", f)
-		sep[0] = st
-		ss = strings.Join(sep, "")
-	} else if strings.Contains(ss, "µs") {
-		sep := strings.Split(ss, "µ")
-		f, _ := strconv.ParseFloat(sep[0], 64)
-		f = f / 1000000
-		st := fmt.Sprintf("%f", f)
-		sep[0] = st
-		ss = strings.Join(sep, "")
-	} else if strings.Contains(ss, "ns") {
-		sep := strings.Split(ss, "n")
-		f, _ := strconv.ParseFloat(sep[0], 64)
-		f = f / 10000000
-		st := fmt.Sprintf("%f", f)
-		sep[0] = st
-		ss = strings.Join(sep, "")
-	}
-	return ss
+	return json.Marshal(m)
 }

@@ -23,7 +23,6 @@ type Client struct {
 
 // New creates a new instance of the nighthawk client connection
 func New(opts Options) (*Client, error) {
-
 	if !utils.TcpCheck(&utils.HostPort{
 		Address: opts.ServerHost,
 		Port:    opts.ServerPort,
@@ -31,10 +30,10 @@ func New(opts Options) (*Client, error) {
 		return nil, ErrInvalidEndpoint
 	}
 
-	var dial_options []grpc.DialOption
-	dial_options = append(dial_options, grpc.WithInsecure())
+	var dialOptions []grpc.DialOption
+	dialOptions = append(dialOptions, grpc.WithInsecure())
 
-	conn, err := grpc.Dial(fmt.Sprintf("%s:%d", opts.ServerHost, opts.ServerPort), dial_options...)
+	conn, err := grpc.Dial(fmt.Sprintf("%s:%d", opts.ServerHost, opts.ServerPort), dialOptions...)
 	if err != nil {
 		return nil, ErrGRPCDial(err)
 	}
