@@ -11,7 +11,7 @@ const (
 )
 
 var (
-	ErrInvalidEndpoint = errors.NewDefault(ErrInvalidEndpointCode, "Endpoint not reachable")
+	ErrInvalidEndpoint = errors.NewDefault(ErrInvalidEndpointCode, "Endpoint is unavailable or endpoint is unreachable")
 	ErrResponseNil     = errors.NewDefault(ErrResponseNilCode, "Response is nil from the generator")
 )
 
