@@ -1,27 +1,29 @@
 .mailing-section {
     background: #1e2117;
     color: white;
-    
+    padding: 162px 0;
+    @media #{$mobile} {
+        padding: 87px 0;
+    }
 
-    a, a:hover, a:focus, a:active{
+    a,
+    a:hover,
+    a:focus,
+    a:active {
         text-decoration: none;
         color: inherit;
     }
-    
-    
+
     .mailinglist-main {
-        margin: 62px auto;
         position: relative;
         display: flex;
-   flex-direction: column;
-    align-items: center;
+        flex-direction: column;
+        align-items: center;
 
         .mailinglist-text {
-        
-            
             margin-bottom: 40px;
             display: block;
-            span{
+            span {
                 font-size: 34px;
             }
 
@@ -30,8 +32,6 @@
                 margin: 0 3rem;
                 color: white;
                 font-size: 20px;
-                
-                
             }
         }
 
@@ -40,7 +40,7 @@
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            
+
             .mailinglist-join-button {
                 display: flex;
                 justify-content: center;
@@ -50,11 +50,14 @@
                 height: 56px;
                 border-radius: 5px;
                 margin: 2rem 0 0;
-                
             }
 
             .mailinglist-join-button:not(:first-child) {
                 margin-left: 1rem;
+                @media #{$mobile} {
+                    margin-left: 0;
+                    
+                }
             }
         }
     }
