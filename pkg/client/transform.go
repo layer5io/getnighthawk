@@ -206,7 +206,7 @@ func Transform(res *nighthawk_client.ExecutionResponse, typ string) ([]byte, err
 
 func constructResults(res *nighthawk_client.ExecutionResponse) ([]Result, error) {
 	results := make([]Result, 0)
-	if res == nil {
+	if res == nil || res.Output == nil {
 		return nil, ErrResponseNil
 	}
 
