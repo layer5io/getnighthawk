@@ -67,7 +67,7 @@ You can contribute to the GetNightHawk main project and documentation or you cou
 
 1. Fork this repository
 2. Clone your forked copy to your local computer
-3.`cd` into the getnighthawk repo
+3. `cd` into the getnighthawk repo
 4. `cd docs` to access the GetNighthawk Jekyll website codebase
 5. Run the following code in your terminal `bundle install`.
 6. Run `make site` in order to serve the jekyll website on your machine at `http://127.0.0.1:4000/`
