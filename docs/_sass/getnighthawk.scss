@@ -22,14 +22,24 @@ $blue-munsell-3: #4392a4ff;
 // hero-section-div starts
 
 .hero-section-div {
-  background: #f8faff;
+  background: #ffffff;
   text-align: center;
-  margin-top: 6rem;
-  padding-top: 1rem;
+  margin-top: 5.9rem;
+  // padding-top: 1rem;
 }
+
+.hero-section-div-container{
+  background-color: #C9FCF6;
+  padding: 4rem 0 1rem 0;
+}
+
+.hero-section-div-container p{
+  margin-bottom: 0;
+}
+
 .hero-section-header {
   text-align: center !important;
-  margin: 2rem auto 2rem auto;
+  margin: 0rem auto 2rem auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -78,7 +88,7 @@ $blue-munsell-3: #4392a4ff;
   margin-right: 10px;
 }
 .slanted-div {
-  background: linear-gradient(to right bottom, #f8faff 50%, white 50%);
+  background: linear-gradient(to right bottom,#C9FCF6 50%, white 50%);
   height: 10rem;
 }
 

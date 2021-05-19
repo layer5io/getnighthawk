@@ -36,8 +36,8 @@ header {
 	position: fixed;
 	width: 100%;
 	z-index: 9999;
-	margin-bottom: 5px;
-	background: #F8FAFF;
+	// margin-bottom: 5px;
+	background: #C9FCF6;
 	&.header-background {
 		background: #F8FAFF; /* Old browsers */
 		background-color: linear-gradient(to bottom, $brand-color 0%, $middle-gradient-color 100%) no-repeat
