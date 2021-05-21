@@ -1,14 +1,9 @@
 .container{
-	text-align: center;
 	display: flex;
 	justify-content: space-evenly;
 	font-size: 0.8rem;
 }
-.copyright-text {
-	color: white;
-	font-size: 15px;
-	line-height: 15px;
-}
+
 
 .footer-links {
 
@@ -17,7 +12,6 @@
 
 	li {
 		list-style: none;
-		margin: 10px auto;
 
 		@media #{$tablet} {
 			max-width: 200px;
@@ -92,7 +86,7 @@
 		list-style: none;
 		margin: 10px auto;
 		display: table-cell;
-		padding-right: 1.5rem;
+		padding-right: 16px;
 
 		@media #{$tablet} {
 			max-width: 200px;
@@ -162,12 +156,9 @@
 }
 .footer-social-div {
 	max-width: 550px;
-	padding-left: 40px !important;
+	
 }
-.footer-social-row {
-	text-align: center;
-	padding-left: 50px;
-}
+
 .feed {
 	width: 100%;
 	margin: 10px;
@@ -194,9 +185,13 @@ footer {
 	position: relative;
 	background: #1E2117;
 	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
 	.getnighthawk-logo{
 		display: flex;
+  align-items: center;
 		a{
 			display:block;
 
@@ -221,9 +216,16 @@ footer {
 
 		display: flex;
 		align-items: center;
+		justify-content: center;
 		p{
 			color:white;
 		}
+	}
+	.copyright-text {
+		
+		color: white;
+		font-size: 15px;
+		line-height: 15px;
 	}
 	.copyright {
 		font-size: .8em;
@@ -242,8 +244,7 @@ footer {
 
 	h2 {
 		font-size: 1.2em;
-		margin: 30px 0;
-		margin: 15px auto;
+		// margin: 15px auto;
 		color: #fff;
 		font-weight: bolder;
 	}
@@ -251,7 +252,7 @@ footer {
 	.footer-columns {
 		@extend %flexbox;
 		@include flex-flow(wrap);
-		justify-content: center;
+		
 	}
 
 	a {
@@ -272,6 +273,11 @@ footer {
 			font-weight: 600;
 		}
 	}
+	.footer-social-row {
+	
+		text-align: center;
+		padding-left: 50px;
+	}
 }
 
 
@@ -279,6 +285,8 @@ footer {
 {
 	.foot-container{
 		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 	}
 	.getnighthawk-logo{
 		justify-content: center;

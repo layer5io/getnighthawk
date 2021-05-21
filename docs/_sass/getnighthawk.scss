@@ -5855,84 +5855,84 @@ div.globalFooterCard.card-environment {
   font-size: 20px;
   color: #737373;
 }
-.footer-social-links {
-  display: table;
+// .footer-social-links {
+//   display: table;
 
-  li {
-    list-style: none;
-    margin: 10px auto;
-    display: table-cell;
-    padding-right: 1.5rem;
+//   li {
+//     list-style: none;
+//     margin: 10px auto;
+//     display: table-cell;
+//     padding-right: 1.5rem;
 
-    a {
-      &:hover {
-        text-decoration: none;
-      }
-      svg {
-        fill: #999;
-        margin-right: 10px;
-        transition: fill 0.2s ease;
-        vertical-align: middle;
-        position: relative;
-        top: -2px;
-        width: 22px;
-        height: 22px;
-      }
+//     a {
+//       &:hover {
+//         text-decoration: none;
+//       }
+//       svg {
+//         fill: #999;
+//         margin-right: 10px;
+//         transition: fill 0.2s ease;
+//         vertical-align: middle;
+//         position: relative;
+//         top: -2px;
+//         width: 22px;
+//         height: 22px;
+//       }
 
-      &:hover svg {
-        fill: #fff;
-      }
+//       &:hover svg {
+//         fill: #fff;
+//       }
 
-      &.twitter-icon:hover svg {
-        fill: #55acee;
-      }
+//       &.twitter-icon:hover svg {
+//         fill: #55acee;
+//       }
 
-      &.google-plus-icon:hover svg {
-        fill: #db4437;
-      }
+//       &.google-plus-icon:hover svg {
+//         fill: #db4437;
+//       }
 
-      &.calendar-icon:hover svg {
-        fill: #0073cf;
-      }
+//       &.calendar-icon:hover svg {
+//         fill: #0073cf;
+//       }
 
-      &.dockerhub-icon:hover svg {
-        fill: #029cec;
-      }
+//       &.dockerhub-icon:hover svg {
+//         fill: #029cec;
+//       }
 
-      &.youtube-icon:hover svg {
-        fill: #cd201f;
-      }
+//       &.youtube-icon:hover svg {
+//         fill: #cd201f;
+//       }
 
-      &.layer5-icon:hover svg {
-        fill: #00b39f;
-      }
+//       &.layer5-icon:hover svg {
+//         fill: #00b39f;
+//       }
 
-      &.linkedin-icon:hover svg {
-        fill: #0077b5;
-      }
+//       &.linkedin-icon:hover svg {
+//         fill: #0077b5;
+//       }
 
-      &.slack-icon:hover svg {
-        fill: #4b154b;
-      }
+//       &.slack-icon:hover svg {
+//         fill: #4b154b;
+//       }
 
-      &.github-icon:hover svg {
-        fill: #000000;
-      }
+//       &.github-icon:hover svg {
+//         fill: #000000;
+//       }
 
-      &.rss-icon:hover svg {
-        fill: #f26522;
-      }
-    }
-  }
-}
-.footer-social-div {
-  max-width: 550px;
-  padding-left: 40px !important;
-}
-.footer-social-row {
-  text-align: center;
-  padding-left: 50px;
-}
+//       &.rss-icon:hover svg {
+//         fill: #f26522;
+//       }
+//     }
+//   }
+// }
+// .footer-social-div {
+//   max-width: 550px;
+//   padding-left: 40px !important;
+// }
+// .footer-social-row {
+//   text-align: center;
+//   padding-left: 50px;
+// }
 /*# sourceMappingURL=about-44bbf7b0a0c8887c2697.min.css.map*/
 
 /* docs styling */

@@ -22,12 +22,18 @@
 
         .mailinglist-text {
             margin-bottom: 40px;
-            display: block;
+            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
             span {
                 font-size: 34px;
             }
 
             p {
+                text-align: center;
                 max-width: 375px;
                 margin: 0 3rem;
                 color: white;
