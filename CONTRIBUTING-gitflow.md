@@ -2,17 +2,18 @@
 Just head over to the GitHub page and click the "Fork" button. It's just that simple. Once you've done that, you can use your favorite git client to clone your repo or just head straight to the command line:
 
 ## Clone your fork to your local machine
+Run the below command on your local machine( Replace USERNAME with your GitHub username ):
 ```
-git clone git@github.com:USERNAME/FORKED-PROJECT.git
+git clone git@github.com:USERNAME/getnighthawk.git
 ```
 Keeping Your Fork Up to Date
 While this isn't an absolutely necessary step, if you plan on doing anything more than just a tiny quick fix, you'll want to make sure you keep your fork up to date by tracking the original "upstream" repo that you forked. To do this, you'll need to add a remote:
 
 ## Add 'upstream' repo to list of remotes
 ```
-git remote add upstream https://github.com/layer5io/meshery.git
+git remote add upstream https://github.com/layer5io/getnighthawk.git
 ``` 
-("meshery" is used as the example repo. Be sure to reference the _actual_ repo you're contributing to e.g. "meshery-linkerd").
+
 
 ## Verify the new remote named 'upstream'
 ```
