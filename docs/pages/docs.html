@@ -102,10 +102,10 @@ permalink: /docs
                     <h4 class="doc-heading">{{ docs.name }}</h4>
                   </button>
                 </h2>
-                  <div id="flush-collapse{{docs.number}}" class="accordion-collapse collapse" aria-labelledby="flush-heading{{docs.number}}" data-bs-parent="#accordionFlushExample">
+                  <div id="flush-collapse{{docs.number}}" class="accordion-collapse collapse" style="padding: 15px;" aria-labelledby="flush-heading{{docs.number}}" data-bs-parent="#accordionFlushExample">
                     {% for doc in site.docs %}
                       {% if doc.section == docs.name %}
-                        <li>
+                        <li style="padding: 5px 0;">
                           <h5>
                             {% assign foo = docs.name %}
                             <a
