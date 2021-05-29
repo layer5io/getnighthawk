@@ -102,30 +102,30 @@ $blue-munsell-3: #4392a4ff;
   padding-bottom: 3rem;
 }
 .newsletter-signup-logo {
-  width: 25rem;
+  width: 15rem;
   height: auto;
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
 .newsletter-signup-button {
   background: #ebc017;
-  width: 240px;
-  height: 74px;
+  width: 130px;
+  height: 50px;
   border-radius: 20px;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 .newsletter-span {
-  font-size: 21px;
+  font-size: 20px;
   line-height: 21px;
   font-weight: 600;
   color: #ffffff;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 .newsletter-para {
-  font-size: 20px;
-  line-height: 20px;
+  font-size: 18px;
+  line-height: 10px;
   font-weight: 550;
   color: #000000;
 }
@@ -133,6 +133,7 @@ $blue-munsell-3: #4392a4ff;
   font-size: 25px;
   line-height: 25px;
   font-weight: 600;
+  padding-top: 1.5rem;
 }
 
 // Newsletter-signup ends
@@ -212,11 +213,10 @@ $blue-munsell-3: #4392a4ff;
 
 // stewared by section startups
 
-.stewarded-by-div {
-  background: #f6f9fc;
+.stewarded-organised {
+  background: #C9FCF6;
   margin: 1rem auto;
-  padding-top: 2rem;
-  padding-bottom: 4rem;
+  padding: 5rem 8rem;
   text-align: center;
 }
 .stewarded-text {
@@ -231,8 +231,8 @@ $blue-munsell-3: #4392a4ff;
 .stewarded-img {
   max-width: 250px;
   max-height: 75px;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 0rem;
 }
 
 // stewarded by section ends
