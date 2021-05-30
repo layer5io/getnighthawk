@@ -69,6 +69,12 @@ $blue-munsell-3: #4392a4ff;
   background: #ebc017;
   border-radius: 20px;
   outline: none;
+  transition: all .4s;
+
+  &:hover{
+    background: #dbb314;
+  }
+
 }
 .hero-section-button:focus {
   outline: none;
@@ -114,6 +120,11 @@ $blue-munsell-3: #4392a4ff;
   border-radius: 20px;
   margin-top: 2rem;
   margin-bottom: 2rem;
+  transition: all .4s;
+
+  &:hover{
+    background-color:  #dbb314;
+  }
 }
 .newsletter-span {
   font-size: 21px;
