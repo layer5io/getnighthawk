@@ -28,12 +28,12 @@ $blue-munsell-3: #4392a4ff;
   // padding-top: 1rem;
 }
 
-.hero-section-div-container{
-  background-color: #C9FCF6;
+.hero-section-div-container {
+  background-color: #c9fcf6;
   padding: 4rem 0 1rem 0;
 }
 
-.hero-section-div-container p{
+.hero-section-div-container p {
   margin-bottom: 0;
 }
 
@@ -88,7 +88,7 @@ $blue-munsell-3: #4392a4ff;
   margin-right: 10px;
 }
 .slanted-div {
-  background: linear-gradient(to right bottom,#C9FCF6 50%, white 50%);
+  background: linear-gradient(to right bottom, #c9fcf6 50%, white 50%);
   height: 10rem;
 }
 
@@ -102,37 +102,51 @@ $blue-munsell-3: #4392a4ff;
   padding-bottom: 3rem;
 }
 .newsletter-signup-logo {
-  width: 25rem;
+  width: 15rem;
   height: auto;
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
 .newsletter-signup-button {
   background: #ebc017;
-  width: 240px;
-  height: 74px;
+  width: 130px;
+  height: 50px;
   border-radius: 20px;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 .newsletter-span {
-  font-size: 21px;
+  font-size: 20px;
   line-height: 21px;
   font-weight: 600;
   color: #ffffff;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 .newsletter-para {
-  font-size: 20px;
-  line-height: 20px;
+  font-size: 18px;
+  line-height: 13px;
   font-weight: 550;
   color: #000000;
+  padding: 0px 0px;
 }
 .organised-by-h5 {
   font-size: 25px;
   line-height: 25px;
   font-weight: 600;
+  padding-top: 1.5rem;
+}
+@media (max-width: 650px) {
+  .newsletter-signup-logo {
+    width: 16rem;
+  }
+  .newsletter-para {
+    line-height: 17px;
+  }
+  .organised-by-h5 {
+    font-size: 29px;
+    padding-top: 2.5rem;
+  }
 }
 
 // Newsletter-signup ends
@@ -212,11 +226,10 @@ $blue-munsell-3: #4392a4ff;
 
 // stewared by section startups
 
-.stewarded-by-div {
-  background: #f6f9fc;
-  margin: 1rem auto;
-  padding-top: 2rem;
-  padding-bottom: 4rem;
+.stewarded-organised {
+  background: #f8faff;
+  margin: 0rem auto;
+  padding: 5rem 8rem;
   text-align: center;
 }
 .stewarded-text {
@@ -231,8 +244,20 @@ $blue-munsell-3: #4392a4ff;
 .stewarded-img {
   max-width: 250px;
   max-height: 75px;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 0rem;
+}
+@media (max-width: 670px) {
+  .stewarded-img {
+    max-width: 200px;
+  }
+  .stewarded-organised {
+    padding: 2rem 3rem;
+    text-align: center;
+  }
+  .stewarded-h5 {
+    font-size: 29px;
+  }
 }
 
 // stewarded by section ends
@@ -979,16 +1004,20 @@ pre {
   height: 100%;
   display: grid;
   grid-template-rows: repeat(auto-fill, var(--stripe-height));
-  grid-template-columns: [viewport-start] 1fr [left-gutter-start] repeat(
+  grid-template-columns:
+    [viewport-start] 1fr [left-gutter-start] repeat(
       var(--gutter-columns),
       var(--gutter-column-width)
-    ) [left-gutter-end content-start] repeat(
+    )
+    [left-gutter-end content-start] repeat(
       var(--content-columns),
       var(--content-column-width)
-    ) [content-end right-gutter-start] repeat(
+    )
+    [content-end right-gutter-start] repeat(
       var(--gutter-columns),
       var(--gutter-column-width)
-    ) [right-gutter-end] 1fr [viewport-end];
+    )
+    [right-gutter-end] 1fr [viewport-end];
 }
 
 @media (min-width: 1040px) {
@@ -5986,5 +6015,5 @@ div.globalFooterCard.card-environment {
   border: 0px !important;
 }
 .accordion-button::after {
-  margin-left: 10px  !important;
+  margin-left: 10px !important;
 }
