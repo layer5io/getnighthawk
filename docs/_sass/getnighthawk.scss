@@ -72,7 +72,8 @@ $blue-munsell-3: #4392a4ff;
   transition: all .4s;
 
   &:hover{
-    background: #dbb314;
+    background: #f1d116;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
   }
 
 }
@@ -123,7 +124,8 @@ $blue-munsell-3: #4392a4ff;
   transition: all .4s;
 
   &:hover{
-    background-color:  #dbb314;
+    background: #f3d110;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
   }
 }
 .newsletter-span {
