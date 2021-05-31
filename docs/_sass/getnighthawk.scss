@@ -5936,7 +5936,13 @@ div.globalFooterCard.card-environment {
 /*# sourceMappingURL=about-44bbf7b0a0c8887c2697.min.css.map*/
 
 /* docs styling */
+.doc-container{
+  padding: 10px;
+}
+
 .doc-link {
+  display: inline-block;
+	padding: 5px 0;
   text-decoration: none;
   margin-left: 20px;
   color: #696969;
