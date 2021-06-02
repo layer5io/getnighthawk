@@ -9,6 +9,10 @@
     font-size: 50px;
 }
 
+.container-faq{
+ font-family: 'Open Sans', sans-serif;
+}
+
 .container-faq .accordion-body{
     text-align: left;
     color: #aaaaaa;
@@ -61,5 +65,13 @@
     }
     button{
         margin: 20px 0;
+    }
+}
+
+@media(max-width:1100px){
+    .container-faq .col-lg-8{
+        padding-left: 4rem;
+        padding-right: 4rem;
+        margin-bottom: 30px;
     }
 }
