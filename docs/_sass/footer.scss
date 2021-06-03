@@ -1,304 +1,320 @@
-.container{
-	text-align: center;
-	display: flex;
-	justify-content: space-evenly;
-	font-size: 0.8rem;
+.container {
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 0.8rem;
 }
 .copyright-text {
-	color: white;
-	font-size: 15px;
-	line-height: 15px;
+  color: white;
+  font-size: 15px;
+  line-height: 15px;
 }
 
 .footer-links {
+  margin: 0rem 0rem;
+  padding: 0;
+  text-align: left;
 
-	margin: 0rem 1rem;
-	padding: 0;
+  li {
+    list-style: none;
+    margin: 5px auto;
 
-	li {
-		list-style: none;
-		margin: 10px auto;
+    @media #{$tablet} {
+      max-width: 200px;
+    }
+    a {
+      &:hover {
+        text-decoration: none;
+      }
+      svg {
+        fill: #999;
+        margin-right: 10px;
+        transition: fill 0.2s ease;
+        vertical-align: middle;
+        position: relative;
+        top: -2px;
+        width: 22px;
+        height: 22px;
+      }
 
-		@media #{$tablet} {
-			max-width: 200px;
-		}
-		a {
+      &:hover svg {
+        fill: #fff;
+      }
 
-			&:hover {
-				text-decoration: none;
-			}
-			svg {
-				fill: #999;
-				margin-right: 10px;
-				transition: fill 0.2s ease;
-				vertical-align: middle;
-				position: relative;
-				top: -2px;
-				width: 22px;
-				height: 22px;
-			}
+      &.twitter-icon:hover svg {
+        fill: #55acee;
+      }
 
-			&:hover svg {
-				fill: #fff;
-			}
+      &.google-plus-icon:hover svg {
+        fill: #db4437;
+      }
 
-			&.twitter-icon:hover svg {
-				fill: #55acee;
-			}
+      &.calendar-icon:hover svg {
+        fill: #0073cf;
+      }
 
-			&.google-plus-icon:hover svg {
-				fill: #db4437;
-			}
+      &.dockerhub-icon:hover svg {
+        fill: #029cec;
+      }
 
-			&.calendar-icon:hover svg {
-				fill: #0073cf;
-			}
+      &.youtube-icon:hover svg {
+        fill: #cd201f;
+      }
 
-			&.dockerhub-icon:hover svg {
-				fill: #029CEC;
-			}
+      &.layer5-icon:hover svg {
+        fill: #00b39f;
+      }
 
-			&.youtube-icon:hover svg {
-				fill: #cd201f;
-			}
+      &.linkedin-icon:hover svg {
+        fill: #0077b5;
+      }
 
-			&.layer5-icon:hover svg {
-				fill: #00b39f;
-			}
+      &.slack-icon:hover svg {
+        fill: #4b154b;
+      }
 
-			&.linkedin-icon:hover svg {
-				fill: #0077b5;
-			}
+      &.github-icon:hover svg {
+        fill: #000000;
+      }
 
-			&.slack-icon:hover svg {
-				fill: #4B154B;
-			}
-
-			&.github-icon:hover svg {
-				fill: #000000;
-			}
-
-			&.rss-icon:hover svg {
-				fill: #f26522;
-			}
-		}
-	}
-
+      &.rss-icon:hover svg {
+        fill: #f26522;
+      }
+    }
+  }
 }
+
 .footer-social-links {
   display: table;
+  margin: 0;
+  padding: 0;
+  li {
+    list-style: none;
+    display: table-cell;
+    padding-right: 0rem;
 
-	li {
-		list-style: none;
-		margin: 10px auto;
-		display: table-cell;
-		padding-right: 1.5rem;
+    @media #{$tablet} {
+      max-width: 200px;
+    }
+    a {
+      &:hover {
+        text-decoration: none;
+      }
+      svg {
+        fill: #999;
+        margin-right: 10px;
+        transition: fill 0.2s ease;
+        vertical-align: middle;
+        position: relative;
+        top: -2px;
+        width: 22px;
+        height: 22px;
+      }
 
-		@media #{$tablet} {
-			max-width: 200px;
-		}
-		a {
+      &:hover svg {
+        fill: #fff;
+      }
 
-			&:hover {
-				text-decoration: none;
-			}
-			svg {
-				fill: #999;
-				margin-right: 10px;
-				transition: fill 0.2s ease;
-				vertical-align: middle;
-				position: relative;
-				top: -2px;
-				width: 22px;
-				height: 22px;
-			}
+      &.twitter-icon:hover svg {
+        fill: #55acee;
+      }
 
-			&:hover svg {
-				fill: #fff;
-			}
+      &.google-plus-icon:hover svg {
+        fill: #db4437;
+      }
 
-			&.twitter-icon:hover svg {
-				fill: #55acee;
-			}
+      &.calendar-icon:hover svg {
+        fill: #0073cf;
+      }
 
-			&.google-plus-icon:hover svg {
-				fill: #db4437;
-			}
+      &.dockerhub-icon:hover svg {
+        fill: #029cec;
+      }
 
-			&.calendar-icon:hover svg {
-				fill: #0073cf;
-			}
+      &.youtube-icon:hover svg {
+        fill: #cd201f;
+      }
 
-			&.dockerhub-icon:hover svg {
-				fill: #029CEC;
-			}
+      &.layer5-icon:hover svg {
+        fill: #00b39f;
+      }
 
-			&.youtube-icon:hover svg {
-				fill: #cd201f;
-			}
+      &.linkedin-icon:hover svg {
+        fill: #0077b5;
+      }
 
-			&.layer5-icon:hover svg {
-				fill: #00b39f;
-			}
+      &.slack-icon:hover svg {
+        fill: #4b154b;
+      }
 
-			&.linkedin-icon:hover svg {
-				fill: #0077b5;
-			}
+      &.github-icon:hover svg {
+        fill: #000000;
+      }
 
-			&.slack-icon:hover svg {
-				fill: #4B154B;
-			}
-
-			&.github-icon:hover svg {
-				fill: #000000;
-			}
-
-			&.rss-icon:hover svg {
-				fill: #f26522;
-			}
-		}
-	}
-
+      &.rss-icon:hover svg {
+        fill: #f26522;
+      }
+    }
+  }
 }
 .footer-social-div {
-	max-width: 550px;
-	padding-left: 40px !important;
+  // max-width: 550px;
+  padding: 0;
 }
 .footer-social-row {
-	text-align: center;
-	padding-left: 50px;
+  text-align: center;
+  padding: 0;
 }
 .feed {
-	width: 100%;
-	margin: 10px;
-	padding: 0;
+  width: 100%;
+  margin: 10px;
+  padding: 0;
 
-	@media #{$tablet} {
-		-webkit-flex: 1 0 310px;
-		flex: 1 0 310px;
-	}
+  @media #{$tablet} {
+    -webkit-flex: 1 0 310px;
+    flex: 1 0 310px;
+  }
 
-	ul {
-		list-style: none;
-		margin: 10px auto;
+  ul {
+    list-style: none;
+    margin: 10px auto;
 
-		@media #{$tablet} {
-			max-width: 400px;
-		}
-	}
+    @media #{$tablet} {
+      max-width: 400px;
+    }
+  }
 }
 
 footer {
-	padding: 50px 0 50px 0;
-	font-size: 1.1em;
-	position: relative;
-	background: #1E2117;
-	color: #fff;
+  padding: 50px 0 50px 0;
+  font-size: 1.1em;
+  position: relative;
+  background: #1e2117;
+  color: #fff;
 
-	.getnighthawk-logo{
-		display: flex;
-		a{
-			display:block;
+  .getnighthawk-logo {
+    display: flex;
+    padding-top: 18px;
+    a {
+      display: block;
 
-			img{
-				width:5rem;
-				vertical-align: middle;
-			}
-			p{
-				display: inline-block;
-				color:white;
-				font-size: 2rem;
-				font-weight: bolder;
-				margin:0rem 0.2rem;
-			}
-		}
-		a:hover{
-			text-decoration: none;
+      img {
+        width: 8rem;
+        vertical-align: middle;
+      }
+    }
+    a:hover {
+      text-decoration: none;
+    }
+  }
+  .getnighthawk-logo p {
+    display: inline-block;
+    color: white;
+    font-size: 2rem;
+    font-weight: bolder;
+    margin: 0rem 0.5rem;
+    padding-top: 18px;
+  }
+  .copyright-cont {
+    display: flex;
+    align-items: center;
+    font-size: 0.8em;
+    p {
+      color: white;
+    }
+  }
+  .copyright {
+    font-size: 0.8em;
+    margin: 0 auto;
 
-		}
-	}
-	.copyright-cont{
+    @media #{$tablet} {
+      text-align: center;
+    }
+  }
 
-		display: flex;
-		align-items: center;
-		p{
-			color:white;
-		}
-	}
-	.copyright {
-		font-size: .8em;
-		margin: 0 auto;
+  &,
+  a {
+    color: #999;
+  }
 
-		@media #{$tablet} {
-			text-align: center;
-		}
+  h2 {
+    font-size: 1.2em;
+    margin: 30px 0;
+    margin: 15px auto;
+    color: #fff;
+    font-weight: bolder;
+  }
 
-	}
+  .footer-columns {
+    // @extend %flexbox;
+    // @include flex-flow(wrap);
+    justify-content: center;
+  }
 
-	&,
-	a {
-		color: #999;
-	}
+  a {
+    text-decoration: none;
 
-	h2 {
-		font-size: 1.2em;
-		margin: 30px 0;
-		margin: 15px auto;
-		color: #fff;
-		font-weight: bolder;
-	}
+    &:hover {
+      color: #fff;
+    }
+  }
 
-	.footer-columns {
-		@extend %flexbox;
-		@include flex-flow(wrap);
-		justify-content: center;
-	}
+  .legal-line {
+    width: 100%;
+    padding: 30px 0;
+    margin: 0;
+    background-color: #222527;
 
-	a {
-		text-decoration: none;
-
-		&:hover {
-			color: #fff;
-		}
-	}
-
-	.legal-line {
-		width: 100%;
-		padding: 30px 0;
-		margin: 0;
-		background-color: #222527;
-
-		a {
-			font-weight: 600;
-		}
-	}
+    a {
+      font-weight: 600;
+    }
+  }
 }
 
+@media (max-width: 660px) {
+  .foot-container {
+    flex-direction: column;
+  }
+  .getnighthawk-logo{
+    justify-content: center;
+    display: flex;
+    margin: 2rem 0;
 
-@media(max-width:660px)
-{
-	.foot-container{
-		flex-direction: column;
-	}
-	.getnighthawk-logo{
-		justify-content: center;
-		margin: 1rem 0rem;
-	}
-	.copyright-cont{
-		justify-content: center;
-		margin: 1rem 0rem;
-	}
+  }
+  .copyright-cont {
+    justify-content: center;
+    margin: 1rem 0rem;
+  }
+  .footer-columns {
+    display: flex;
+    justify-content: center;
+    padding-right: 50px;
+  }
+  .footer-columns2 {
+    display: flex;
+    justify-content: center;
+
+  }
+  .footer-links {
+    justify-content: center;
+  }
+  .footer-social-div {
+    padding: 0;
+  }
+  .footer-social-row {
+    padding: 0;
+  }
+
 }
 
-@media(max-width:350px)
-{
-	.foot-container{
-		flex-direction: column;
-	}
+@media (max-width: 350px) {
+  .foot-container {
+    flex-direction: column;
+  }
 }
-@media (min-width:769px){
-	.custom-nav-container{
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
-	}
+@media (min-width: 769px) {
+  .custom-nav-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }

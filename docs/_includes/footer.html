@@ -2,7 +2,8 @@
 			<div class="container foot-container">
 				<p class="editor-link"><a href="cloudcannon:collections/_data/footer.yml" class="btn"><strong>&#9998;</strong> Edit footer</a></p>
 				<div class="getnighthawk-logo">
-					<a href="/" target="_blank" rel="noopener noreferrer"><img src="{{ site.baseurl }}/assets/images/logos/getnighthawk-logo.svg" alt="getnighthawk-Logo"> <p>GetNighthawk</p></a>
+					<a href="/" target="_blank" rel="noopener noreferrer"><img src="{{ site.baseurl }}/assets/images/logos/getnighthawk-logo.svg" alt="getnighthawk-Logo">	</a>
+				<p>GetNighthawk</p>
 				</div>
 				<div class="footer-columns">
 					{% for column in site.data.footer %}
@@ -19,12 +20,29 @@
 					{% endfor %}
 
 				</div>
+				<div class="footer-columns2">
+					{% for column in site.data.footer %}
+					<ul class="footer-links">
+						<li><h2><strong>{{ column.title2 }}</strong></h2></li>
+						{% for link in column.links2 %}
+							<li><a {% if link.new_window %}target="_blank"{% endif %} href="{% include relative-src.html src=link.link %}" {% if link.social_icon %}class="{{ link.social_icon || downcase }}-icon"{% endif %}>
+								{% if link.social_icon %}
+									{% include social-icon.html icon=link.social_icon %}
+								{% endif %}
+								{{ link.name }}</a></li>
+						{% endfor %}
+					</ul>
+					{% endfor %}
 
+				</div>
+<div>
+	
+</div>
 			</div>
 			<hr>
 			<div class="row footer-social-row">
 				<div class="col-lg-6">
-					<p class="copyright-text">Copyright <span class="copyright">&#169;</span> Layer5, Inc. 2021 </p>
+					<p class="copyright-text">2021 © Layer5, Inc.<span class="copyright">&#169;</span></p>
 				</div>
 				<div class="col-lg-6 footer-social-div">
 					{% for column in site.data.footer-social %}

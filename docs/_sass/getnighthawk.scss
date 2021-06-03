@@ -20,7 +20,7 @@ $blue-munsell-2: #3a8da0ff;
 $blue-munsell-3: #4392a4ff;
 
 // hero-section-div starts
-
+  
 .hero-section-div {
   background: #ffffff;
   text-align: center;
@@ -227,7 +227,7 @@ $blue-munsell-3: #4392a4ff;
 // stewared by section startups
 
 .stewarded-organised {
-  background: #f8faff;
+  background-color: #c9fcf6;
   margin: 0rem auto;
   padding: 5rem 8rem;
   text-align: center;
@@ -5886,12 +5886,12 @@ div.globalFooterCard.card-environment {
 }
 .footer-social-links {
   display: table;
-
+margin: 0;
   li {
     list-style: none;
-    margin: 10px auto;
+    margin: 10px;
     display: table-cell;
-    padding-right: 1.5rem;
+    padding-right: 0.5rem;
 
     a {
       &:hover {
@@ -5956,11 +5956,13 @@ div.globalFooterCard.card-environment {
 }
 .footer-social-div {
   max-width: 550px;
-  padding-left: 40px !important;
+  padding-left: 0px;
+   display: flex;
+  justify-content: center;
 }
 .footer-social-row {
   text-align: center;
-  padding-left: 50px;
+  padding-left: 0px;
 }
 /*# sourceMappingURL=about-44bbf7b0a0c8887c2697.min.css.map*/
 
@@ -5969,9 +5971,6 @@ div.globalFooterCard.card-environment {
   text-decoration: none;
   margin-left: 20px;
   color: #696969;
-}
-
-.sidebar {
 }
 
 .doc-heading {
