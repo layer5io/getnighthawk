@@ -9,13 +9,52 @@
     font-size: 50px;
 }
 
-.accordion-body{
-    color: #737373;
+.container-faq{
+ font-family: 'Open Sans', sans-serif;
+}
+
+.container-faq .accordion-body{
+    text-align: left;
+    color: #aaaaaa;
+    padding: 1rem 0;
+}
+
+.container-faq .accordion-button{
+    padding: 1rem 2rem 1rem 0;
+}
+
+.container-faq .accordion-button:focus{
+    border-color: transparent;
+    box-shadow: none;
+}
+
+.container-faq .accordion-button:not(.collapsed)::after{
+    transform: rotate(270deg);
+}
+
+.container-faq .accordion-button:not(.collapsed){
+    background-color: transparent;
+    color: inherit;
+}
+
+.container-faq .accordion-item{
+    padding: 1rem 0;
+    &:not(:last-child){
+        border-bottom: 3px solid #cecece;
+    }
+}
+
+.container-faq .accordion-button:not(.collapsed)::after{
+    background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.container-faq .accordion-collapse{
+    border:none;
 }
 
 #faq-title{
     font-size: 24px;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .side{
@@ -26,5 +65,13 @@
     }
     button{
         margin: 20px 0;
+    }
+}
+
+@media(max-width:1100px){
+    .container-faq .col-lg-8{
+        padding-left: 2rem;
+        padding-right: 2rem;
+        margin-bottom: 30px;
     }
 }
