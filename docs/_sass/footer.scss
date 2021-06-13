@@ -289,15 +289,20 @@ footer {
   .footer-columns {
     display: flex;
     justify-content: center;
-    padding-right: 37px;
+    // padding-right: 37px;
   }
   .footer-columns2 {
     display: flex;
     justify-content: center;
+    margin-bottom: 20px;
 
   }
   .footer-links {
     justify-content: center;
+    text-align: center;
+  }
+  .footer-links li{
+    letter-spacing: 1px;
   }
   .footer-social-div {
     padding: 0;
