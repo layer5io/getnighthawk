@@ -20,7 +20,7 @@
     margin: 5px auto;
 
     @media #{$tablet} {
-      max-width: 200px;
+      max-width: 225px;
     }
     a {
       &:hover {
@@ -269,18 +269,16 @@ footer {
       font-weight: 600;
     }
   }
-
 }
 
 @media (max-width: 660px) {
   .foot-container {
     flex-direction: column;
   }
-  .getnighthawk-logo{
+  .getnighthawk-logo {
     justify-content: center;
     display: flex;
     margin: 2rem 0;
-
   }
   .copyright-cont {
     justify-content: center;
@@ -295,13 +293,13 @@ footer {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
-
   }
   .footer-links {
     justify-content: center;
     text-align: center;
+    font-size: 1rem;
   }
-  .footer-links li{
+  .footer-links li {
     letter-spacing: 1px;
   }
   .footer-social-div {
@@ -310,7 +308,14 @@ footer {
   .footer-social-row {
     padding: 0;
   }
-
+  .footer-social-links li a svg {
+    width: 30px !important;
+    height: 30px !important;
+  }
+  .copyright-text {
+    font-size: 17px;
+    margin-bottom: 1.5rem;
+  }
 }
 
 @media (max-width: 350px) {
