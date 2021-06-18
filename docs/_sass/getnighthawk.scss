@@ -39,25 +39,26 @@ $blue-munsell-3: #4392a4ff;
 
 .hero-section-header {
   text-align: center !important;
-  margin: 0rem auto 2rem auto;
+  margin: 0rem auto 3rem auto;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .hero-section-logo-span {
-  font-size: 50px;
-  line-height: 50px;
+  font-size: 32px;
+  line-height: 45px;
   font-weight: 700;
-  text-align: center;
+  text-align: start;
 }
 .hero-section-para {
   text-align: center;
-  margin: 2rem auto 2rem auto;
+  margin: 1rem auto 2rem auto;
 }
 .hero-section-para p {
   font-size: 21px;
-  line-height: 21px;
+  line-height: 27px;
   font-weight: 400px;
+  text-align: start;
 }
 .hero-section-button-div {
   text-align: center;
@@ -96,13 +97,21 @@ $blue-munsell-3: #4392a4ff;
   margin: 6rem auto auto auto;
 }
 .hero-section-img {
-  width: 100px;
+  width: 300px;
   margin-right: 10px;
+}
+.hero-section-header-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 500px;
+  margin-left: 50px;
 }
 .slanted-div {
   background: linear-gradient(to right bottom, #c9fcf6 50%, white 50%);
   height: 10rem;
 }
+
 
 // hero-section-div ends
 
@@ -5883,6 +5892,34 @@ div.globalFooterCard.card-environment {
   }
 }
 
+@media (max-width: 1000px) {
+  .hero-section-header{
+    flex-direction: column;
+  }
+  .hero-section-header-text{
+    margin: 3rem 0 1rem 0;
+  }
+  .hero-section-logo-span{
+    text-align: center;
+  }
+  .hero-section-para p{
+    text-align: center;
+    margin-top: 1rem;
+  }
+}
+@media (max-width: 550px) {
+  .hero-section-header-text{
+    width: 425px;
+  }
+  .hero-section-logo-span{
+    text-align: center;
+    font-size: 26px;
+  }
+  .hero-section-para p{
+    font-size: 16px;
+  }
+}
+
 @media screen and (max-width: 450px) {
   .section-cust-head {
     display: flex;
@@ -5894,11 +5931,20 @@ div.globalFooterCard.card-environment {
     width: 99vw;
   }
   .hero-section-img {
-    width: 40px;
-    height: 40px;
+    width: 200px;
+    height: 200px;
   }
   .hero-section-logo-span {
     font-size: 40px;
+  }
+  .hero-section-header-text{
+    width: 400px;
+  }
+  .hero-section-logo-span{
+    font-size: 27px;
+  }
+  .hero-section-para p{
+    font-size: 14px;
   }
 }
 
