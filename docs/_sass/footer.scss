@@ -7,7 +7,7 @@
 .copyright-text {
   color: white;
   font-size: 15px;
-  line-height: 15px;
+  line-height: 22px;
 }
 
 .footer-links {
@@ -187,7 +187,7 @@
 }
 
 footer {
-  padding: 50px 0 50px 0;
+  padding: 15px 0 2px 0;
   font-size: 1.1em;
   position: relative;
   background: #1e2117;
@@ -197,8 +197,8 @@ footer {
     display: flex;
     padding-top: 18px;
     a {
-      display: block;
-
+        display: block;
+        
       img {
         width: 8rem;
         vertical-align: middle;

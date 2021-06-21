@@ -110,6 +110,7 @@ $blue-munsell-3: #4392a4ff;
 .slanted-div {
   background: linear-gradient(to right bottom, #c9fcf6 50%, white 50%);
   height: 10rem;
+  padding: 150px 25px;
 }
 
 
@@ -119,8 +120,8 @@ $blue-munsell-3: #4392a4ff;
 
 .newsletter-signup {
   text-align: center;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
 }
 .newsletter-signup-logo {
   width: 15rem;
@@ -185,7 +186,7 @@ $blue-munsell-3: #4392a4ff;
 // nighthawk-description startups
 
 .nighthawk-description-div {
-  margin: auto auto 3rem auto;
+  margin: -252px auto 3rem auto;
   z-index: 1;
 }
 .description-div {
@@ -217,7 +218,7 @@ $blue-munsell-3: #4392a4ff;
   margin: 2rem;
 }
 .nighthawk-meshery-div-columns {
-  padding: 5rem 2rem;
+  padding: 0.2rem 2rem;
   max-width: 100%;
   height: auto;
 }
@@ -5415,7 +5416,7 @@ div.globalFooterCard.card-environment {
 
 @media (min-width: 670px) {
   .platform {
-    padding: 80px 0 100px;
+    padding: 4px 0 100px;
   }
 }
 
