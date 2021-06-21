@@ -1,3 +1,5 @@
+<img src="docs/assets/images/logos/getnighthawk-logo-with-name.svg" />
+
 # GetNighthawk
 
 - Project site: https://getnighthawk.dev
@@ -40,9 +42,6 @@ Different use cases and different opinions call for different approaches to stat
 `fortio` - Fortio load testing library, command line tool, advanced echo server and web UI in go (golang). Allows to specify a set query-per-second load and record latency histograms and other useful stats.
 `wrk2` - A constant throughput, correct latency recording variant of wrk.
 `nighthawk` - Enables users to run distributed performance tests to better mimic real-world, distributed systems scenarios.
-
-
-
 
 <div>&nbsp;</div>
 
