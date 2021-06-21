@@ -112,6 +112,25 @@ $blue-munsell-3: #4392a4ff;
   height: 10rem;
 }
 
+.docs-section{
+  &-logo-span{
+    display: none ;
+  }
+
+  &-para{
+    margin: 0;
+  }
+
+  &-header{
+    margin: 0rem auto 1rem auto;
+  }
+
+  &-para p{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
+}
 
 // hero-section-div ends
 
