@@ -50,6 +50,11 @@
                 height: 56px;
                 border-radius: 5px;
                 margin: 2rem 0 0;
+                transition: all .4s;
+
+                &:hover{
+                    background-color: #4a5a63;
+                }
             }
 
             .mailinglist-join-button:not(:first-child) {
