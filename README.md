@@ -1,3 +1,5 @@
+<img src="docs/assets/images/logos/getnighthawk-logo-with-name.svg" />
+
 # GetNighthawk
 
 - Project site: https://getnighthawk.dev
@@ -41,18 +43,15 @@ Different use cases and different opinions call for different approaches to stat
 `wrk2` - A constant throughput, correct latency recording variant of wrk.
 `nighthawk` - Enables users to run distributed performance tests to better mimic real-world, distributed systems scenarios.
 
-
-
-
 <div>&nbsp;</div>
 
 ## Join the service mesh community!
 
 <a name="contributing"></a><a name="community"></a>
-Our projects are community-built and welcome collaboration. 👍 Be sure to see the <a href="https://docs.google.com/document/d/17OPtDE_rdnPQxmk2Kauhm3GwXF1R5dZ3Cj8qZLKdo5E/edit">Layer5 Community Welcome Guide</a> for a tour of resources available to you and jump into our <a href="http://slack.layer5.io">Slack</a>!
+Our projects are community-built and welcome collaboration. 👍 Be sure to see the <a href="https://docs.google.com/document/d/17OPtDE_rdnPQxmk2Kauhm3GwXF1R5dZ3Cj8qZLKdo5E/edit">Layer5 Community Welcome Guide</a> for a tour of resources available to you and jump into our <a href="https://slack.layer5.io">Slack</a>!
 
 <p style="clear:both;">
-<a href ="https://layer5.io/community/meshmates"><img alt="MeshMates" src=".github/readme/images/Layer5-MeshMentors.png" style="margin-right:10px; margin-bottom:7px;" width="28%" align="left" /></a>
+<a href ="https://layer5.io/community/meshmates"><img alt="MeshMates" src=".github/readme/images/Layer5-Community-Sign_square.png" style="margin-right:10px; margin-bottom:7px;" width="28%" align="left" /></a>
 <h3>Find your MeshMate</h3>
 
 <p>MeshMates are experienced Layer5 community members, who will help you learn your way around, discover live projects and expand your community network. 

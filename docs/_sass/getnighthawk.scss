@@ -39,25 +39,26 @@ $blue-munsell-3: #4392a4ff;
 
 .hero-section-header {
   text-align: center !important;
-  margin: 0rem auto 2rem auto;
+  margin: 0rem auto 3rem auto;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .hero-section-logo-span {
-  font-size: 50px;
-  line-height: 50px;
+  font-size: 32px;
+  line-height: 45px;
   font-weight: 700;
-  text-align: center;
+  text-align: start;
 }
 .hero-section-para {
   text-align: center;
-  margin: 2rem auto 2rem auto;
+  margin: 1rem auto 2rem auto;
 }
 .hero-section-para p {
   font-size: 21px;
-  line-height: 21px;
+  line-height: 27px;
   font-weight: 400px;
+  text-align: start;
 }
 .hero-section-button-div {
   text-align: center;
@@ -69,7 +70,19 @@ $blue-munsell-3: #4392a4ff;
   background: #ebc017;
   border-radius: 20px;
   outline: none;
+  transition:all .4s;
+
+  &-text:hover{
+    color: white;
+  }
+
+  &:hover{
+    background: #f3d110;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  }
 }
+
+
 .hero-section-button:focus {
   outline: none;
 }
@@ -84,12 +97,40 @@ $blue-munsell-3: #4392a4ff;
   margin: 6rem auto auto auto;
 }
 .hero-section-img {
-  width: 100px;
+  width: 300px;
   margin-right: 10px;
+}
+.hero-section-header-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 500px;
+  margin-left: 50px;
 }
 .slanted-div {
   background: linear-gradient(to right bottom, #c9fcf6 50%, white 50%);
   height: 10rem;
+  padding: 150px 25px;
+}
+
+.docs-section{
+  &-logo-span{
+    display: none ;
+  }
+
+  &-para{
+    margin: 0;
+  }
+
+  &-header{
+    margin: 0rem auto 1rem auto;
+  }
+
+  &-para p{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
 }
 
 // hero-section-div ends
@@ -98,8 +139,8 @@ $blue-munsell-3: #4392a4ff;
 
 .newsletter-signup {
   text-align: center;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
 }
 .newsletter-signup-logo {
   width: 15rem;
@@ -114,6 +155,16 @@ $blue-munsell-3: #4392a4ff;
   border-radius: 20px;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  transition:all .4s;
+
+  .newsletter-span:hover{
+    color: white;
+  }
+
+  &:hover{
+    background: #f3d110;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  }
 }
 .newsletter-span {
   font-size: 20px;
@@ -154,7 +205,7 @@ $blue-munsell-3: #4392a4ff;
 // nighthawk-description startups
 
 .nighthawk-description-div {
-  margin: auto auto 3rem auto;
+  margin: -252px auto 3rem auto;
   z-index: 1;
 }
 .description-div {
@@ -186,7 +237,7 @@ $blue-munsell-3: #4392a4ff;
   margin: 2rem;
 }
 .nighthawk-meshery-div-columns {
-  padding: 5rem 2rem;
+  padding: 0.2rem 2rem;
   max-width: 100%;
   height: auto;
 }
@@ -5384,7 +5435,7 @@ div.globalFooterCard.card-environment {
 
 @media (min-width: 670px) {
   .platform {
-    padding: 80px 0 100px;
+    padding: 4px 0 100px;
   }
 }
 
@@ -5861,6 +5912,34 @@ div.globalFooterCard.card-environment {
   }
 }
 
+@media (max-width: 1000px) {
+  .hero-section-header{
+    flex-direction: column;
+  }
+  .hero-section-header-text{
+    margin: 3rem 0 1rem 0;
+  }
+  .hero-section-logo-span{
+    text-align: center;
+  }
+  .hero-section-para p{
+    text-align: center;
+    margin-top: 1rem;
+  }
+}
+@media (max-width: 550px) {
+  .hero-section-header-text{
+    width: 425px;
+  }
+  .hero-section-logo-span{
+    text-align: center;
+    font-size: 26px;
+  }
+  .hero-section-para p{
+    font-size: 16px;
+  }
+}
+
 @media screen and (max-width: 450px) {
   .section-cust-head {
     display: flex;
@@ -5872,11 +5951,20 @@ div.globalFooterCard.card-environment {
     width: 99vw;
   }
   .hero-section-img {
-    width: 40px;
-    height: 40px;
+    width: 200px;
+    height: 200px;
   }
   .hero-section-logo-span {
     font-size: 40px;
+  }
+  .hero-section-header-text{
+    width: 400px;
+  }
+  .hero-section-logo-span{
+    font-size: 27px;
+  }
+  .hero-section-para p{
+    font-size: 14px;
   }
 }
 
@@ -5904,8 +5992,8 @@ margin: 0;
         vertical-align: middle;
         position: relative;
         top: -2px;
-        width: 22px;
-        height: 22px;
+        width: 28px;
+        height: 28px;
       }
 
       &:hover svg {
@@ -5967,10 +6055,65 @@ margin: 0;
 /*# sourceMappingURL=about-44bbf7b0a0c8887c2697.min.css.map*/
 
 /* docs styling */
+.row .col-lg-9{
+  padding-right: 40px !important;
+}
+
+.doc-container{
+  padding: 10px;
+}
+
 .doc-link {
+  display: inline-block;
+	padding: 5px 0;
   text-decoration: none;
   margin-left: 20px;
   color: #696969;
+}
+
+
+.sidebar{
+  font-family: 'Open Sans', sans-serif;
+}
+ 
+.sidebar .accordion-body{
+  text-align: left;
+  color: #aaaaaa;
+  padding: 1rem 0;
+}
+ 
+.sidebar .accordion-button{
+  padding: 1rem 1rem 0rem 0;
+  width: 13rem;
+}
+ 
+.sidebar .accordion-button:focus{
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.sidebar .accordion-button:not(.collapsed)::after{
+  transform: rotate(270deg);
+}
+
+.sidebar .accordion-button:not(.collapsed){
+  background-color: transparent;
+  color: inherit;
+}
+ 
+.sidebar .accordion-item{
+  padding: 1rem 0;
+  &:not(:last-child){
+    border-bottom: 3px solid #cecece;
+  }
+}
+ 
+.sidebar .accordion-button:not(.collapsed)::after{
+  background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+ 
+.sidebar .accordion-collapse{
+  border:none;
 }
 
 .doc-heading {

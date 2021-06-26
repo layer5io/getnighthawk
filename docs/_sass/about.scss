@@ -79,7 +79,7 @@ img {
   border-radius: 0px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 990px) {
   .whyGetnighthawk {
     flex-wrap: wrap;
     padding: 50px;
@@ -87,15 +87,22 @@ img {
   }
   .whyGetnighthawk .text2 {
     padding: 30px;
-    text-align: left;
+    text-align: center;
   }
+
+  .about-section_content{
+    margin-top: 60px;
+  }
+
+  .about-section_text{
+    text-align: center;
+  }
+
   .nighthawk-meshery-fig {
     flex-wrap: wrap;
     padding: 0px;
   }
-  .hero-section {
-    margin: 100px;
-  }
+
   .figbox {
     width: 100%;
     padding: 30px;
@@ -104,5 +111,11 @@ img {
     width: 100%;
     padding: 30px;
     margin: 0;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .hero-section {
+    margin: 100px;
   }
 }

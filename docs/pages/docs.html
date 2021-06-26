@@ -94,15 +94,15 @@ permalink: /docs
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="sidebar">
             
-            <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion" id="accordionExample">
               {% for docs in site.data.docs %}
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading{{docs.number}}">
-                  <button id="faq-title" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse{{docs.number}}" aria-expanded="false" aria-controls="flush-collapse{{docs.number}}">
+                  <button id="faq-title" class="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#flush-collapse{{docs.number}}" aria-expanded="false" aria-controls="flush-collapse{{docs.number}}">
                     <h4 class="doc-heading">{{ docs.name }}</h4>
                   </button>
                 </h2>
-                  <div id="flush-collapse{{docs.number}}" class="accordion-collapse collapse" aria-labelledby="flush-heading{{docs.number}}" data-bs-parent="#accordionFlushExample">
+                  <div id="flush-collapse{{docs.number}}" class="accordion-collapse collapse doc-container" aria-labelledby="flush-heading{{docs.number}}" data-parent="#accordionExample">
                     {% for doc in site.docs %}
                       {% if doc.section == docs.name %}
                         <li>
@@ -126,14 +126,14 @@ permalink: /docs
       </nav>
     </div>
     <div class="col-lg-9">
-      <div class="hero-section-header">
+      <div class="hero-section-header docs-section-header">
         <img
-          src="{{ site.baseurl }}/assets/images/logos/getnighthawk-logo.svg"
+          src="{{ site.baseurl }}/assets/images/logos/getnighthawk-logo-with-name.png"
           alt="getnighthawk-logo"
           class="hero-section-img"
-        /><span class="hero-section-logo-span">GetNighthawk</span>
+        /><span class="hero-section-logo-span docs-section-logo-span">GetNighthawk</span>
       </div>
-      <div class="hero-section-para">
+      <div class="hero-section-para docs-section-para">
         <p>
           The easiest way to get started with Nighthawk on any cloud or platform
         </p>
