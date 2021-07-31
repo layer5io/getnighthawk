@@ -7,16 +7,27 @@
     text-align: center;
     font-weight: 700;
     font-size: 50px;
+    padding: 0 20px;
+}
+
+.para-g{
+    padding: 20px 40px;
+    line-height: 36px;
 }
 
 #list {
     margin-top: 60px;
 
+    ul{
+        padding-left: 1rem;
+        padding-right: 2rem;
+    }
+
     .title-list{
         font-size: 24px;
         padding-left: 15px;
         margin-bottom: 10px;
-        height:80px;
+        min-height:80px;
     }
     p{
         font-size: 20px;
@@ -25,7 +36,7 @@
 
     li {
         margin-bottom: 40px;
-        height: 240px;
+        min-height: 240px;
     }
 
     #marker{
@@ -38,3 +49,21 @@
     // }
 }
 
+@media screen and (max-width:725px){
+    .para-g{
+        letter-spacing: 1px;
+        padding: 15px 30px;
+    }
+}
+
+@media screen and (max-width:450px){
+    #list .title-list {
+        font-size: 24px;
+    }
+    #list p {
+        font-size: 20px;
+    }
+    .title-g{
+        font-size: 2rem;
+    }
+}
