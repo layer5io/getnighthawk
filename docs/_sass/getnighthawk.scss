@@ -5924,9 +5924,15 @@ div.globalFooterCard.card-environment {
   .hero-section-para p{
     text-align: center;
     margin-top: 1rem;
+    line-height: 1.5;
   }
 }
 @media (max-width: 550px) {
+  .why-getnighthawk-p-div p{
+    line-height: 1.6;
+    padding:0 .5rem;
+    font-size: 1.1rem;
+  }
   .hero-section-header-text{
     width: 425px;
   }
@@ -5949,10 +5955,6 @@ div.globalFooterCard.card-environment {
   .hero-section-button-div {
     width: 99vw;
   }
-  .hero-section-img {
-    width: 200px;
-    height: 200px;
-  }
   .hero-section-logo-span {
     font-size: 40px;
   }
@@ -5962,8 +5964,8 @@ div.globalFooterCard.card-environment {
   .hero-section-logo-span{
     font-size: 27px;
   }
-  .hero-section-para p{
-    font-size: 14px;
+  .hero-section-img{
+    margin-right: 0;
   }
 }
 
@@ -6070,6 +6072,10 @@ margin: 0;
   color: #696969;
 }
 
+.doc-sidebar{
+  padding:0 1rem;
+}
+
 
 .sidebar{
   font-family: 'Open Sans', sans-serif;
@@ -6142,6 +6148,14 @@ margin: 0;
   }
   .nighthawk-meshery-div {
     margin: 0;
+  }
+  .docs-section{
+    padding-left: 40px !important;
+  
+    &-main{
+      margin-bottom: 40px !important;
+      margin-top: 50px !important;
+    }
   }
 }
 @media only screen and (max-width: 500px) {
