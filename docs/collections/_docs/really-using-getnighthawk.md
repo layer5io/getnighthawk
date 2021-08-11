@@ -8,8 +8,7 @@ section: "Section 1"
 ## High level interaction model
 
 **Process** creates one or more **Workers**. **Worker** will run **Sequencer**,
-which in turn queries **RateLimiter** for [request-release
-timings](terminology.md#request-release-timings). When it is time to release a
+which in turn queries **RateLimiter** for request-release timings. When it is time to release a
 request, **BenchmarkClient** will be requested to do so by **Sequencer**.
 **BenchMarkClient** will then ask its underlying **Pool** to create a
 **StreamDecoder** for releasing the actual request. **StreamDecoder** will query the
