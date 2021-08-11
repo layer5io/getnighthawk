@@ -5937,6 +5937,14 @@ div.globalFooterCard.card-environment {
   .hero-section-para p{
     font-size: 16px;
   }
+  .sidebar{
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+  .section-content ol{
+    padding-left: 10px;
+    margin-top: 30px;
+  }
 }
 
 @media screen and (max-width: 450px) {
@@ -6058,6 +6066,13 @@ margin: 0;
   padding-right: 40px !important;
 }
 
+.section-content{
+  padding-left: 40px !important;
+  margin-top: 30px !important; 
+  margin-bottom: 50px !important; 
+}
+
+
 .doc-container{
   padding: 10px;
 }
@@ -6073,6 +6088,7 @@ margin: 0;
 
 .sidebar{
   font-family: 'Open Sans', sans-serif;
+  padding-right: 2rem;
 }
  
 .sidebar .accordion-body{
