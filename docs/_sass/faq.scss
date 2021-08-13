@@ -76,3 +76,13 @@
         margin-bottom: 30px;
     }
 }
+@media(max-width:550px){
+    #faq-title{
+        font-size: 20px;
+        padding-left: 15px;
+        line-height: 1.5;
+    }
+    .container-faq .accordion-body{
+        padding: 1rem;
+    }
+}
