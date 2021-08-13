@@ -5904,7 +5904,7 @@ div.globalFooterCard.card-environment {
     .card-item {
       margin: 1.3rem 0rem;
     }
-    grid-template-columns: 88vw;
+    // grid-template-columns: 88vw;
     .item-3 {
       grid-column: unset;
     }
@@ -5930,8 +5930,11 @@ div.globalFooterCard.card-environment {
 @media (max-width: 550px) {
   .why-getnighthawk-p-div p{
     line-height: 1.6;
-    padding:0 .5rem;
+    padding:0 1rem;
     font-size: 1.1rem;
+  }
+  .platform{
+    padding-top:0 ;
   }
   .hero-section-header-text{
     width: 425px;
@@ -5951,6 +5954,7 @@ div.globalFooterCard.card-environment {
     padding-left: 10px;
     margin-top: 30px;
   }
+
 }
 
 @media screen and (max-width: 450px) {
