@@ -272,6 +272,14 @@ $blue-munsell-3: #4392a4ff;
   margin-top: 2rem;
 }
 
+
+@media (max-width: 500px) {
+  .head-h1 {
+    text-align: center;
+  }
+
+}
+
 // nighthawk-description ends
 
 // stewared by section startups
