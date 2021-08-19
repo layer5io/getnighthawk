@@ -3,11 +3,11 @@
   - name: Features
     link: /features
   - name: Run GetNighthawk
-    link: /#getting-started
+    link: /docs/really-using-getnighthawk
     new_window: false
   - name: Docs
     link: /docs
-    new_window: true
+    new_window: false
 
 - title2: Resources
   links2:
