@@ -209,6 +209,7 @@ $blue-munsell-3: #4392a4ff;
 }
 .description-div {
   text-align: center;
+ 
 }
 .nighthawk-desc-text {
   display: inline-block;
@@ -279,6 +280,7 @@ $blue-munsell-3: #4392a4ff;
   }
 
   .desc-h1 {
+    text-align: center;
     font-size: 30px;
     line-height: 45px;
     font-weight: 700;
@@ -291,6 +293,7 @@ $blue-munsell-3: #4392a4ff;
     font-weight: 700;
     color: #000000;
   }
+
 
 }
 
@@ -6202,7 +6205,7 @@ margin: 0;
 }
 @media only screen and (max-width: 500px) {
   .nighthawk-desc-text {
-    padding: 4rem 0rem;
+    padding: 1rem 0rem;
   }
   .des-para {
     font-size: 14px;
