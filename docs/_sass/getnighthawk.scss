@@ -243,12 +243,12 @@ $blue-munsell-3: #4392a4ff;
 }
 .desc-h1 {
   font-size: 45px;
-  line-height: 45px;
+  line-height: 50px;
   font-weight: 700;
   color: #000000;
 }
 .des-para {
-  font-size: 19px;
+  font-size: 17px;
   line-height: 10px;
   color: #737373;
   font-weight: 490;
@@ -270,7 +270,8 @@ $blue-munsell-3: #4392a4ff;
   color: #000000 60%;
 }
 .why-getnighthawk-p-div {
-  margin-top: 2rem;
+   font-size: 17px;
+  margin-top: 1.1rem;
 }
 
 
@@ -282,7 +283,7 @@ $blue-munsell-3: #4392a4ff;
   .desc-h1 {
     text-align: center;
     font-size: 30px;
-    line-height: 45px;
+    line-height: 43px;
     font-weight: 700;
     color: #000000;
   }
@@ -294,6 +295,17 @@ $blue-munsell-3: #4392a4ff;
     color: #000000;
   }
 
+  .des-para {
+    font-size: 17px;
+    line-height: 10px;
+    color: #737373;
+    font-weight: 490;
+    margin-bottom: 20px;
+  }
+  .why-getnighthawk-p-div {
+    font-size: 20px;
+   margin-top: 1rem;
+ }
 
 }
 
@@ -6007,7 +6019,7 @@ div.globalFooterCard.card-environment {
 }
 
 .des-para1 {
-  font-size: 20px;
+  font-size: 22px;
   color: #737373;
 }
 .footer-social-links {
