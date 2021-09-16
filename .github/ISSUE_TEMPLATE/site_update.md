@@ -7,10 +7,10 @@ assignees: ""
 ---
 
 **Current State of the GetNighthawk.dev site**
-A brief description of what the problem is.
+<!-- A brief description of what the problem is. -->
 
 **Desired State of the GetNighthawk.dev site**
-A brief description of the change you are requesting.
+<!-- A brief description of the change you are requesting. -->
 
 ---
 
