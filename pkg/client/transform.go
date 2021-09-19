@@ -18,7 +18,7 @@ func Transform(res *nighthawk_client.ExecutionResponse) ([]byte, error) {
 
 	var workers int
 	if workers = len(res.Output.Results); workers != 1 {
-		workers = workers - 1
+		workers--
 	}
 	// TODO resFortio.Label
 	resFortio.Version = res.Output.GetVersion().GetVersion().String()
@@ -44,11 +44,11 @@ func Transform(res *nighthawk_client.ExecutionResponse) ([]byte, error) {
 	if globalResult == nil {
 		return nil, err
 	}
-	resFortio.ActualQPS = float64(getCounterValue(globalResult, "upstream_rq_total", 0).GetValue())/resFortio.ActualDuration
-	resFortio.BytesReceived = getCounterValue(globalResult, "upstream_cx_rx_bytes_total", 0).GetValue()
-	resFortio.BytesSent = getCounterValue(globalResult, "upstream_cx_tx_bytes_total", 0).GetValue()
+	resFortio.ActualQPS = float64(getCounterValue(globalResult, "upstream_rq_total").GetValue()) / resFortio.ActualDuration
+	resFortio.BytesReceived = getCounterValue(globalResult, "upstream_cx_rx_bytes_total").GetValue()
+	resFortio.BytesSent = getCounterValue(globalResult, "upstream_cx_tx_bytes_total").GetValue()
 	mRetCodes := make(map[string]uint64, 1)
-	mRetCodes["200"] = getCounterValue(globalResult, "benchmark.http_2xx", 0).GetValue()
+	mRetCodes["200"] = getCounterValue(globalResult, "benchmark.http_2xx").GetValue()
 	resFortio.RetCodes = mRetCodes
 	statistic := findStatistic(globalResult, "benchmark_http_client.request_to_response")
 	if statistic != nil {
@@ -77,7 +77,7 @@ func getAverageExecutionDuration(res *nighthawk_client.ExecutionResponse) (time.
 		return 0, errors.New("no results found")
 	}
 
-	avgExecutionDuration := res.Output.Results[resultsLen - 1].ExecutionDuration.AsDuration()
+	avgExecutionDuration := res.Output.Results[resultsLen-1].ExecutionDuration.AsDuration()
 	return avgExecutionDuration, nil
 }
 
@@ -90,13 +90,13 @@ func getGlobalResult(res *nighthawk_client.ExecutionResponse) *nighthawk_client.
 	return nil
 }
 
-func getCounterValue(result *nighthawk_client.Result, counterName string, zeroValue uint64) *nighthawk_client.Counter {
+func getCounterValue(result *nighthawk_client.Result, counterName string) *nighthawk_client.Counter {
 	for _, counter := range result.Counters {
 		if counter.GetName() == counterName {
 			return counter
 		}
 	}
-	return &nighthawk_client.Counter{Value: zeroValue}
+	return &nighthawk_client.Counter{Value: 0}
 }
 
 func findStatistic(result *nighthawk_client.Result, statID string) *nighthawk_client.Statistic {
@@ -131,7 +131,8 @@ func renderFortioDurationHistogram(stat *nighthawk_client.Statistic) *nighthawk_
 		// fortioStart = prevFortioEnd
 		// If this is the first entry, force the start and end time to be the same.
 		// This prevents it from starting at 0, making it disproportionally big in the UI.
-		if i++; i == 0 {
+		i++
+		if i == 0 {
 			prevFortioEnd = value
 		}
 		dataEntry.Start = prevFortioEnd
@@ -170,10 +171,10 @@ func renderFortioDurationHistogram(stat *nighthawk_client.Statistic) *nighthawk_
 		fortioHistogram.StdDev = stat.GetRawPstdev()
 	}
 
-	iteratePercentiles(fortioHistogram, stat, func (fortioHistogram *nighthawk_client.DurationHistogram, percentile *nighthawk_client.Percentile) {
+	iteratePercentiles(fortioHistogram, stat, func(fortioHistogram *nighthawk_client.DurationHistogram, percentile *nighthawk_client.Percentile) {
 		if percentile.GetPercentile() > 0 && percentile.GetPercentile() < 1 {
 			p := &nighthawk_client.FortioPercentile{}
-			p.Percentile = (percentile.Percentile * 1000)/10
+			p.Percentile = (percentile.Percentile * 1000) / 10
 			if duration := percentile.GetDuration(); duration != nil {
 				p.Value = duration.AsDuration().Seconds()
 			} else {
@@ -186,9 +187,9 @@ func renderFortioDurationHistogram(stat *nighthawk_client.Statistic) *nighthawk_
 	return fortioHistogram
 }
 
-type callback func (*nighthawk_client.DurationHistogram, *nighthawk_client.Percentile)
+type callback func(*nighthawk_client.DurationHistogram, *nighthawk_client.Percentile)
 
-func iteratePercentiles(fortioHistogram *nighthawk_client.DurationHistogram, stat *nighthawk_client.Statistic, fn callback)  {
+func iteratePercentiles(fortioHistogram *nighthawk_client.DurationHistogram, stat *nighthawk_client.Statistic, fn callback) {
 	var lastPercentile float64 = -1
 
 	percentiles := []float64{.0, .5, .75, .8, .9, .95, .99, .999, 1}
@@ -198,7 +199,7 @@ func iteratePercentiles(fortioHistogram *nighthawk_client.DurationHistogram, sta
 				lastPercentile = percentile.GetPercentile()
 				fn(fortioHistogram, percentile)
 				fmt.Println(fortioHistogram.GetPercentiles())
-				break;
+				break
 			}
 		}
 	}
