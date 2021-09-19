@@ -171,7 +171,8 @@ func renderFortioDurationHistogram(stat *nighthawk_client.Statistic) *nighthawk_
 		fortioHistogram.StdDev = stat.GetRawPstdev()
 	}
 
-	iteratePercentiles(fortioHistogram, stat, func(fortioHistogram *nighthawk_client.DurationHistogram, percentile *nighthawk_client.Percentile) {
+	iteratePercentiles(fortioHistogram, stat, func(fortioHistogram *nighthawk_client.DurationHistogram,
+		percentile *nighthawk_client.Percentile) {
 		if percentile.GetPercentile() > 0 && percentile.GetPercentile() < 1 {
 			p := &nighthawk_client.FortioPercentile{}
 			p.Percentile = (percentile.Percentile * 1000) / 10
@@ -203,5 +204,4 @@ func iteratePercentiles(fortioHistogram *nighthawk_client.DurationHistogram, sta
 			}
 		}
 	}
-
 }
