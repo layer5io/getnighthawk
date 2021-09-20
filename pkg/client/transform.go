@@ -1,345 +1,207 @@
 package nighthawk
 
 import (
-	"encoding/json"
+	"errors"
 	"fmt"
-	"os/exec"
-	"strconv"
-	"strings"
 	"time"
 
-	v3 "github.com/envoyproxy/go-control-plane/envoy/config/core/v3"
-	"github.com/golang/protobuf/ptypes/duration"
-	"github.com/golang/protobuf/ptypes/wrappers"
-	"github.com/layer5io/meshkit/utils"
 	nighthawk_client "github.com/layer5io/nighthawk-go/pkg/proto"
+	"google.golang.org/protobuf/encoding/protojson"
+	"google.golang.org/protobuf/types/known/durationpb"
 )
 
-type Verbosity struct {
-	Value string `json:"value"`
-}
+// func Transform transforms nighthawk's json output to fortio compatible json output
+// This implementation is adpated from nighthawk's own transformer
+// https://github.com/envoyproxy/nighthawk/blob/main/source/client/output_formatter_impl.cc
+func Transform(res *nighthawk_client.ExecutionResponse) ([]byte, error) {
+	resFortio := &nighthawk_client.FortioResult{}
 
-type OutputFormat struct {
-	Value string `json:"value"`
-}
+	var workers int
+	if workers = len(res.Output.Results); workers != 1 {
+		workers--
+	}
+	// TODO resFortio.Label
+	resFortio.Version = res.Output.GetVersion().GetVersion().String()
+	resFortio.StartTime = res.Output.GetTimestamp()
+	resFortio.RequestedQPS = uint32(workers) * res.Output.Options.RequestsPerSecond.GetValue()
+	resFortio.URL = res.Output.Options.GetUri().GetValue()
+	resFortio.RequestedDuration = durationpb.New(res.Output.Options.GetDuration().AsDuration())
+	// actual duration
+	avgExecutionDuration, err := getAverageExecutionDuration(res)
+	if err != nil {
+		return nil, err
+	}
+	resFortio.ActualDuration = avgExecutionDuration.Seconds()
+	// set jitter
+	hasJitter := false
+	if jitter := res.Output.Options.GetJitterUniform(); jitter != nil {
+		hasJitter = true
+	}
+	resFortio.Jitter = hasJitter
+	resFortio.RunType = "HTTP"
+	resFortio.NumThreads = res.Output.Options.Connections.GetValue() * uint32(workers)
+	globalResult := getGlobalResult(res)
+	if globalResult == nil {
+		return nil, err
+	}
+	resFortio.ActualQPS = float64(getCounterValue(globalResult, "upstream_rq_total").GetValue()) / resFortio.ActualDuration
+	resFortio.BytesReceived = getCounterValue(globalResult, "upstream_cx_rx_bytes_total").GetValue()
+	resFortio.BytesSent = getCounterValue(globalResult, "upstream_cx_tx_bytes_total").GetValue()
+	mRetCodes := make(map[string]uint64, 1)
+	mRetCodes["200"] = getCounterValue(globalResult, "benchmark.http_2xx").GetValue()
+	resFortio.RetCodes = mRetCodes
+	statistic := findStatistic(globalResult, "benchmark_http_client.request_to_response")
+	if statistic != nil {
+		resFortio.DurationHistogram = renderFortioDurationHistogram(statistic)
+	}
+	statistic = findStatistic(globalResult, "benchmark_http_client.response_body_size")
+	if statistic != nil {
+		resFortio.Sizes = renderFortioDurationHistogram(statistic)
+	}
+	statistic = findStatistic(globalResult, "benchmark_http_client.response_header_size")
+	if statistic != nil {
+		resFortio.HeaderSizes = renderFortioDurationHistogram(statistic)
+	}
 
-type AddressFamily struct {
-	Value string `json:"value"`
-}
-
-type RequestOption struct {
-	RequestMethod  string                  `json:"request_method"`
-	RequestHeaders []*v3.HeaderValueOption `json:"request_headers"`
-}
-
-type SequencerIdleStrategy struct {
-	Value string `json:"value"`
-}
-
-type ExperimentalH1ConnectionReuseStrategy struct {
-	Value string `json:"value"`
-}
-
-type FailurePredicates struct {
-	BenchmarkPoolConnectionFailure string `json:"benchmark.pool_connection_failure"`
-	BenchmarkHTTP4Xx               string `json:"benchmark.http_4xx"`
-	BenchmarkHTTP5Xx               string `json:"benchmark.http_5xx"`
-	RequestsourceUpstreamRq5Xx     string `json:"requestsource.upstream_rq_5xx"`
-}
-
-type TransformOptions struct {
-	RequestsPerSecond                     int                                    `json:"requests_per_second"`
-	Connections                           int                                    `json:"connections"`
-	Duration                              string                                 `json:"duration"`
-	Timeout                               string                                 `json:"timeout"`
-	H2                                    bool                                   `json:"h2"`
-	Concurrency                           string                                 `json:"concurrency"`
-	Verbosity                             *Verbosity                             `json:"verbosity"`
-	OutputFormat                          *OutputFormat                          `json:"output_format"`
-	AddressFamily                         *AddressFamily                         `json:"address_family"`
-	RequestOptions                        *RequestOption                         `json:"request_options"`
-	SequencerIdleStrategy                 *SequencerIdleStrategy                 `json:"sequencer_idle_strategy"`
-	ExperimentalH1ConnectionReuseStrategy *ExperimentalH1ConnectionReuseStrategy `json:"experimental_h1_connection_reuse_strategy"`
-	TerminationPredicates                 struct {
-	} `json:"termination_predicates"`
-	FailurePredicates                    *FailurePredicates    `json:"failure_predicates"`
-	Labels                               []interface{}         `json:"labels"`
-	StatsSinks                           []interface{}         `json:"stats_sinks"`
-	PrefetchConnections                  bool                  `json:"prefetch_connections"`
-	BurstSize                            *wrappers.UInt32Value `json:"burst_size"`
-	MaxPendingRequests                   int                   `json:"max_pending_requests"`
-	MaxActiveRequests                    int                   `json:"max_active_requests"`
-	MaxRequestsPerConnection             int64                 `json:"max_requests_per_connection"`
-	URI                                  string                `json:"uri"`
-	Trace                                string                `json:"trace"`
-	OpenLoop                             bool                  `json:"open_loop"`
-	ExperimentalH2UseMultipleConnections bool                  `json:"experimental_h2_use_multiple_connections"`
-	NighthawkService                     string                `json:"nighthawk_service"`
-	SimpleWarmup                         bool                  `json:"simple_warmup"`
-	StatsFlushInterval                   int                   `json:"stats_flush_interval"`
-	LatencyResponseHeaderName            string                `json:"latency_response_header_name"`
-}
-
-type Percentile struct {
-	Percentile int    `json:"percentile"`
-	Count      string `json:"count"`
-	Duration   string `json:"duration"`
-}
-
-type Statistic struct {
-	Count       string       `json:"count"`
-	ID          string       `json:"id"`
-	Percentiles []Percentile `json:"percentiles"`
-	Mean        string       `json:"mean,omitempty"`
-	Pstdev      string       `json:"pstdev,omitempty"`
-	Min         string       `json:"min,omitempty"`
-	Max         string       `json:"max,omitempty"`
-	RawMean     int          `json:"raw_mean,omitempty"`
-	RawPstdev   int          `json:"raw_pstdev,omitempty"`
-	RawMin      string       `json:"raw_min,omitempty"`
-	RawMax      string       `json:"raw_max,omitempty"`
-}
-
-type Counter struct {
-	Name  string `json:"name"`
-	Value string `json:"value"`
-}
-
-type Result struct {
-	Name              string      `json:"name"`
-	Statistics        []Statistic `json:"statistics"`
-	Counters          []Counter   `json:"counters"`
-	ExecutionDuration string      `json:"execution_duration"`
-	ExecutionStart    time.Time   `json:"execution_start"`
-}
-
-type TransformResult struct {
-	Options   *TransformOptions `json:"options"`
-	Results   []Result          `json:"results"`
-	Version   *v3.BuildVersion  `json:"version"`
-	Timestamp string            `json:"timestamp"`
-}
-
-func Transform(res *nighthawk_client.ExecutionResponse, typ string) ([]byte, error) {
-	results, err := constructResults(res)
+	out, err := protojson.Marshal(resFortio)
 	if err != nil {
 		return nil, err
 	}
 
-	expStrategy := res.Output.Options.ExperimentalH1ConnectionReuseStrategy.String()
-	if expStrategy == "" {
-		expStrategy = "DEFAULT"
-	}
-
-	t := TransformResult{
-		Version:   res.Output.Version,
-		Timestamp: time.Now().Format(time.RFC3339),
-		Options: &TransformOptions{
-			RequestsPerSecond: int(res.Output.Options.RequestsPerSecond.GetValue()),
-			Connections:       int(res.Output.Options.Connections.GetValue()),
-			Duration:          formatToNs(res.Output.Options.GetDuration()),
-			Timeout:           formatToNs(res.Output.Options.Timeout),
-			H2:                res.Output.Options.H2.Value,
-			Concurrency:       res.Output.Options.Concurrency.Value,
-			Verbosity: &Verbosity{
-				Value: res.Output.Options.Verbosity.Value.String(),
-			},
-			OutputFormat: &OutputFormat{
-				Value: res.Output.Options.OutputFormat.Value.String(),
-			},
-			PrefetchConnections: res.Output.Options.PrefetchConnections.Value,
-			BurstSize:           res.Output.Options.BurstSize,
-			AddressFamily: &AddressFamily{
-				Value: res.Output.Options.AddressFamily.Value.String(),
-			},
-			RequestOptions: &RequestOption{
-				RequestMethod:  res.Output.Options.GetRequestOptions().RequestMethod.String(),
-				RequestHeaders: res.Output.Options.GetRequestOptions().RequestHeaders,
-			},
-			MaxPendingRequests:       res.Output.Options.MaxPendingRequests.ProtoReflect().Descriptor().Index(),
-			MaxActiveRequests:        res.Output.Options.MaxActiveRequests.ProtoReflect().Descriptor().Index(),
-			MaxRequestsPerConnection: int64(res.Output.Options.MaxRequestsPerConnection.Value),
-			SequencerIdleStrategy: &SequencerIdleStrategy{
-				Value: res.Output.Options.SequencerIdleStrategy.Value.String(),
-			},
-			URI:   res.Output.Options.GetUri().Value,
-			Trace: res.Output.Options.Trace.Value,
-			ExperimentalH1ConnectionReuseStrategy: &ExperimentalH1ConnectionReuseStrategy{
-				Value: expStrategy,
-			},
-			ExperimentalH2UseMultipleConnections: res.Output.Options.ExperimentalH2UseMultipleConnections.Value,
-			FailurePredicates: &FailurePredicates{
-				BenchmarkHTTP4Xx:               fmt.Sprint(res.Output.Options.FailurePredicates["benchmark.http_4xx"]),
-				BenchmarkHTTP5Xx:               fmt.Sprint(res.Output.Options.FailurePredicates["benchmark.http_5xx"]),
-				BenchmarkPoolConnectionFailure: fmt.Sprint(res.Output.Options.FailurePredicates["benchmark.pool_connection_failure"]),
-				RequestsourceUpstreamRq5Xx:     fmt.Sprint(res.Output.Options.FailurePredicates["requestsource.upstream_rq_5xx"]),
-			},
-			OpenLoop:                  res.Output.Options.OpenLoop.Value,
-			NighthawkService:          res.Output.Options.NighthawkService.Value,
-			SimpleWarmup:              res.Output.Options.SimpleWarmup.Value,
-			StatsFlushInterval:        res.Output.Options.GetStatsFlushInterval().ProtoReflect().Descriptor().Index(),
-			LatencyResponseHeaderName: res.Output.Options.LatencyResponseHeaderName.Value,
-		},
-		Results: results,
-	}
-	input, err := utils.Marshal(t)
-	if err != nil {
-		return nil, err
-	}
-
-	command := "./nighthawk_output_transform"
-	cmd := exec.Command(command, "--output-format", "fortio")
-	cmd.Stdin = strings.NewReader(input)
-	out, err := cmd.Output()
-	if err != nil {
-		return nil, err
-	}
-
-	// Hack due to bug in nighthawk
-	outputFinal, err := hackFormat(out)
-	if err != nil {
-		return nil, err
-	}
-
-	return outputFinal, nil
+	return out, nil
 }
 
-func constructResults(res *nighthawk_client.ExecutionResponse) ([]Result, error) {
-	results := make([]Result, 0)
-	if res == nil || res.Output == nil {
-		return nil, ErrResponseNil
+func getAverageExecutionDuration(res *nighthawk_client.ExecutionResponse) (time.Duration, error) {
+	resultsLen := len(res.Output.Results)
+	if resultsLen == 0 {
+		return 0, errors.New("no results found")
 	}
 
-	for _, r := range res.Output.Results {
-		statistics := make([]Statistic, 0)
-		counters := make([]Counter, 0)
-		for _, c := range r.Counters {
-			counters = append(counters, Counter{
-				Name:  c.Name,
-				Value: strconv.Itoa(int(c.Value)),
-			})
-		}
-
-		for _, s := range r.Statistics {
-			percentiles := make([]Percentile, 0)
-			for _, p := range s.Percentiles {
-				percentiles = append(percentiles, Percentile{
-					Percentile: int(p.Percentile),
-					Count:      strconv.Itoa(int(p.Count)),
-					Duration:   formatToNs(p.GetDuration()),
-				})
-			}
-
-			sts := Statistic{
-				Count:       strconv.Itoa(int(s.Count)),
-				ID:          s.Id,
-				Percentiles: percentiles,
-				Mean:        formatToNs(s.GetMean()),
-				Pstdev:      formatToNs(s.GetPstdev()),
-				Min:         formatToNs(s.GetMin()),
-				Max:         formatToNs(s.GetMax()),
-			}
-			if sts.Mean == "" {
-				sts.RawMean = int(s.GetRawMean())
-			}
-			if sts.Pstdev == "" {
-				sts.RawPstdev = int(s.GetRawPstdev())
-			}
-			if sts.Min == "" {
-				sts.RawMin = strconv.Itoa(int(s.GetRawMin()))
-			}
-			if sts.Max == "" {
-				sts.RawMax = strconv.Itoa(int(s.GetRawMax()))
-			}
-			statistics = append(statistics, sts)
-		}
-		results = append(results, Result{
-			Name:              r.Name,
-			ExecutionStart:    r.ExecutionStart.AsTime(),
-			ExecutionDuration: formatToNs(r.ExecutionDuration),
-			Statistics:        statistics,
-			Counters:          counters,
-		})
-	}
-	return results, nil
+	avgExecutionDuration := res.Output.Results[resultsLen-1].ExecutionDuration.AsDuration()
+	return avgExecutionDuration, nil
 }
 
-func formatToNs(s *duration.Duration) string {
-	ss := s.AsDuration().String()
-	if strings.Contains(ss, "ms") {
-		sep := strings.Split(ss, "m")
-		f, _ := strconv.ParseFloat(sep[0], 64)
-		f /= 1000
-		st := fmt.Sprintf("%f", f)
-		sep[0] = st
-		ss = strings.Join(sep, "")
-	} else if strings.Contains(ss, "µs") {
-		sep := strings.Split(ss, "µ")
-		f, _ := strconv.ParseFloat(sep[0], 64)
-		f /= 1000000
-		st := fmt.Sprintf("%f", f)
-		sep[0] = st
-		ss = strings.Join(sep, "")
-	} else if strings.Contains(ss, "ns") {
-		sep := strings.Split(ss, "n")
-		f, _ := strconv.ParseFloat(sep[0], 64)
-		f /= 10000000
-		st := fmt.Sprintf("%f", f)
-		sep[0] = st
-		ss = strings.Join(sep, "")
+func getGlobalResult(res *nighthawk_client.ExecutionResponse) *nighthawk_client.Result {
+	for _, result := range res.Output.Results {
+		if result.GetName() == "global" {
+			return result
+		}
 	}
-	return ss
+	return nil
 }
 
-func hackFormat(out []byte) ([]byte, error) {
-	m := map[string]interface{}{}
-	err := json.Unmarshal(out, &m)
-	if err != nil {
-		return nil, err
+func getCounterValue(result *nighthawk_client.Result, counterName string) *nighthawk_client.Counter {
+	for _, counter := range result.Counters {
+		if counter.GetName() == counterName {
+			return counter
+		}
+	}
+	return &nighthawk_client.Counter{Value: 0}
+}
+
+func findStatistic(result *nighthawk_client.Result, statID string) *nighthawk_client.Statistic {
+	for _, stat := range result.Statistics {
+		if stat.Id == statID {
+			return stat
+		}
+	}
+	return nil
+}
+
+func renderFortioDurationHistogram(stat *nighthawk_client.Statistic) *nighthawk_client.DurationHistogram {
+	fortioHistogram := &nighthawk_client.DurationHistogram{}
+
+	var prevFortioCount uint64 = 0
+	var prevFortioEnd float64 = 0
+
+	for i, p := range stat.Percentiles {
+		dataEntry := &nighthawk_client.DataEntry{}
+		dataEntry.Percent = (p.GetPercentile() * 100)
+		dataEntry.Count = p.GetCount() - prevFortioCount
+
+		var value float64
+		if d := p.GetDuration(); d != nil {
+			value = p.GetDuration().AsDuration().Seconds()
+		} else {
+			value = p.GetRawValue()
+		}
+
+		dataEntry.End = value
+
+		// fortioStart = prevFortioEnd
+		// If this is the first entry, force the start and end time to be the same.
+		// This prevents it from starting at 0, making it disproportionally big in the UI.
+		i++
+		if i == 0 {
+			prevFortioEnd = value
+		}
+		dataEntry.Start = prevFortioEnd
+
+		prevFortioCount = p.GetCount()
+		prevFortioEnd = value
+
+		fortioHistogram.Data = append(fortioHistogram.Data, dataEntry)
 	}
 
-	m["RequestedQPS"] = fmt.Sprint(m["RequestedQPS"].(float64))
+	fortioHistogram.Count = stat.GetCount()
 
-	if m["DurationHistogram"] != nil {
-		dh, err := strconv.ParseInt(m["DurationHistogram"].(map[string]interface{})["Count"].(string), 10, 64)
-		if err != nil {
-			return nil, err
-		}
-		m["DurationHistogram"].(map[string]interface{})["Count"] = dh
+	if mean := stat.GetMean(); mean != nil {
+		fortioHistogram.Avg = mean.AsDuration().Seconds()
+	} else {
+		fortioHistogram.Avg = stat.GetRawMean()
+	}
 
-		for _, c := range m["DurationHistogram"].(map[string]interface{})["Data"].([]interface{}) {
-			h, err := strconv.ParseInt(c.(map[string]interface{})["Count"].(string), 10, 64)
-			if err != nil {
-				return nil, err
+	if min := stat.GetMin(); min != nil {
+		fortioHistogram.Min = min.AsDuration().Seconds()
+	} else {
+		fortioHistogram.Min = float64(stat.GetRawMin())
+	}
+
+	fortioHistogram.Sum = float64(stat.GetCount() * uint64(fortioHistogram.GetAvg()))
+
+	if max := stat.GetMax(); max != nil {
+		fortioHistogram.Max = max.AsDuration().Seconds()
+	} else {
+		fortioHistogram.Max = float64(stat.GetRawMax())
+	}
+
+	if pstDev := stat.GetPstdev(); pstDev != nil {
+		fortioHistogram.StdDev = pstDev.AsDuration().Seconds()
+	} else {
+		fortioHistogram.StdDev = stat.GetRawPstdev()
+	}
+
+	iteratePercentiles(fortioHistogram, stat, func(fortioHistogram *nighthawk_client.DurationHistogram,
+		percentile *nighthawk_client.Percentile) {
+		if percentile.GetPercentile() > 0 && percentile.GetPercentile() < 1 {
+			p := &nighthawk_client.FortioPercentile{}
+			p.Percentile = (percentile.Percentile * 1000) / 10
+			if duration := percentile.GetDuration(); duration != nil {
+				p.Value = duration.AsDuration().Seconds()
+			} else {
+				p.Value = percentile.GetRawValue()
 			}
-			c.(map[string]interface{})["Count"] = h
+			fortioHistogram.Percentiles = append(fortioHistogram.Percentiles, p)
 		}
-	}
+	})
 
-	if m["HeaderSizes"] != nil {
-		h, err := strconv.ParseInt(m["HeaderSizes"].(map[string]interface{})["Count"].(string), 10, 64)
-		if err != nil {
-			return nil, err
-		}
-		m["HeaderSizes"].(map[string]interface{})["Count"] = h
-	}
+	return fortioHistogram
+}
 
-	if m["RetCodes"] != nil {
-		temp := make(map[int]int64)
-		for key, val := range m["RetCodes"].(map[string]interface{}) {
-			k, _ := strconv.Atoi(key)
-			v, _ := strconv.ParseInt(val.(string), 10, 64)
-			temp[k] = v
-		}
-		m["RetCodes"] = temp
-	}
+type callback func(*nighthawk_client.DurationHistogram, *nighthawk_client.Percentile)
 
-	if m["Sizes"] != nil {
-		h, err := strconv.ParseInt(m["Sizes"].(map[string]interface{})["Count"].(string), 10, 64)
-		if err != nil {
-			return nil, err
+func iteratePercentiles(fortioHistogram *nighthawk_client.DurationHistogram, stat *nighthawk_client.Statistic, fn callback) {
+	var lastPercentile float64 = -1
+
+	percentiles := []float64{.0, .5, .75, .8, .9, .95, .99, .999, 1}
+	for _, p := range percentiles {
+		for _, percentile := range stat.Percentiles {
+			if percentile.GetPercentile() >= p && lastPercentile < percentile.GetPercentile() {
+				lastPercentile = percentile.GetPercentile()
+				fn(fortioHistogram, percentile)
+				fmt.Println(fortioHistogram.GetPercentiles())
+				break
+			}
 		}
-		m["Sizes"].(map[string]interface{})["Count"] = h
 	}
-	return json.Marshal(m)
 }
