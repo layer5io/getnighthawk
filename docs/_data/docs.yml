@@ -1,6 +1,6 @@
-- name: Section 1
+- name: Overview
   number: One
-- name: Section 2
+- name: Getting Started
   number: Two
-- name: Section 3
+- name: Performance Benchmarking with Nighthawk
   number: Three
