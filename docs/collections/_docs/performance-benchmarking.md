@@ -8,7 +8,7 @@ section: "Performance Benchmarking with Nighthawk"
 
 # Performance Benchmarking Using mesheryctl
 
-mesheryctl is the command line interface of Meshery.
+<pre>mesheryctl</pre> is the command line interface of Meshery. <pre>mesheryctl</pre> along with other load generators,  <pre>mesheryctl</pre> can use Nighthawk to run performance benchmarks.
 
 mesheryctl can use Nighthawk underneath the hood to run performance benchmarks.
 
