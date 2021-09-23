@@ -8,7 +8,7 @@ section: "Performance Benchmarking with Nighthawk"
 
 # Performance Benchmarking Using mesheryctl
 
-<pre>mesheryctl</pre> is the command line interface of Meshery. <pre>mesheryctl</pre> along with other load generators,  <pre>mesheryctl</pre> can use Nighthawk to run performance benchmarks.
+`mesheryctl` is the command line interface of Meshery. `mesheryctl` along with other load generators,  `mesheryctl` can use Nighthawk to run performance benchmarks.
 
 
 ## Install mesheryctl
@@ -74,6 +74,12 @@ clients:
   endpoint_urls:
   - http://localhost:2323
 duration: "15s"
+```
+
+You can then use `mesheryctl` to run the test using this configuration file as shown below.
+
+```
+mesheryctl perf apply -f perf-test.yaml
 ```
 
 Check the [Meshery usage guides](https://docs.meshery.io/guides) for more information on running performance benchmarks.
