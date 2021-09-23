@@ -1,7 +1,7 @@
 ---
 layout: docs
-title: Overview
-section: "Section 1"
+title: What is Nighthawk?
+section: "Overview"
 ---
 # Nighthawk: architecture and key concepts
 
