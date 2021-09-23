@@ -312,7 +312,6 @@ benchmark a single endpoint. For multiple endpoints, set
 --multi-target-* instead.
 
 
-L7 (HTTP/HTTPS/HTTP2) performance characterization tool.
 ```
 
 # Using Nighthawk gRPC Service
