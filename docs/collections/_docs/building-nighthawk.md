@@ -6,7 +6,7 @@ section: "Getting Started"
 
 # Building Nighthawk
 
-Although GetNighthawk would provide all of the features available in Nighthawk, you can also build Nighthawk and run it from source.
+While GetNighthawk distribution are a convenient way of using Nighthawk, you can also build Nighthawk and run it from source.
 
 ## Clone the Nighthawk repo
 
