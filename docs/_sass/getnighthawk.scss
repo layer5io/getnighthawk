@@ -113,6 +113,7 @@ $blue-munsell-3: #4392a4ff;
 }
 
 .docs-section{
+  min-height: 100vh;
   &-logo-span{
     display: none ;
   }
