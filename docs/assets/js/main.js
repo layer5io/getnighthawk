@@ -34,9 +34,9 @@ var scrollbtn = $("#scroll-bottom-up");
 
 $(window).scroll(function () {
   if ($(window).scrollTop() > 300) {
-    scrollbtn.fadeIn();
+    scrollbtn.addClass('show');
   } else {
-    scrollbtn.fadeOut();
+    scrollbtn.removeClass('show');
   }
 });
 
