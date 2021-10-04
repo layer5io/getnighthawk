@@ -29,3 +29,18 @@
 
   changeHeader();
 })();
+
+var scrollbtn = $("#scroll-bottom-up");
+
+$(window).scroll(function () {
+  if ($(window).scrollTop() > 300) {
+    scrollbtn.addClass('show');
+  } else {
+    scrollbtn.removeClass('show');
+  }
+});
+
+scrollbtn.click(function (e) {
+  e.preventDefault();
+  $("html, body").animate({ scrollTop: 0 }, "300");
+});
