@@ -209,14 +209,14 @@ footer {
   background: #1e2117;
   color: #fff;
 
-  .getnighthawk-logo {
+  .nighthawk-logo {
     display: flex;
     padding-top: 18px;
     a {
       display: block;
 
       img {
-        width: 7rem;
+        width: 100%;
         vertical-align: middle;
       }
     }
@@ -224,7 +224,7 @@ footer {
       text-decoration: none;
     }
   }
-  .getnighthawk-logo p {
+  .nighthawk-logo p {
     display: inline-block;
     color: white;
     font-size: 2rem;
