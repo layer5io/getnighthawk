@@ -1,6 +1,6 @@
 <img src="docs/assets/images/logos/nighthawk/stacked/nighthawk-full.svg" />
 
-# GetNighthawk
+# Nighthawk
 
 - Project site: https://getnighthawk.dev
 - Project doc: https://docs.google.com/document/d/1lHfMo4iIx2WXFZIspfHyxTsPR1T63_2IV5NUkgxoo0w/edit#
