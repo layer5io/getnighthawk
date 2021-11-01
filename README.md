@@ -1,4 +1,4 @@
-<img src="docs/assets/images/logos/nighthawk/stacked/nighthawk-logo.svg" />
+<img src="docs/assets/images/logos/nighthawk/stacked/nighthawk-full.svg" />
 
 # GetNighthawk
 
