@@ -2,7 +2,9 @@
 name: Site Update
 about: Suggest an update to the GetNighthawk.dev website
 title: ""
-labels: "component/ui"
+labels: 
+ - "area/website"
+ - "framework/jekyll"
 assignees: ""
 ---
 
