@@ -1,9 +1,8 @@
-title: GetNighthawk
+title: Nighthawk
 author: Layer5 Authors
 email: community@layer5.io
 name:  Layer5
-description: "The Nighthawk distribution for service mesh performance characterization.
- Integrating Meshery and Service Mesh Performance (SMP)."
+description: "The Nighthawk distribution for service mesh performance characterization. Integrating Meshery and Service Mesh Performance."
 url: "https://getnighthawk.dev"
 #baseurl: /docs
 
