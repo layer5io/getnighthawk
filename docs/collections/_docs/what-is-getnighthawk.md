@@ -4,16 +4,19 @@ title: What is GetNighthawk?
 section: "Overview"
 ---
 
-# What is GetNighthawk?
+# What is Nighthawk?
 
-GetNighthawk was built with the goal to make it easy to use Nighthawk.
+Nighthawk is a versatile HTTP load testing tool built out of a need to drill HTTP services with a constant request rate or with an adaptive request rate. Layer5 offers a custom distribution of Nighthawk with intelligent adaptive load controllers to automatically identify optimatal configurations for your service mesh deployment. As a Layer 7 performance characterization tool supporting HTTP/HTTPS/HTTP2, Nighthawk is Meshery's (and Envoy's) load generator and is written in C++.
 
-As such, GetNighthawk will provide generally available distributions of Nighthawk under different architectures and platforms also providing easy-to-use tooling for installation and operation. This involves creating distributions of Nighthawk and to build up existing tooling.
 
-The GetNighthawk project also aims to work alongside Meshery and Service Mesh Performance to enable standards-based distributed performance management. This would enable researchers and users to conveniently identify the optimal service mesh configuration while considering their specific environment, application and load.
+<!-- GetNighthawk was built with the goal to make it easy to use Nighthawk. -->
 
-To provide this functionality, GetNighthawk will orchestrate multiple instances of Nighthawk (horizontal scaling) and would also provide an easy to use interface for Nighthawk's adaptive load controller capability.
+You can download generally available distributions of Nighthawk under different architectures and platforms.
+ <!-- also providing easy-to-use tooling for installation and operation. This involves creating distributions of Nighthawk and to build up existing tooling. -->
 
-GetNighthawk also enables Nighthawk adoption by delivering trusted, certified builds, distributed via popular package managers like apt, yum, Homebrew and platforms including Docker and Meshery. GetNighthawk also bridges the gap between C++ code in Nighthawk and the language of the cloud, Golang.
+Centric to the advancement of Nighthawk is the Meshery and Service Mesh Performance projects, which enable Nighthawk's standards-based distributed performance management. The intersection of these projects allow researchers and users to conveniently identify the optimal service mesh configuration while considering their specific environment, application and load.Meshery orchestrates multiple instances of Nighthawk (horizontal scaling) and provides an easy to use interface for Nighthawk's adaptive load controller capability.
 
-This would also enable Nighthawk to be the performance characterization tool that would be used in the 30 patterns in the [Service Mesh Patterns](https://layer5.io/books/service-mesh-patterns) book.
+Nighthawk also enables Nighthawk adoption by delivering trusted, certified builds, distributed via popular package managers like apt, yum, Homebrew and platforms including Docker and Kubernetes.
+
+<!-- Nighthawk also bridges the gap between C++ code in Nighthawk and the language of the cloud, Golang. -->
+First-class support for Nighthawk in [Service Mesh Patterns](https://github.com/service-mesh-patterns) is also available. Nighthawk to be the performance characterization tool that would be used in the 30 patterns in the [Service Mesh Patterns](https://layer5.io/learn/service-mesh-books/service-mesh-patterns) book.
