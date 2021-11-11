@@ -43,7 +43,8 @@ collections:
     output: true 
   docs:
     output: true
-    permalink: /docs/:title
+    
+    
 
 
 # defaults:
@@ -75,13 +76,26 @@ defaults:
   -
     scope:
       path: ""
-      type: "docs"
+      type: "docs/overview"
     values:
       layout: "doc"
+      permalink: /docs/:section/:title      
       _options:
         content:
           width: 1500
-          height: 2500          
+          height: 2500      
+  -
+    scope:
+      path: "docs/architecture"
+      type: "docs"
+    values:
+      layout: "doc"
+      permalink: /docs/:section/:title
+      # category: architecture
+      _options:
+        content:
+          width: 1500
+          height: 2500                  
   -
     scope:
       path: ""
