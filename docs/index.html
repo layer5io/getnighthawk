@@ -39,97 +39,81 @@ layout: default
 
     <!-- Hero-section starts -->
 
-      <div class="hero-section-div">
-        <div class="hero-section-div-container">
-          <div class="hero-section-header">
-            <img src="{{ site.baseurl }}/assets/images/logos/nighthawk/stacked/nighthawk-full.svg" alt="getnighthawk-logo" class="hero-section-img">
-            <div class="hero-section-header-text">
-              <span class="hero-section-logo-span">Unlock distributed systems behavioral performance analysis</span>
-              <div class="hero-section-para">
-                <p>The easiest way to get started with Nighthawk on any cloud or platform</p>
-              </div>
+    <div class="hero-section-div">
+      <div class="hero-section-div-container">
+        <div class="hero-section-header">
+          <img src="{{ site.baseurl }}/assets/images/logos/nighthawk/stacked/nighthawk-full.svg" alt="getnighthawk-logo" class="hero-section-img">
+          <div class="hero-section-header-text">
+            <span class="hero-section-logo-span">Unlocking distributed systems performance analysis</span>              
+            <div class="hero-section-para">
+              <p>Behavioral characterization of your microservices performance</p>
             </div>
           </div>
-          <div class="hero-section-button-div">
-            <button class="hero-section-button" type="button" name="Getting Started"><a class="hero-section-button-text" style="text-decoration: none" href="/docs">Get started</a></button>
-          </div>
-          <p>Subscribe for updates below.</p>
         </div>
-      <section class="slanted-div">
-        <div>
+        <div class="hero-section-button-div">
+          <button class="hero-section-button" type="button" name="Getting Started"><a class="hero-section-button-text" style="text-decoration: none" href="/docs">Get started</a></button>
+          <p>Put your cloud native infrastructure to the test</p>
+
         </div>
-      </section>
+      </div>
+    </div>
+    <section class="slanted-div">
+      <div>
+      </div>
+    </section>
 
     <!-- Hero-section ends -->
-
+    {% include project-cards.html %}
   <!-- Nighthawk-description-section starts -->
+  <section>
 
   <div class="nighthawk-description-div">
-      <div class="container">
-        <div class="custom-desc-div description-div">
-          <div >
-            <div class="custom-desc-cont">
-              <div >
-                <img src="images/logos/nighthawk-description.png" class="nighthawk-desc-img" alt="logo">
-              </div>
-              <div >
-                <img src="images/logos/nighthawk-description.png" class="nighthawk-desc-img" alt="logo">
-              </div>
-              <div >
-                <img src="images/logos/nighthawk-description.png" class="nighthawk-desc-img" alt="logo">
-              </div>
-              <div >
-                <img src="images/logos/nighthawk-description.png" class="nighthawk-desc-img" alt="logo">
-              </div>
-              <div >
-                <img src="images/logos/nighthawk-description.png" class="nighthawk-desc-img" alt="logo">
-              </div>
-              <div >
-                <img src="images/logos/nighthawk-description.png" class="nighthawk-desc-img" alt="logo">
-              </div>
-            </div>
+      <div class="custom-desc-div">
+        <div class="custom-desc-div">
+          <div class="custom-desc-div">
+          <img src="/assets/images/screenshots/meshery-nighthawk-performance-chart.png" />              
           </div>
-
+          </div>
           <div class="description-div">
-                <div class="nighthawk-desc-text head-h1">
-                  <h1 class="desc-h1">What is Nighthawk?</h1>
+              <div class="nighthawk-desc-text head-h1">
+                <h1 class="desc-h1">Nighthawk and Meshery</h1>
 
-                  <div class="des-para">
-                  <p>Nighthawk is a Layer 7 (HTTP/HTTPS/HTTP2)
-                  performance characterization tool. Nighthawk
-                  is Envoy’s load generator and is written in C++.</p>
-                </div>
-                </div>
+                <div class="des-para">
+                  <p>The integration of Meshery and Nighthawk bridges high performance C++ with the lingua franca of Cloud Native: Golang.</p> 
+                  <p>Use Nighthawk and Meshery to conveniently identify optimal service mesh configurations.</p>
+                  <p>Orchestrate complext performance analysis scenarios with multiple instances of Nighthawk.</p>
+                  <!-- <p>By using adaptive load controller of Nighthawk
+                    Meshery integrates Nighthawk as one of
+                    three choices of load generator for
+                    characterizing and managing the performance
+                    of service meshes and their workloads.</p> -->
+                  
+              </div>
+             </div>
           </div>
         </div>
       </div>
     <div class="nighthawk-meshery-div">
       <div class="container description-div">
         <div class="custom-desc-div">
-          <div class="nighthawk-meshery-div-columns">
+    
             <div class="nighthawk-desc-text-meshery head-h1">
-              <h1 class="desc-h1">Nighthawk and Meshery</h1>
+              <h1 class="desc-h1">Layer 7 Performance Analysis</h1>
 
               <div class="des-para">
-              <p>Meshery integrates Nighthawk as one of (currently)
-                 three choices of load generator for
-                 characterizing and managing the performance
-                 of service meshes and their workloads.</p>
+                <p>Generate HTTP/HTTPS/HTTP2/gRPC load and measure the responsiveness of your applications with various types and intensities of load. See the affects on your services latency and bandwidth.</p>
               </div>
             </div>
           </div>
           <div class="nighthawk-meshery-div-columns">
-            <img src="images/logos/nighthawk-meshery.png" class="nighthawk-meshery-logo" alt="logo">
+            <img src="/assets/images/screenshots/meshery-nighthawk.png" class="nighthawk-meshery-logo" alt="logo">
           </div>
         </div>
       </div>
-      </div>
-
+</section>
     <!-- Nighthawk-description-section ends -->
 
-  </div>
-
-  <div class="newsletter-signup newsletter-div container-g">
+  <!-- <div class="newsletter-signup newsletter-div container-g">
     <div>
       <h2 class="desc-h1">
         Why Nighthawk?
@@ -144,46 +128,15 @@ layout: default
         Hat, and AWS are investing into it. Istio is considering switching from Fortio to Nighthawk.
       </p>
     </div>
-  </div>
+  </div> -->
 
-<section class="platform section section--padding">
-  <div class="container-lg">
-    <div class="section-intro ">
-      <div class="card-wrapper">
-        <div class="card-item item-1">
-          <div class="card-head">
-            <img src="{{ site.baseurl }}/assets/images/card-component-images/applications.png" alt="application-img">
-          </div>
-          <div class="card-cust-body">
-            <h4>APPLICATIONS</h4>
-            <p>Sitting atop our payments platform are applications to manage revenue ,prevent fraud,and expand internationally.</p>
-          </div>
-        </div>
-        <div class="card-item item-2">
-          <div class="card-head">
-            <img src="{{ site.baseurl }}/assets/images/card-component-images/platform.png" alt="platform-img">
-          </div>
-          <div class="card-cust-body">
-            <h4>PLATFORM</h4>
-            <p>Sitting atop our payments platform are applications to manage revenue ,prevent fraud,and expand internationally.</p>
-          </div>
-        </div>
-        <div class="card-item item-3">
-          <div class="card-head">
-            <img src="{{ site.baseurl }}/assets/images/card-component-images/infrastructure.png" alt="infrastructure-img">
-          </div>
-          <div class="card-cust-body">
-            <h4>INFRASTRUCTURE</h4>
-            <p>Sitting atop our payments platform are applications to manage revenue ,prevent fraud,and expand internationally.</p>
-          </div>
-        </div>
-      </div>
-</section>
 
 
 {% include explain.html %}
 
-  <div class="nighthawk-meshery-div">
+
+
+  <!-- <div class="nighthawk-meshery-div">
     <div class="container description-div">
       <div class="row">
         <div class="col-lg-6">
@@ -200,15 +153,14 @@ layout: default
         </div>
       </div>
     </div>
-    </div>
-
-    <br/><br/><br/><br/>
+    </div>-->
 
 
-{% include getnighthawk.html %}
+<!-- {% include getnighthawk.html %} -->
 
 {% include faq.html %}
 
 {% include stewarded.html %}
 
 {% include mailing-list.html %}
+</div>

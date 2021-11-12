@@ -471,14 +471,14 @@ hr {
 }
 .custom-desc-div {
   display: flex;
-  padding: 5rem 0;
+  padding: 0rem 0;
 }
 
 @media only screen and (max-width: 992px) {
   .custom-desc-div {
     display: flex;
     flex-direction: column;
-    padding: 2rem;
+    padding: 0rem;
   }
 }
 @media only screen and (max-width: 768px) {
