@@ -1,6 +1,7 @@
 .container-faq {
     max-width: 1040px;
-    margin: 50px auto;
+    margin: auto;
+    margin-bottom: 3rem;
 }
 
 .title {
@@ -15,9 +16,9 @@
 
 .container-faq .accordion-body{
     text-align: left;
-    color: #6d6d6d;
+    color: #262626;
     padding: 1rem 0;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 .container-faq .accordion-button{
@@ -41,7 +42,7 @@
 .container-faq .accordion-item{
     padding: 1rem 0;
     &:not(:last-child){
-        border-bottom: 3px solid #cecece;
+        border-bottom: 1px solid #cecece;
     }
 }
 
