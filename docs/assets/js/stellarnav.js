@@ -7,9 +7,11 @@
 (function($) {
 	$.fn.stellarNav = function(options, width, breakpoint) {
 
-		var $nav, $width, $breakpoint, $parentItems;
+		var $nav, $width, $breakpoint, $parentItems, mainHeader, headerPadding;
 		nav = $(this);
 		width = $(window).width();
+		mainHeader = $( `#${options.headerId}`);
+		headerPadding = options.headerPadding;
 
 		// default settings
 		var settings = $.extend( {
@@ -274,6 +276,7 @@
 
 					resetTriggers();
 					nav.addClass('mobile');
+					mainHeader.css( "padding", 0);
 					nav.removeClass('desktop');
 
 					// closes the menu when resizing window back to desktop
@@ -291,6 +294,7 @@
 					// desktop nav
 					nav.addClass('desktop');
 					nav.removeClass('mobile');
+					mainHeader.css("padding", headerPadding);
 
 					if(nav.hasClass('active')) {
 						nav.removeClass('active');

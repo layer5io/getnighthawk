@@ -77,8 +77,7 @@ header {
   .project-name {
     font-size: 1.7em;
     line-height: 0;
-    padding: 25px;
-
+    
     a {
       display: inline-flex;
       justify-content: center;
@@ -462,9 +461,6 @@ hr {
   text-align: center;
 }
 
-.custom-nav-elem {
-  padding-top: 25px;
-}
 .custom-desc-cont {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
