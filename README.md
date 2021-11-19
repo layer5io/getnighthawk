@@ -8,11 +8,12 @@
 
 ## What is Nighthawk?
 
-Nighthawk is a Layer 7 (HTTP/HTTPS/HTTP2) performance characterization tool. Nighthawk is Envoy’s load generator and is written in C++. 
+Nighthawk is a versatile HTTP load testing tool built out of a need to drill HTTP services with a constant request rate or with an adaptive request rate. Layer5 offers a custom distribution of Nighthawk with intelligent adaptive load controllers to automatically identify optimal configurations for your service mesh deployment. As a Layer 7 performance characterization tool supporting HTTP/HTTPS/HTTP2, Nighthawk is Meshery’s (and Envoy’s) load generator and is written in C++.
 
 ## Nighthawk and Meshery
 
-Meshery integrates Nighthawk as one of (currently) three choices of load generator for characterizing and managing the performance of service meshes and their workloads. 
+Meshery integrates Nighthawk as one of (currently) three choices of load generator for characterizing and managing the performance of service meshes and their workloads.
+Centric to the advancement of Nighthawk is the Meshery and Service Mesh Performance projects, which enable Nighthawk’s standards-based distributed performance management. The intersection of these projects allow researchers and users to conveniently identify the optimal service mesh configuration while considering their specific environment, application and load. Meshery orchestrates multiple instances of Nighthawk (horizontal scaling) and provides an easy to use interface for Nighthawk’s adaptive load controller capability. 
 
 ## Why GetNighthawk?
 
