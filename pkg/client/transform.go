@@ -42,7 +42,7 @@ func Transform(res *nighthawk_client.ExecutionResponse) ([]byte, error) {
 	resFortio.NumThreads = res.Output.Options.Connections.GetValue() * uint32(workers)
 	globalResult := getGlobalResult(res)
 	if globalResult == nil {
-		return nil, err
+		return nil, errors.New("error")
 	}
 	resFortio.ActualQPS = float64(getCounterValue(globalResult, "upstream_rq_total").GetValue()) / resFortio.ActualDuration
 	resFortio.BytesReceived = getCounterValue(globalResult, "upstream_cx_rx_bytes_total").GetValue()
@@ -63,12 +63,13 @@ func Transform(res *nighthawk_client.ExecutionResponse) ([]byte, error) {
 		resFortio.HeaderSizes = renderFortioDurationHistogram(statistic)
 	}
 
+	//out, err := utils.Marshal(resFortio)
 	out, err := protojson.Marshal(resFortio)
 	if err != nil {
 		return nil, err
 	}
 
-	return out, nil
+	return []byte(out), nil
 }
 
 func getAverageExecutionDuration(res *nighthawk_client.ExecutionResponse) (time.Duration, error) {
