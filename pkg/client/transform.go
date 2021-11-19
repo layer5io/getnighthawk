@@ -42,7 +42,7 @@ func Transform(res *nighthawk_client.ExecutionResponse) ([]byte, error) {
 	resFortio.NumThreads = res.Output.Options.Connections.GetValue() * uint32(workers)
 	globalResult := getGlobalResult(res)
 	if globalResult == nil {
-		return nil, err
+		return nil, errors.New("error")
 	}
 	resFortio.ActualQPS = float64(getCounterValue(globalResult, "upstream_rq_total").GetValue()) / resFortio.ActualDuration
 	resFortio.BytesReceived = getCounterValue(globalResult, "upstream_cx_rx_bytes_total").GetValue()
