@@ -63,13 +63,12 @@ func Transform(res *nighthawk_client.ExecutionResponse) ([]byte, error) {
 		resFortio.HeaderSizes = renderFortioDurationHistogram(statistic)
 	}
 
-	//out, err := utils.Marshal(resFortio)
 	out, err := protojson.Marshal(resFortio)
 	if err != nil {
 		return nil, err
 	}
 
-	return []byte(out), nil
+	return out, nil
 }
 
 func getAverageExecutionDuration(res *nighthawk_client.ExecutionResponse) (time.Duration, error) {
