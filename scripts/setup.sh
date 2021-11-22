@@ -1,13 +1,13 @@
-BAZEL_VERSION="3.7.2"
+BAZEL_VERSION="4.2.1"
 
 printf "INFO\tOperating System set to $INPUT_OS!\n"
 
 function ubuntu() {
   sudo apt update
-  DEBIAN_FRONTEND="noninteractive" sudo apt-get install -y libtool cmake automake autoconf make ninja-build curl unzip virtualenv 
-  curl -fLO "https://github.com/bazelbuild/bazel/releases/download/${BAZEL_VERSION}/bazel-${BAZEL_VERSION}-installer-linux-x86_64.sh"
-  sudo chmod +x "bazel-${BAZEL_VERSION}-installer-linux-x86_64.sh"
-  ./bazel-${BAZEL_VERSION}-installer-linux-x86_64.sh --user
+  DEBIAN_FRONTEND="noninteractive" sudo apt-get install autoconf automake cmake curl libtool make ninja-build patch python3-pip unzip virtualenv
+
+  sudo wget -O /usr/local/bin/bazel https://github.com/bazelbuild/bazelisk/releases/${BAZEL_VERSION}/download/bazelisk-linux-$([ $(uname -m) = "aarch64" ] && echo "arm64" || echo "amd64")
+  sudo chmod +x /usr/local/bin/bazel
 }
 
 function fedora() {
@@ -17,10 +17,8 @@ function fedora() {
 }
 
 function darwin() {
-  sudo brew install coreutils wget cmake libtool automake ninja clang-format autoconf aspell
-  curl -fLO "https://github.com/bazelbuild/bazel/releases/download/${BAZEL_VERSION}/bazel-${BAZEL_VERSION}-installer-darwin-x86_64.sh"
-  sudo chmod +x "bazel-${BAZEL_VERSION}-installer-darwin-x86_64.sh"
-  ./bazel-${BAZEL_VERSION}-installer-darwin-x86_64.sh --user
+  sudo brew install coreutils wget cmake libtool go automake ninja clang-format autoconf aspell
+  sudo brew install bazel@${BAZEL_VERSION}
 }
 
 if [[ "$INPUT_OS" = *"ubuntu"* ]]; then
