@@ -9,7 +9,7 @@ on:
       nighthawk_version:
         description: 'Version of the nighthawk project'
         required: true
-        default: 'latest'
+        default: 'main'
 
 jobs:
   release:
