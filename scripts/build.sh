@@ -1,22 +1,7 @@
 NIGHTHAWK_DIR="/home/runner/work/getnighthawk/getnighthawk/"
 cd $NIGHTHAWK_DIR
 
-if ! bazel build -c opt //:nighthawk_client; then
+if ! bazel build -c opt --define tcmalloc=gperftools //:nighthawk; then
   printf "ERROR\tUnable to build nighthawk client\n"
-  exit 1;
-fi
-
-if ! bazel build -c opt //:nighthawk_service; then
-  printf "ERROR\tUnable to build nighthawk service\n"
-  exit 1;
-fi
-
-if ! bazel build -c opt //:nighthawk_test_server; then
-  printf "ERROR\tUnable to build nighthawk test server\n"
-  exit 1;
-fi
-
-if ! bazel build -c opt //:nighthawk_output_transform; then
-  printf "ERROR\tUnable to build nighthawk output transform\n"
   exit 1;
 fi

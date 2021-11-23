@@ -20,9 +20,6 @@ inputs:
   architecture:
     description: 'Build Architecture. Eg: amd64,arm...'
     required: false
-  distribution:
-    description: 'Build Distribution. Eg: Client/Server..'
-    required: false
 
 runs:
   using: "composite"
@@ -43,7 +40,6 @@ runs:
         INPUT_TOKEN: ${{ inputs.token }}
         INPUT_OS: ${{ inputs.os }}
         INPUT_ARCHITECTURE: ${{ inputs.architecture }}
-        INPUT_DISTRIBUTION: ${{ inputs.distribution }}
       shell: bash
 
 outputs:
