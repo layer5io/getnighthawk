@@ -1,12 +1,10 @@
-BAZEL_VERSION="4.2.1"
-
 printf "INFO\tOperating System set to $INPUT_OS!\n"
 
 function ubuntu() {
   sudo apt update
   DEBIAN_FRONTEND="noninteractive" sudo apt-get install autoconf automake cmake curl libtool make ninja-build patch python3-pip unzip virtualenv
 
-  sudo wget -O /usr/local/bin/bazel https://github.com/bazelbuild/bazelisk/releases/${BAZEL_VERSION}/download/bazelisk-linux-$([ $(uname -m) = "aarch64" ] && echo "arm64" || echo "amd64")
+  sudo wget -O /usr/local/bin/bazel https://github.com/bazelbuild/bazelisk/releases/latest/download/bazelisk-linux-$([ $(uname -m) = "aarch64" ] && echo "arm64" || echo "amd64")
   sudo chmod +x /usr/local/bin/bazel
 }
 
@@ -17,8 +15,8 @@ function fedora() {
 }
 
 function darwin() {
-  sudo brew install coreutils wget cmake libtool go automake ninja clang-format autoconf aspell
-  sudo brew install bazel@${BAZEL_VERSION}
+  brew install coreutils wget cmake libtool go automake ninja clang-format autoconf aspell
+  brew install bazelisk
 }
 
 if [[ "$INPUT_OS" = *"ubuntu"* ]]; then
