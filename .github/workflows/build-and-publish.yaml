@@ -9,7 +9,7 @@ on:
       nighthawk_version:
         description: 'Version of the nighthawk project'
         required: true
-        default: 'latest'
+        default: 'main'
 
 jobs:
   release:
@@ -33,9 +33,8 @@ jobs:
     strategy:
       max-parallel: 10
       matrix:
-        os: [ubuntu-latest, macos-latest]
+        os: [ubuntu-latest,]
         architecture: [amd64]
-        distribution: [client, server, test_server, nighthawk_output_transform]
     runs-on: ${{ matrix.os }}
     steps:
     - name: Checkout nighthawk
@@ -43,6 +42,7 @@ jobs:
       with:
         repository: 'envoyproxy/nighthawk'
         ref: ${{ github.event.inputs.nighthawk_version }}
+        token: ${{ secrets.GH_ACCESS_TOKEN }}
     - name: Setup Golang
       uses: actions/setup-go@v2
       with:
@@ -55,7 +55,6 @@ jobs:
         token: ${{ secrets.GH_ACCESS_TOKEN }}
         os: ${{ matrix.os }}
         architecture: ${{ matrix.architecture }}
-        distribution: ${{ matrix.distribution }}
     - name: Docker login
       if: github.event_name != 'pull_request' && (startsWith(github.ref, 'refs/tags/') || github.ref == 'refs/heads/master') && success()
       uses: azure/docker-login@v1
