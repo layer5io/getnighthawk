@@ -19,7 +19,7 @@ $blue-munsell-2: #3a8da0ff;
 $blue-munsell-3: #4392a4ff;
 
 // hero-section-div starts
-  
+
 .hero-section-div {
   background: #ffffff;
   text-align: center;
@@ -75,18 +75,17 @@ $blue-munsell-3: #4392a4ff;
   background: #ebc017;
   border-radius: 20px;
   outline: none;
-  transition:all .4s;
+  transition: all 0.4s;
 
-  &-text:hover{
+  &-text:hover {
     color: white;
   }
 
-  &:hover{
+  &:hover {
     background: #f3d110;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
   }
 }
-
 
 .hero-section-button:focus {
   outline: none;
@@ -118,21 +117,21 @@ $blue-munsell-3: #4392a4ff;
   z-index: -1px;
 }
 
-.docs-section{
+.docs-section {
   min-height: 100vh;
-  &-logo-span{
-    display: none ;
+  &-logo-span {
+    display: none;
   }
 
-  &-para{
+  &-para {
     margin: 0;
   }
 
-  &-header{
+  &-header {
     margin: 0rem auto 1rem auto;
   }
 
-  &-para p{
+  &-para p {
     text-align: center;
     font-size: 1.5rem;
     font-weight: 400;
@@ -161,13 +160,13 @@ $blue-munsell-3: #4392a4ff;
   border-radius: 20px;
   margin-top: 1rem;
   margin-bottom: 1rem;
-  transition:all .4s;
+  transition: all 0.4s;
 
-  .newsletter-span:hover{
+  .newsletter-span:hover {
     color: white;
   }
 
-  &:hover{
+  &:hover {
     background: #f3d110;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
   }
@@ -216,7 +215,13 @@ $blue-munsell-3: #4392a4ff;
 }
 .description-div {
   text-align: center;
- 
+}
+.custom-description-div {
+  @media screen and (min-width: 50rem) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
 }
 .nighthawk-desc-text {
   display: inline-block;
@@ -229,6 +234,11 @@ $blue-munsell-3: #4392a4ff;
   text-align: left;
   margin-top: 0rem;
 }
+
+.custom-nighthawk-desc-text-meshery {
+  margin-top: 2rem;
+  padding: 0 1rem;
+}
 .nighthawk-desc-img {
   width: 155px;
   height: 155px;
@@ -238,17 +248,25 @@ $blue-munsell-3: #4392a4ff;
   padding-top: 1rem;
 }
 .nighthawk-meshery-logo {
-  max-width: 100%;
-  height: auto;
+  width: 100%;
 }
 .nighthawk-meshery-div {
   margin: 2rem;
 }
-.nighthawk-meshery-div-columns {
-  padding: 0.2rem 2rem;
-  max-width: 100%;
-  height: auto;
+.custom-nighthawk-meshery-div {
+  margin: 2rem 0;
 }
+.custom-nighthawk-meshery-div-columns {
+  display: none;
+
+  @media screen and (min-width: 50rem) {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+  }
+}
+
 .desc-h1 {
   font-size: 45px;
   line-height: 50px;
@@ -278,10 +296,9 @@ $blue-munsell-3: #4392a4ff;
   color: #000000 60%;
 }
 .why-getnighthawk-p-div {
-   font-size: 17px;
+  font-size: 17px;
   margin-top: 1.1rem;
 }
-
 
 @media (max-width: 500px) {
   .head-h1 {
@@ -312,13 +329,12 @@ $blue-munsell-3: #4392a4ff;
   }
   .why-getnighthawk-p-div {
     font-size: 20px;
-   margin-top: 1rem;
- }
+    margin-top: 1rem;
+  }
 
- .button-responsive-index {
-   text-align: center;
- }
-
+  .button-responsive-index {
+    text-align: center;
+  }
 }
 
 // nighthawk-description ends
