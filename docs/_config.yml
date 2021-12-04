@@ -27,7 +27,7 @@ timezone: Etc/UTC
 # Build settings
 # theme: minima
 # paginate: 5
-markdown: kramdown
+# markdown: kramdown
 permalink: pretty
 sass:
   sass_dir: _sass
