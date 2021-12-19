@@ -5630,6 +5630,27 @@ div.globalFooterCard.card-environment {
     margin-top: 1rem;
     line-height: 1.5;
   }
+  .side {
+    margin-top: 2rem !important;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100% !important;
+  }
+
+  .accordion {
+    margin-top: 1.5rem !important;
+    padding: 0 1.5rem;
+  }
+  #faq-title {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 0.5rem;
+  }
+  .container-faq .accordion-body {
+    padding: 1rem 0.5rem !important;
+  }
 }
 
 @media (max-width: 600px) {
