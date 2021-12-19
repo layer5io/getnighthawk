@@ -1,69 +1,76 @@
 .mailing-section {
-    background: #1e2117;
-    color: white;
-    padding: 80px 0px 40px 0px;
-    @media #{$mobile} {
-        padding: 87px 0;
+  background: #1e2117;
+  color: white;
+  padding: 80px 0px 40px 0px;
+  @media #{$mobile} {
+    padding: 87px 0;
+  }
+
+  a,
+  a:hover,
+  a:focus,
+  a:active {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .mailinglist-main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .mailinglist-text {
+      text-align: center;
+      margin-bottom: 30px;
+      display: block;
+      span {
+        font-size: 34px;
+      }
+
+      p {
+        margin: 0 3rem;
+        margin-top: 1rem;
+        color: white;
+        font-size: 20px;
+        @media (max-width: 525px) {
+          margin: 0 1.75rem;
+          margin-top: 1rem;
+        }
+      }
     }
 
-    a,
-    a:hover,
-    a:focus,
-    a:active {
-        text-decoration: none;
-        color: inherit;
-    }
-
-    .mailinglist-main {
-        position: relative;
-        display: flex;
+    .mailinglist-buttons {
+      display: inline-flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      @media (max-width: 570px) {
         flex-direction: column;
+      }
+
+      .mailinglist-join-button {
+        display: flex;
+        justify-content: center;
         align-items: center;
+        background: #647881;
+        width: 253px;
+        height: 56px;
+        border-radius: 5px;
+        margin: 2rem 0 0;
+        transition: all 0.4s;
 
-        .mailinglist-text {
-            margin-bottom: 40px;
-            display: block;
-            span {
-                font-size: 34px;
-            }
-
-            p {
-                max-width: 375px;
-                margin: 0 3rem;
-                color: white;
-                font-size: 20px;
-            }
+        &:hover {
+          background-color: #4a5a63;
         }
+      }
 
-        .mailinglist-buttons {
-            display: inline-flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-
-            .mailinglist-join-button {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                background: #647881;
-                width: 253px;
-                height: 56px;
-                border-radius: 5px;
-                margin: 2rem 0 0;
-                transition: all .4s;
-
-                &:hover{
-                    background-color: #4a5a63;
-                }
-            }
-
-            .mailinglist-join-button:not(:first-child) {
-                margin-left: 1rem;
-                @media #{$mobile} {
-                    margin-left: 0;
-                    
-                }
-            }
+      .mailinglist-join-button:not(:first-child) {
+        margin-left: 1rem;
+        @media (max-width: 570px) {
+          margin-left: 0;
         }
+      }
     }
+  }
 }

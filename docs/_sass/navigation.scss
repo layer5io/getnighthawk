@@ -1,78 +1,74 @@
 nav {
-	text-transform: uppercase;
-	font-size: .8em;
-	width: 100%;
-	padding-left: -2rem;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  width: 100%;
+  padding-left: -2rem;
 
-	@media #{$mid-point} {
-		padding-right: 2rem;
-		padding-left: 2rem;
-	}
+  @media #{$mid-point} {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
 }
 
 .nav-container {
-	display: flex;
-	flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .nav-list {
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-end;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
 .nav-text {
-	font-size: 0.8rem !important;
-	@media (min-width: 840px) {
-		padding: 0.8rem !important;
-		margin: 0px 3px; 
-		color: rgba(0,0,0,.8) !important;
-	}
+  font-size: 0.8rem !important;
+  @media (min-width: 840px) {
+    padding: 0.8rem !important;
+    margin: 0px 3px;
+    color: rgba(0, 0, 0, 0.8) !important;
+  }
 }
 
 a.nav-text:hover {
-	color: rgba(0,0,0,0.7) !important;
+  color: rgba(0, 0, 0, 0.7) !important;
 }
 
 .subnav-item {
-	color: $brand-color !important;
+  color: $brand-color !important;
 }
 
 a.subnav-item:hover {
-	color: rgba(0, 0, 0, 0.25) !important;
+  color: rgba(0, 0, 0, 0.25) !important;
 }
 
 .active {
-	color: black !important;
-	font-weight: bold;
+  color: black !important;
+  font-weight: bold;
 }
 
 .highlight {
-	border: 1px #ccc solid;
-	border-radius: 5px;
+  border: 1px #ccc solid;
+  border-radius: 5px;
 }
 
 a.highlight:hover {
-	background: #fff;
-	color: $brand-color !important;
+  background: #fff;
+  color: $brand-color !important;
 }
 
+.stellarnav .menu-toggle span.bars span {
+  background: black;
+}
+.stellarnav a {
+  color: black;
+}
 
-.stellarnav .menu-toggle span.bars span{
-	background: black;
+.navmenu-container {
+  display: none;
 }
-.stellarnav a{
-	color:black;
-}
-
-.navmenu-container
-{
-	display: none;
-}
-@media only screen and (max-width:768px)
-{
-	.navmenu-container{
-		display: flex;
-	}
-	
+@media only screen and (max-width: 768px) {
+  .navmenu-container {
+    display: flex;
+  }
 }
