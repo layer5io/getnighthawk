@@ -361,3 +361,46 @@ footer {
   //   max-width: 800px !important;
   // }
 }
+
+@media (width: 768px) {
+  .custom-nav-elem {
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 770px) {
+  .custom-nav-elem {
+    padding-top: 40px;
+  }
+
+  .stellarnav {
+    width: 125px;
+  }
+}
+
+@media (max-width: 475px) {
+  header .project-name {
+    padding-right: 0;
+  }
+  .stellarnav.mobile > ul > li > a {
+    font-size: 0.75rem !important;
+  }
+}
+
+@media (max-width: 435px) {
+  header .project-name {
+    padding-left: 10px;
+  }
+  .stellarnav {
+    width: 120px;
+  }
+}
+
+@media (max-width: 410px) {
+  header .project-name {
+    padding-left: 20px;
+  }
+  .stellarnav {
+    width: 105px;
+  }
+}
