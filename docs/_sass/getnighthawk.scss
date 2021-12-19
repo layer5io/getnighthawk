@@ -5662,12 +5662,46 @@ div.globalFooterCard.card-environment {
   }
   .hero-section-logo-span {
     text-align: center !important;
+    font-size: 2.75rem !important;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
   .hero-section-para p {
     text-align: center !important;
+    font-size: 1.5rem !important;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
   .hero-section-button-div {
     margin-top: 1rem !important;
+  }
+  .accordion {
+    padding: 0 0.5rem;
+  }
+}
+
+@media (max-width: 475px) {
+  .hero-section-logo-span {
+    font-size: 2.25rem !important;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+  .hero-section-para p {
+    font-size: 1.25rem !important;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+  .hero-section-img {
+    width: 450px !important;
+  }
+}
+
+@media (max-width: 455px) {
+  .hero-section-logo-span {
+    font-size: 2rem !important;
+  }
+  .hero-section-para p {
+    font-size: 1rem !important;
   }
 }
 
@@ -5721,6 +5755,9 @@ div.globalFooterCard.card-environment {
   }
   .hero-section-img {
     margin-right: 0;
+  }
+  .accordion {
+    padding: 0 0rem;
   }
 }
 
