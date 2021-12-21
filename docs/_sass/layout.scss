@@ -133,7 +133,7 @@ section + section {
 .page h2 {
   text-align: center;
   margin: 2.5rem 0;
-	text-transform: capitalize; 
+  text-transform: capitalize;
 }
 
 blockquote {
@@ -480,7 +480,24 @@ hr {
     flex-direction: column;
     padding: 0rem;
   }
+  .description-div-grpc {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 0rem;
+    margin: 0 !important;
+    max-width: 100% !important;
+  }
+  .nighthawk-meshery-div {
+    margin: 0 !important;
+    margin-top: 2rem;
+  }
+  .nighthawk-meshery-div-columns {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+    margin-bottom: 6rem !important;
+  }
 }
+
 @media only screen and (max-width: 768px) {
   .custom-nav-cont-1,
   .custom-nav-cont-2 {
