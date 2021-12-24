@@ -3,7 +3,7 @@
   - name: Features
     link: /features
   - name: Run Nighthawk
-    link: /docs/what-is-getnighthawk
+    link: /docs/what-is-nighthawk
     new_window: false
   - name: Docs
     link: /docs
