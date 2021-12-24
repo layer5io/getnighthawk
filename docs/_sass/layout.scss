@@ -474,6 +474,18 @@ hr {
   padding: 0rem 0;
 }
 
+@media only screen and (max-width: 1300px) {
+  .nighthawk-img-container {
+    padding-top: 5rem;
+  }
+}
+
+@media only screen and (max-width: 1070px) {
+  .nighthawk-img-container {
+    padding-top: 10rem;
+  }
+}
+
 @media only screen and (max-width: 992px) {
   .custom-desc-div {
     display: flex;
@@ -495,6 +507,9 @@ hr {
     padding-left: 0.5rem !important;
     padding-right: 0.5rem !important;
     margin-bottom: 6rem !important;
+  }
+  .nighthawk-img-container {
+    padding-top: 3rem;
   }
 }
 
