@@ -1,19 +1,19 @@
 - title: Getting Started
   links:
-  - name: Features
-    link: /features
-  - name: Run Nighthawk
-    link: /docs/what-is-getnighthawk
-    new_window: false
-  - name: Docs
-    link: /docs
-    new_window: false
+    - name: Features
+      link: /features
+    - name: Run Nighthawk
+      link: /docs/what-is-nighthawk
+      new_window: false
+    - name: Docs
+      link: /docs
+      new_window: false
 
 - title2: Resources
   links2:
-  - name: Service Mesh Performance
-    link: https://smp-spec.io
-    new_window: true
-  - name: Service Mesh Landscape
-    link: https://layer5.io/landscape
-    new_window: true
+    - name: Service Mesh Performance
+      link: https://smp-spec.io
+      new_window: true
+    - name: Service Mesh Landscape
+      link: https://layer5.io/landscape
+      new_window: true
