@@ -25,16 +25,63 @@
                     <p>If you are using another CI/CD system, you can easily incorporate `mesheryctl` into your pipelines.</p></div>
                   </div>
                 </div>
-                <!-- <div class="accordion-item">
+                <div class="accordion-item">
                   <h2 class="accordion-header" id="flush-headingThree">
-                    <button id="faq-title" class="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                    <button id="faq-title" class="accordion-button collapsed" type="button" data-toggle="collapse"
+                      data-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
                       What projects are related to Nighthawk?
                     </button>
                   </h2>
-                  <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-parent="#accordionExample">
-                    <div class="accordion-body">Yes, certainly. As a matter of fact, you can leverage Nighthawk’s build workflows as the basis for your own. We recommend collaborating in the Nighthawk project to improve upon the workflows to meet your specific needs. Join the community and let us know.</div>
+                  <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+                    data-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <p>Meshery, the service mesh management plane uses Nighthawk as a load generator for running performance tests.
+                        Meshery uses the Docker image published by GetNighthawk to run Nighthawk.
+                
+                        The Service Mesh Performance project is also closely related to GetNighthawk as it defines a standard for
+                        capturing these performance test configurations and results..</p>
+                    </div>
                   </div>
-                </div> -->
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingFour">
+                    <button id="faq-title" class="accordion-button collapsed" type="button" data-toggle="collapse"
+                      data-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                      What value is GetNighthawk as an individual project adding to Nighthawk?
+                    </button>
+                  </h2>
+                  <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour"
+                    data-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <p>- Aimed at alligning and making Nighthawk compatible with the SMP spec.</p>
+                      <p>- A Go native wrapper for using Nighthawk.</p>
+                      <p>- Enables mesheryctl to do multi version lifecycle management of Nighthawk..</p>
+                      <p>- A vehicle for creating and publishing Nighthawk extensions.</p>
+                      <p>- Publishes Nighthawk artifacts compatible with multiple OS and CPU architectures.</p>
+                      <p>- Provides a container with ready to use Nighthawk binaries.</p>
+                      <p>- A logo and a website.</p>
+                      <p>- A community of contributors.</p>
+                      <p>- An audience within CNCF projects.</p>
+                      <p>- A shared spotlight on KubeCon stage.</p>
+                      <p>- Enables easy Nighthawk adoption.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingFive">
+                    <button id="faq-title" class="accordion-button collapsed" type="button" data-toggle="collapse"
+                      data-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                      Will nighthawk_client and nighthawk_server still be supported?
+                    </button>
+                  </h2>
+                  <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive"
+                    data-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <p>Yes, GetNighthawk will publish the Nighthawk binaries which can be dowloaded directly or used through a Docker
+                        image.</p>
+                    </div>
+                  </div>
+                </div>
             </div>
         </div>
 
