@@ -9,23 +9,31 @@
 }
 
 .subscribe-button {
-  padding-bottom: 10px;
-  padding-top: 10px;
-  width: 300px;
+  width: 100%;
   margin-left: auto !important;
   margin-right: auto !important;
+  text-decoration: none;
+  padding: 15px 30px;
+  background: #3c494f;
+  border-radius: 3px;
+  border: 1px solid rgba(255,255,255,0.5);
+  transition: .2s ease-in-out;
+  display: flex;
+  justify-content: center;
+  height: 3.5rem;
+  color: white;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.125rem;
+  cursor:     ;
+  letter-spacing: 0.5px;
 }
 
 .subscribe-inputbox {
   white-space: nowrap;
 }
 #mc_embed_signup {
-  clear: left;
   font: 14px Helvetica, Arial, sans-serif;
-  width: 80%;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
@@ -47,8 +55,7 @@
     margin-bottom: 5px;
   }
 
-  #mc_embed_signup .clear {
-    display: block;
+  #mc_embed_signup {
     width: 100%;
   }
 

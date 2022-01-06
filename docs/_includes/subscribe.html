@@ -1,5 +1,5 @@
 <div>
-  <a id="subscribe" class="subscribe-a"></a>
+  <a id="subscribe" class="subscribe-a" ></a>
   <!-- Begin MailChimp Signup Form -->
   <link
     href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css"
@@ -15,7 +15,7 @@
       id="mc-embedded-subscribe-form"
       name="mc-embedded-subscribe-form"
       class="validate"
-      novalidate
+      onsubmit="document.getElementById('mc-embedded-subscribe-form').submit();"
     >
       <div id="mc_embed_signup_scroll">
         <div class="subscribe-inputbox"
@@ -28,7 +28,12 @@
             name="FNAME"
             class="email"
             id="mce-FNAME"
-            style="width: 49%"
+            style="width: 48%;
+            height: 3rem;
+            border: 1px solid #000000;
+            box-sizing: border-box;
+            border-radius: 5px;" 
+            required
           />
           <input
             type="text"
@@ -37,7 +42,12 @@
             name="LNAME"
             class="email"
             id="mce-LNAME"
-            style="width: 49%"
+            style="width: 48%;
+            height: 3rem;
+            border: 1px solid #000000;
+            box-sizing: border-box;
+            border-radius: 5px;"
+            required
           />
         </div>
         <div id="mce-responses" class="clear subscribe-inputbox">
@@ -63,8 +73,13 @@
             class="email"
             id="mce-EMAIL"
             placeholder="Email Address"
+            style="width: 100%;
+            margin: 20px 20px 0px 0px;
+            height: 3rem;
+            border: 1px solid #000000;
+            box-sizing: border-box;
+            border-radius: 5px;"
             required
-            style="white-space: nowrap; display: inline-block; width: 100%"
           />
           <!-- <span class="asterisk" style="white-space: nowrap;">*</span> -->
         </div>
@@ -81,21 +96,15 @@
             value=""
           />
         </div>
-        <div
-          onclick="document.getElementById('mc-embedded-subscribe-form').submit();"
-          id="mc_embed_signup"
-          class="clear"
-        >
           <h4 style="text-align: center; color: aliceblue">
-            <input
+            <button
+              style="margin: 0px !important;"
               class="subscribe-button"
               type="submit"
-              value="Subscribe"
-              name="subscribe"
-              id="mc-embedded-subscribe"
-            />
+              id="mc-embedded-subscribe-form"
+              id="mc_embed_signup"
+            >Subscribe</button>
           </h4>
-        </div>
       </div>
     </form>
   </div>
