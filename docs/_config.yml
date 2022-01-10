@@ -6,6 +6,7 @@ description: "The Nighthawk distribution for service mesh performance characteri
 url: "https://getnighthawk.dev"
 #baseurl: /docs
 
+
 #Contact / Social
 github: https://github.com/layer5io/getnighthawk
 slack: http://slack.layer5.io/
@@ -63,6 +64,10 @@ defaults:
       type: "pages"
     values:
       layout: "plain"
+      image: 
+        path: /assets/images/logos/nighthawk/icon/nighthawk-logo.png
+        height: 1200
+        width: 680
   -
     scope:
       path: ""
