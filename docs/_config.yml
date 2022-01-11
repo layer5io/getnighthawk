@@ -66,8 +66,7 @@ defaults:
       layout: "plain"
       image: 
         path: /assets/images/logos/nighthawk/icon/nighthawk-logo.png
-        height: 1200
-        width: 680
+    
   -
     scope:
       path: ""
