@@ -473,16 +473,20 @@ hr {
   display: flex;
   padding: 0rem 0;
 }
-
+.nighthawk-img-container {
+  flex: 1;
+}
 @media only screen and (max-width: 1300px) {
   .nighthawk-img-container {
     padding-top: 5rem;
+    flex: 1;
   }
 }
 
 @media only screen and (max-width: 1070px) {
   .nighthawk-img-container {
     padding-top: 10rem;
+    flex: 1;
   }
 }
 
@@ -510,6 +514,7 @@ hr {
   }
   .nighthawk-img-container {
     padding-top: 3rem;
+    flex: 1;
   }
 }
 
