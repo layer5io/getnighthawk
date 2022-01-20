@@ -493,12 +493,12 @@ hr {
 @media only screen and (max-width: 992px) {
   .custom-desc-div {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     padding: 0rem;
   }
   .description-div-grpc {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     padding: 0rem;
     margin: 0 !important;
     max-width: 100% !important;
@@ -513,8 +513,8 @@ hr {
     margin-bottom: 6rem !important;
   }
   .nighthawk-img-container {
-    padding-top: 3rem;
     flex: 1;
+    padding-top: 0rem;
   }
 }
 
