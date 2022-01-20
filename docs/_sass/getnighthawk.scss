@@ -5899,6 +5899,12 @@ div.globalFooterCard.card-environment {
   transform: rotate(270deg);
 }
 
+.accordion-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .sidebar .accordion-button:not(.collapsed) {
   background-color: transparent;
   color: inherit;
