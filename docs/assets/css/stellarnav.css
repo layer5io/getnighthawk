@@ -164,4 +164,10 @@ body.stellarnav-noscroll-x { overflow-x: hidden; }
 /* mobile nav */
 @media only screen and (max-width : 420px) {
 	.stellarnav.mobile .call-btn-mobile.third span, .stellarnav.mobile .location-btn-mobile.third span { display: none; }
+	.stellarnav.mobile ul {
+		position: absolute;
+	}
+	.stellarnav.mobile ul li:hover{
+		background-color: #d0fcf4;
+	}
 }
