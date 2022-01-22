@@ -155,17 +155,16 @@ body.stellarnav-noscroll-x { overflow-x: hidden; }
 /* mega dd */
 
 
-/* Fallback for slow javascript load */
-@media only screen and (max-width : 768px) {
-	.stellarnav { overflow: hidden; display: block; }
-	.stellarnav ul { position: relative; display: none; }
-}
+
 
 /* mobile nav */
-@media only screen and (max-width : 420px) {
+@media only screen and (max-width : 768px) {
 	.stellarnav.mobile .call-btn-mobile.third span, .stellarnav.mobile .location-btn-mobile.third span { display: none; }
 	.stellarnav.mobile ul {
-		position: absolute;
+		position: absolute; 
+		width: fit-content; 
+		display: block; 
+		right: 1%;
 	}
 	.stellarnav.mobile ul li:hover{
 		background-color: #d0fcf4;
