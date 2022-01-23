@@ -5899,12 +5899,6 @@ div.globalFooterCard.card-environment {
   transform: rotate(270deg);
 }
 
-.accordion-button {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .sidebar .accordion-button:not(.collapsed) {
   background-color: transparent;
   color: inherit;
@@ -5980,6 +5974,7 @@ div.globalFooterCard.card-environment {
 }
 .accordion-button {
   border: 0px !important;
+  justify-content: space-between;
 }
 .accordion-button::after {
   margin-left: 10px !important;
