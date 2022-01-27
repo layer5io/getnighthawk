@@ -32,7 +32,7 @@
 }
 .float-button-container {
     position: fixed;
-    right: 30px;
+    left: 30px;
     bottom: 30px;
     z-index: 999;
     visibility: hidden;
@@ -42,7 +42,7 @@
     width: 70px;
     border-radius: 50%;
     background-color: #00d3a9;
-    float: right;
+    float: left;
     position: relative;
     visibility: hidden;
 }
@@ -57,8 +57,12 @@
     z-index: 100;
     visibility: hidden;
     padding-top: 200px;
+    overflow: scroll;
 }
 
+#menuTray ul{
+    padding-bottom: 200px;
+}
 .doc-heading-tray {
     font-weight: 600;
 }
@@ -67,7 +71,7 @@
     font-weight: 400;
 }
 
-.float-button-container .fa-angle-double-up {
+.float-button-container .fa-angle-double-right {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -75,7 +79,7 @@
     font-size: 22px;
 }
 
-.float-button-container .fa-angle-double-down {
+.float-button-container .fa-angle-double-left {
     position: absolute;
     top: 50%;
     left: 50%;
