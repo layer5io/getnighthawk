@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Running Performance Tests
-section: "Performance Benchmarking with Nighthawk"
+section: "Performance Benchmarking"
 ---
 
 [Meshery](https://meshery.io/) uses Nighthawk as one of its load generators to run performance benchmarking. Meshery is the canonical implementation of [Service Mesh Performance](https://smp-spec.io/), CNCF's service mesh performance benchmarking specification.

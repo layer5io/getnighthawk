@@ -23,6 +23,7 @@ permalink: /docs
     />
 
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css" />
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/sidebar_doc.css" />
 
     <script
       src="https://kit.fontawesome.com/2ffe680fa0.js"
@@ -77,23 +78,45 @@ permalink: /docs
   </style>
   <br /><br /><br /><br /><br /><br />
   <div class="row">
-    <div class="col-lg-3">
-      <nav class="navbar navbar-expand-lg navbar-light">
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="sidebar doc-sidebar">
-            
+    <div class="float-button-container">
+      <button class="float-button" id="toggle"><i class="fas fa-angle-double-right" id="float-icon-arrow"></i>
+      </button>
+    </div>
+    <div id="menuTray">
+      <ul>
+        <div>
+          {% for docs in site.data.docs %}
+          <div>
+            <h2>
+              <button type="button" data-toggle="collapse">
+                <h4 class="doc-heading doc-heading-tray">{{ docs.name }}</h4>
+              </button>
+            </h2>
+              <div>
+                {% for doc in site.docs %}
+                  {% if doc.section == docs.name %}
+                    <li>
+                      <h5>
+                        {% assign foo = docs.name %}
+                        <a
+                          class="doc-link doc-link-tray"
+                          href={% include relative-src.html src=doc.url %}
+                          >{{ doc.title }}</a
+                        >
+                      </h5>
+                    </li>
+                  {% endif %}
+                {% endfor %}
+              </div>
+            </div>
+            {% endfor %}
+        </div>
+      </ul>
+    </div>
+    <div class="col-sm-3 height-100">
+      <nav class="navbar">
+        <div>
+          <ul class="sidebar doc-sidebar"> 
             <div class="accordion" id="accordionExample">
               {% for docs in site.data.docs %}
               <div class="accordion-item">
@@ -125,7 +148,7 @@ permalink: /docs
         </div>
       </nav>
     </div>
-    <div class="col-lg-9 docs-section">
+    <div class="col-sm-9 docs-section">
       <div class="hero-section-header docs-section-header">
         <img
           src="{{ site.baseurl }}/assets/images/logos/nighthawk/stacked/nighthawk-full.svg"
@@ -157,4 +180,5 @@ permalink: /docs
       </div>
     </div>
   </div>
+<script src="{{ site.baseurl }}/assets/js/docs_nav.js"></script>
 </html>
