@@ -473,28 +473,32 @@ hr {
   display: flex;
   padding: 0rem 0;
 }
-
+.nighthawk-img-container {
+  flex: 1;
+}
 @media only screen and (max-width: 1300px) {
   .nighthawk-img-container {
     padding-top: 5rem;
+    flex: 1;
   }
 }
 
 @media only screen and (max-width: 1070px) {
   .nighthawk-img-container {
     padding-top: 10rem;
+    flex: 1;
   }
 }
 
 @media only screen and (max-width: 992px) {
   .custom-desc-div {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     padding: 0rem;
   }
   .description-div-grpc {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     padding: 0rem;
     margin: 0 !important;
     max-width: 100% !important;
@@ -509,7 +513,8 @@ hr {
     margin-bottom: 6rem !important;
   }
   .nighthawk-img-container {
-    padding-top: 3rem;
+    flex: 1;
+    padding-top: 0rem;
   }
 }
 
@@ -527,7 +532,7 @@ hr {
   }
   .custom-desc-div {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     padding: 0;
   }
 }
