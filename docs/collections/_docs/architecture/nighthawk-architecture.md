@@ -163,6 +163,8 @@ strategies.
 
 ## Nighthawk binaries
 
+<img src="/assets/images/screenshots/Nighthawk.svg" style="width:80%;padding:4%;align:center"/>
+
 ### nighthawk_client
 
 The CLI interface of the Nighthawk client. It synthesizes traffic according
