@@ -12,4 +12,4 @@ GetNighthawk also provides a gRPC Go stub which can be used to interact with a r
 
 GetNighthawk also provides a Docker image that can be pulled from here.
 
-<img src="/assets/images/screenshots/GetNighthawk.svg" style="width:80%;padding:4%;align:center"/>
+<img src="/assets/images/screenshots/GetNighthawk.svg" style="width:90%;padding:4%;align:center"/>
