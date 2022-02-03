@@ -14,6 +14,8 @@ Nighthawk is a versatile HTTP load testing tool built out of a need to drill HTT
 You can download generally available distributions of Nighthawk under different architectures and platforms.
  <!-- also providing easy-to-use tooling for installation and operation. This involves creating distributions of Nighthawk and to build up existing tooling. -->
 
+<img src="/assets/images/screenshots/Nighthawk+Meshery.svg" style="width:90%;padding:4%;align:center" />
+
 Centric to the advancement of Nighthawk is the Meshery and Service Mesh Performance projects, which enable Nighthawk's standards-based distributed performance management. The intersection of these projects allow researchers and users to conveniently identify the optimal service mesh configuration while considering their specific environment, application and load.Meshery orchestrates multiple instances of Nighthawk (horizontal scaling) and provides an easy to use interface for Nighthawk's adaptive load controller capability.
 
 Nighthawk also enables Nighthawk adoption by delivering trusted, certified builds, distributed via popular package managers like apt, yum, Homebrew and platforms including Docker and Kubernetes.
