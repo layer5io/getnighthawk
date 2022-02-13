@@ -97,7 +97,7 @@ permalink: /docs
                   {% if doc.section == docs.name %}
                     <li>
                       <h5>
-                        {% assign foo = docs.name %}
+                        {% assign foo = doc.name %}
                         <a
                           class="doc-link doc-link-tray"
                           href={% include relative-src.html src=doc.url %}

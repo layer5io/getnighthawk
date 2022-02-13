@@ -2,8 +2,8 @@
 layout: docs
 title: Nighthawk Architecture
 section: "Overview"
-
 ---
+
 # Architecture and Key Concepts
 
 ## High level interaction model
