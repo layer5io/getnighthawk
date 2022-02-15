@@ -5,6 +5,7 @@ section: "Overview"
 ---
 
 # Architecture and Key Concepts
+&nbsp;
 
 ## High level interaction model
 
@@ -24,12 +25,12 @@ when and how to terminate execution. When all **Workers** have finished,
 **Process** will collect the results from all **Workers** via
 **OutputCollector**, and run **OutputFormatter** to transform to the requested
 output format.
-
+&nbsp;
 ## Notable upcoming changes
 
 Calling out two new concepts that may get proposed in the future, and cause some
 churn in the code base as we inject them.
-
+&nbsp;
 ### Phases
 
 One notable addition / change that may get proposed in the near future is the
@@ -47,7 +48,7 @@ controlled ramping of certain test parameters by associating those to different
 phases. Termination predicates can be leveraged to immediately terminate the
 current phase after injecting a new one, allowing for real-time steering via
 gRPC and/or CLI.
-
+&nbsp;
 ### Streaming parameterization and output stats
 
 Once we have phases, the gRPC service, and perhaps the CLI, would be natural
@@ -57,7 +58,7 @@ back reports per phase.
 ## Key concept descriptions
 
 *The c++ interface definitions for the concepts below can be found [here](https://github.com/envoyproxy/nighthawk/tree/main/include/nighthawk)*.
-
+&nbsp;
 ### Process
 
 **Process** represents the primary entry point to a Nighthawk execution run.
@@ -66,12 +67,14 @@ Process. **Process** is responsible for performing process-wide initialization
 and termination, as well as handle input configuration, deliver output, and
 co-ordinate Workers. **ProcessImpl** is re-used across the CLI and the gRPC
 service.
+&nbsp;
 
 ### Worker
 
 **Worker** is responsible for performing correct initialization and termination
 of its thread, as well as execution of its designated task and offering a way
 for consumers to wait for that task to complete.
+&nbsp;
 
 ### TerminationPredicate
 
@@ -79,6 +82,7 @@ for consumers to wait for that task to complete.
 today, there are two types: one that will indicate that it is time to terminate
 based on a pre-configured duration, and one that will do so based on absolute
 counter thresholds.
+&nbsp;
 
 ### Sequencer
 
@@ -86,6 +90,7 @@ counter thresholds.
 run on the dispatcher, and coordinates interaction between **RateLimiter,**
 **BenchmarkClient**, and **TerminationPredicate** to drive execution to
 completion.
+&nbsp;
 
 ### RateLimiter
 
@@ -98,6 +103,7 @@ today there is **LinearRateLimiterImpl** which offers a straight-paced plain
 frequency, as well as work in progress on
 **DistributionSamplingRateLimiterImpl** (adding uniformly distributed random
 timing offsets to an underlying **RateLimiter**) and **LinearRampingRateLimiter**.
+&nbsp;
 
 ### BenchmarkClient
 
@@ -112,6 +118,7 @@ which will be fired upon completion of a successfully started request.
 For H3, it is anticipated that it will fit into this model, but if all else
 fails, it will be entirely possible to wire in a new type of
 **BenchmarkClient**.
+&nbsp;
 
 ### RequestSource
 
@@ -121,6 +128,7 @@ to fire off should look like. Today, two implementations exist: a static one,
 which will repeat the same request over and over, as well as one that pulls
 dynamic request data from a grpc service. The latter can, for example, be used
 to implement log-replay.
+&nbsp;
 
 ### StreamDecoder
 
@@ -130,17 +138,20 @@ StreamDecoder will by notified by Envoy as headers and body fragments arrive.
 The Nighthawk implementation of that is responsible for coordinating lifetime
 events of a request to upper abstraction layers (**BenchmarkClient**,
 **Sequencer**) as well as recording latency and reporting that upwards.
+&nbsp;
 
 ### OutputCollector
 
 **OutputCollector** is a container that facilitates building up the native output
 format of Nighthawk (`proto3`, `nighthawk::client::Output`). It is the basis for all
 output formats offered by Nighthawk, including CLI human output.
+&nbsp;
 
 ### OutputFormatter
 
 **OutputFormatter** is responsible for transformations of `nighthawk::client::Output`
 to requested formats (e.g. human, json, fortio, etc)
+&nbsp;
 
 ### Statistic
 
@@ -153,6 +164,7 @@ implementation that simply tracks the `mean` and `pstddev` for those cases where
 we don't need percentiles. For various reasons, HdrHistogram might get replaced
 by [libcirclhist](https://github.com/envoyproxy/nighthawk/issues/115) in the
 near future.
+&nbsp;
 
 ### H1Pool & H2Pool
 
@@ -188,6 +200,7 @@ Utility for transforming the nighthawk-native json output format into
 other formats (e.g. human, fortio). It can be very useful to always store the
 json output format, yet be able to easily get to one of the other output
 formats. It’s like having the cake and eating it too!
+&nbsp;
 
 ## User-specified Nighthawk logging
 
