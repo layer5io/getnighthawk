@@ -5,11 +5,12 @@ section: "Performance Benchmarking"
 ---
 
 [Meshery](https://meshery.io/) uses Nighthawk as one of its load generators to run performance benchmarking. Meshery is the canonical implementation of [Service Mesh Performance](https://smp-spec.io/), CNCF's service mesh performance benchmarking specification.
+<br/>
 
-# Performance Benchmarking Using mesheryctl
+## Performance Benchmarking Using mesheryctl
 
 `mesheryctl` is the command line interface of Meshery. `mesheryctl` along with other load generators,  `mesheryctl` can use Nighthawk to run performance benchmarks.
-
+<br/>
 
 ## Install mesheryctl
 
@@ -43,6 +44,7 @@ Flags:
 
 Use "mesheryctl [command] --help" for more information about a command.
 ```
+<br/>
 
 ## Run a performance test
 
@@ -54,6 +56,7 @@ The command below runs a performance benchmark test with Nighthawk with the test
 mesheryctl perf apply --profile istio-soak-test --concurrent-requests 1 --duration 15s --load-generator nighthawk --mesh istio --url http://localhost:2323
 ```
 
+<br/>
 You can also run performance tests with SMP compatible test configuration files like the one shown below.
 
 ```yaml

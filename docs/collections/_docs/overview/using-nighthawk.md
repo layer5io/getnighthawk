@@ -266,6 +266,7 @@ benchmark a single endpoint. For multiple endpoints, set
 
 
 ```
+<br/>
 
 # Using Nighthawk gRPC Service
 
@@ -309,6 +310,7 @@ Displays usage information and exits.
 
 L7 (HTTP/HTTPS/HTTP2) performance characterization tool.
 ```
+<br/>
 
 # Nighthawk Output Transform Utility
 

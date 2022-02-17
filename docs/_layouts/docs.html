@@ -54,7 +54,7 @@ layout: default
                 {% if doc.section == docs.name %}
                   <li>
                     <h5>
-                      {% assign foo = docs.name %}
+                      {% assign category = page.section %}
                       <a
                         class="doc-link doc-link-tray"
                         href={% include relative-src.html src=doc.url %}
@@ -105,6 +105,7 @@ layout: default
       </nav>    
   </div>
   <div class="col-sm-9 container-g section-content">
+    {{category}}
     {{content}}
   </div>
 </div>
