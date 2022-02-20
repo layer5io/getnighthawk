@@ -27,8 +27,8 @@
 }
 
 .sidebar {
-    position: absolute;
-    top: 30px;
+    position: fixed;
+    top: 145px;
 }
 .float-button-container {
     position: fixed;
