@@ -63,6 +63,8 @@ defaults:
       type: "pages"
     values:
       layout: "plain"
+      image:
+        path: /assets/images/logos/nighthawk/icon/nighthawk-logo.png
   -
     scope:
       path: ""
