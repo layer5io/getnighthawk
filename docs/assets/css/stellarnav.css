@@ -153,20 +153,3 @@ body.stellarnav-noscroll-x { overflow-x: hidden; }
 .stellarnav.desktop li.mega li.has-sub a:after { display: none; }
 .stellarnav.desktop > ul > li.mega > ul > li > a { color: yellow; }
 /* mega dd */
-
-
-
-
-/* mobile nav */
-@media only screen and (max-width : 768px) {
-	.stellarnav.mobile .call-btn-mobile.third span, .stellarnav.mobile .location-btn-mobile.third span { display: none; }
-	.stellarnav.mobile ul {
-		position: absolute; 
-		width: fit-content; 
-		display: block; 
-		right: 1%;
-	}
-	.stellarnav.mobile ul li:hover{
-		background-color: #d0fcf4;
-	}
-}
