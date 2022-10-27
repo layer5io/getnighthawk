@@ -10,6 +10,6 @@ require (
 	github.com/pkg/errors v0.9.1
 	github.com/sirupsen/logrus v1.8.1
 	google.golang.org/genproto v0.0.0-20220502173005-c8bf987b8c21
-	google.golang.org/grpc v1.46.0
+	google.golang.org/grpc v1.50.1
 	google.golang.org/protobuf v1.28.0
 )
