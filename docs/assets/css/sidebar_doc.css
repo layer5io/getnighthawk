@@ -32,15 +32,15 @@
 }
 .float-button-container {
     position: fixed;
-    left: 30px;
     bottom: 30px;
+    padding-left: 0 !important;
     z-index: 999;
     visibility: hidden;
 }
 .float-button {
     height: 70px;
-    width: 70px;
-    border-radius: 50%;
+    width: 50px;
+    border-radius: 20%;
     background-color: #00d3a9;
     float: left;
     position: relative;
@@ -75,6 +75,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
+    padding-left: 7px;
     transform: translate(-50%, -50%);
     font-size: 22px;
 }
