@@ -1,5 +1,5 @@
 ---
-name: Site Update
+name: Website Update
 about: Suggest an update to the GetNighthawk.dev website
 title: ""
 labels: 
