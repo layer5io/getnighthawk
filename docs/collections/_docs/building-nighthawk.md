@@ -68,3 +68,6 @@ Run:
 cd nighthawk
 bazel build -c opt //:nighthawk
 ```
+
+<br>
+{% include related-discussions.html tag="nighthawk" %}
