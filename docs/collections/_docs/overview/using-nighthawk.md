@@ -350,3 +350,5 @@ L7 (HTTP/HTTPS/HTTP2) performance characterization transformation tool.
 ```
 
 See [Nighthawk README](https://github.com/envoyproxy/nighthawk) for more info.
+
+{% include related-discussions.html tag="nighthawk" %}

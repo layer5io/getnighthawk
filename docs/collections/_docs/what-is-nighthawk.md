@@ -22,3 +22,5 @@ Nighthawk also enables Nighthawk adoption by delivering trusted, certified build
 
 <!-- Nighthawk also bridges the gap between C++ code in Nighthawk and the language of the cloud, Golang. -->
 First-class support for Nighthawk in [Service Mesh Patterns](https://github.com/service-mesh-patterns) is also available. Nighthawk to be the performance characterization tool that would be used in the 30 patterns in the [Service Mesh Patterns](https://layer5.io/learn/service-mesh-books/service-mesh-patterns) book.
+
+{% include related-discussions.html tag="nighthawk" %}
