@@ -90,7 +90,7 @@ layout: default
                             <a
                               class="doc-link"
                               href="{% include relative-src.html src=doc.url %}"
-                              >{{ doc.title }}</a
+                              >{{ doc.title }} </a
                             >
                           </h5>
                         </li>
@@ -100,6 +100,11 @@ layout: default
                 </div>
                 {% endfor %}
             </div>
+            <br>
+            <h4 class="doc-heading"> <a
+              class="doc-link" style="padding:0px; margin-left:0px"
+              href={% include relative-src.html src="/docs/recent-discussions" %}
+              >RECENT DISCUSSIONS ON NIGHTHAWK</a></h4>
           </ul>
         </div>
       </nav>    
