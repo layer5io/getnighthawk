@@ -1,17 +1,21 @@
 name: Discussion data files update
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: '0 0 * * *' #runs every day at midnight
 
 jobs:
   update:
     runs-on: ubuntu-latest
+    if: github.repository == 'layer5io/getnighthawk'
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GH_ACCESS_TOKEN }}
       - name: Fetch data for nighthawk tag
-        run: curl https://discuss.layer5.io/tag/meshery.json -o docs/_data/discuss/nighthawk.json
+        run: curl https://discuss.layer5.io/tag/nighthawk.json -o docs/_data/discuss/nighthawk.json
       - name: Commit results
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
