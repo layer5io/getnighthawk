@@ -1,0 +1,27 @@
+name: Discussion data files update
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *' #runs every day at midnight
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    if: github.repository == 'layer5io/getnighthawk'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GH_ACCESS_TOKEN }}
+      - name: Fetch data for nighthawk tag
+        run: curl https://discuss.layer5.io/tag/nighthawk.json -o docs/_data/discuss/nighthawk.json
+      - name: Commit results
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_user_name: l5io
+          commit_user_email: ci@layer5.io
+          commit_author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+          commit_options: "--signoff"
+          commit_message: "Updated nighthawk.json with new discussion posts"
+          branch: master
