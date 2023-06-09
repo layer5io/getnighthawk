@@ -43,7 +43,7 @@ type FortioResult struct {
 	// Start time of the load test execution.
 	StartTime *timestamppb.Timestamp `protobuf:"bytes,2,opt,name=StartTime,proto3" json:"StartTime,omitempty"`
 	// Configured qps
-	RequestedQPS string `protobuf:"varint,3,opt,name=RequestedQPS,proto3" json:"RequestedQPS,omitempty"`
+	RequestedQPS string `protobuf:"bytes,3,opt,name=RequestedQPS,proto3" json:"RequestedQPS,omitempty"`
 	// Configured duration
 	RequestedDuration *durationpb.Duration `protobuf:"bytes,4,opt,name=RequestedDuration,proto3" json:"RequestedDuration,omitempty"`
 	// Effective qps
