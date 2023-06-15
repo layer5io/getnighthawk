@@ -3,6 +3,7 @@ package nighthawk
 import (
 	"errors"
 	"fmt"
+	"strings"
 	"time"
 
 	nighthawk_client "github.com/layer5io/nighthawk-go/pkg/proto"
@@ -20,7 +21,7 @@ func Transform(res *nighthawk_client.ExecutionResponse) ([]byte, error) {
 	if workers = len(res.Output.Results); workers != 1 {
 		workers--
 	}
-	// TODO resFortio.Label
+	resFortio.Labels = strings.Join(res.Output.GetOptions().GetLabels(), " ")
 	resFortio.Version = res.Output.GetVersion().GetVersion().String()
 	resFortio.StartTime = res.Output.GetTimestamp()
 	resFortio.RequestedQPS = uint32(workers) * res.Output.Options.RequestsPerSecond.GetValue()
@@ -63,7 +64,9 @@ func Transform(res *nighthawk_client.ExecutionResponse) ([]byte, error) {
 		resFortio.HeaderSizes = renderFortioDurationHistogram(statistic)
 	}
 
-	out, err := protojson.Marshal(resFortio)
+	out, err := protojson.MarshalOptions{
+		EmitUnpopulated: true,
+	}.Marshal(resFortio)
 	if err != nil {
 		return nil, err
 	}
