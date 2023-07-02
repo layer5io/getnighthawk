@@ -81,11 +81,34 @@
       }
 
       &.slack-icon:hover svg {
-        fill: #4b154b;
+        .first{
+          fill:#00bcd4;
+        }
+        .second{
+          fill:#00bcd4;
+        }
+        .third{
+          fill:#e91e63;
+        }
+        .fourth{
+          fill:#e91e63;
+        }
+        .fifth{
+          fill:#ff9800;
+        }
+        .sixth{
+          fill:#ff9800;
+        }
+        .seventh{
+          fill:#4caf50;
+        }
+        .eighth{
+          fill:#4caf50;
+        }
       }
 
       &.github-icon:hover svg {
-        fill: #000000;
+        fill:#fff !important;
       }
 
       &.rss-icon:hover svg {
