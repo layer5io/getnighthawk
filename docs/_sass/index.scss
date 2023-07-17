@@ -118,6 +118,21 @@ $blue-munsell-3: #4392a4ff;
   z-index: -1px;
 }
 
+.star-meshery-button{
+  
+  padding: 0.5rem;
+  background-color: #f3d112;
+  text-decoration: none;
+  color: black;
+  border-radius: 8px;
+  font-weight: 600;
+
+}
+
+.star-meshery{
+  margin-top: 2rem;
+}
+
 .docs-section{
   min-height: 100vh;
   &-logo-span{
