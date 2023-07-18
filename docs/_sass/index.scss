@@ -118,24 +118,9 @@ $blue-munsell-3: #4392a4ff;
   z-index: -1px;
 }
 
-.star-meshery-button{
-  
-  padding: 0.5rem;
-  background-color: #f3d112;
-  text-decoration: none;
-  color: black;
-  border-radius: 8px;
-  font-weight: 600;
-}
-
-.star-meshery-button:hover{
-  text-decoration: none;
-  background-color: #f0d644;
-  color: black;
-}
-
-.star-meshery{
-  margin-top: 2rem;
+.meshery-repo{
+  width: 18rem;
+  margin-top: 1rem;
 }
 
 .docs-section{
@@ -158,6 +143,7 @@ $blue-munsell-3: #4392a4ff;
     font-weight: 400;
   }
 }
+
 
 // hero-section-div ends
 
