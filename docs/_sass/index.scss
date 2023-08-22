@@ -118,6 +118,11 @@ $blue-munsell-3: #4392a4ff;
   z-index: -1px;
 }
 
+.meshery-repo{
+  width: 18rem;
+  margin-top: 1rem;
+}
+
 .docs-section{
   min-height: 100vh;
   &-logo-span{
@@ -138,6 +143,7 @@ $blue-munsell-3: #4392a4ff;
     font-weight: 400;
   }
 }
+
 
 // hero-section-div ends
 
