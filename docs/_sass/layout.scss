@@ -544,17 +544,15 @@ hr {
 }
 /* Custom Scrollbar*/
 ::-webkit-scrollbar{
-  width: 8px;
+  width: 0.5rem;
 }
 ::-webkit-scrollbar-track {
-  background-color: #ffffff;
+  background: rgb(255, 255, 255);
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #393E46;
-  border-radius: 12px;
-  box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-  transition: background-color 0.3s ease;
+  background: rgb(60, 73, 79);
+  border-radius: 0.3rem;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #555b66;
+  background: rgb(85, 91, 102);
 }
