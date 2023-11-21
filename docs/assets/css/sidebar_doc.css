@@ -8,12 +8,16 @@
     text-transform: uppercase;
     white-space: nowrap;
 }
+.doc-heading a {
+    width: 80%;
+}
 .doc-link {
     font-size: 16px;
     text-transform: capitalize;
     color: #000;
 }
 .accordion-collapse li h5 {
+    width: 80%;
     margin-bottom: 0;
 }
 .accordion-item {
