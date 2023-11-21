@@ -9,5 +9,6 @@ code {
     background-color: black;
     border: 0px;
     padding: .35rem;
+    overflow: hidden;
     /* margin-bottom: 0rem; */
 }
