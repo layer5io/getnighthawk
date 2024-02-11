@@ -3,11 +3,13 @@ pre {
 }
 code {
     border: 0px;
+    overflow-y: hidden;
 }
 .highlight {
     color: white;
     background-color: black;
     border: 0px;
     padding: .35rem;
+    overflow-y: hidden;
     /* margin-bottom: 0rem; */
 }
