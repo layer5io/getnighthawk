@@ -21,7 +21,10 @@
 .highlight{
     display: inline-flex;
     position: relative;
-   
+    margin-bottom: 0px;
     width: 100%;
    
+}
+div.highlight {
+  margin-bottom: 16px;
 }
