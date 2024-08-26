@@ -5016,6 +5016,12 @@ div.globalFooterCard.card-environment {
   }
 }
 
+.docs-section{
+  position: relative;
+  top: 6rem;
+  right: 6rem;
+}
+
 .rooted-pillar {
   position: relative;
   margin: 0 0 30px;
@@ -5853,9 +5859,23 @@ div.globalFooterCard.card-environment {
 
 .section-content {
   padding-left: 40px !important;
-  margin-top: 30px !important;
+  margin-top: 8rem !important;
+  margin-right: 2rem !important;
   margin-bottom: 50px !important;
   min-height: 100vh;
+}
+
+@media (max-width: 1275px) {
+  .section-content{
+    margin-right: 7rem !important;
+  }
+}
+
+@media (max-width: 745px) {
+  .section-content{
+    margin-right: 2rem !important;
+    width: 90% !important;
+  }
 }
 
 .doc-container {
