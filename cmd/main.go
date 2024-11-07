@@ -30,9 +30,8 @@ func main() {
 	result, err := apinighthawk.NighthawkRun(testConfig)
 
 	if err != nil {
-		msg := "Failed to run load-test"
-		err = errors.Wrapf(err, msg)
-		log.Fatal(err)
+		log.Error("Failed to run load test: ", err)
+		return
 	}
 
 	var result1 periodic.RunnerResults
@@ -40,16 +39,16 @@ func main() {
 	err = json.Unmarshal(result, &result1)
 
 	if err != nil {
-		err = errors.Wrap(err, "Error while unmarshaling  Nighthawk results to the FortioHTTPRunner")
-		log.Fatal(err)
+		log.Error("Error while unmarshaling Nighthawk results to the FortioHTTPRunner: ", err)
+		return
 	}
 
 	resultsMap := map[string]interface{}{}
 	err = json.Unmarshal(result, &resultsMap)
 
 	if err != nil {
-		err = errors.Wrap(err, "Error while unmarshaling Nighthawk results to map")
-		log.Fatal(err)
+		log.Error("Error while unmarshaling Nighthawk results to map: ", err)
+		return
 	}
 
 	log.Infof("Mapped version of the test: %+#v", resultsMap)
