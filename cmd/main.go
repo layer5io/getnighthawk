@@ -30,8 +30,7 @@ func main() {
 	result, err := apinighthawk.NighthawkRun(testConfig)
 
 	if err != nil {
-		msg := "Failed to run load-test"
-		err = errors.Wrapf(err, msg)
+		err = errors.Wrapf(err, "Failed to run load-test")
 		log.Fatal(err)
 	}
 
