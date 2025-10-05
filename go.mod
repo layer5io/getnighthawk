@@ -15,7 +15,7 @@ require (
 require (
 	github.com/envoyproxy/go-control-plane/envoy v1.32.4
 	github.com/golang/protobuf v1.5.4
-	github.com/meshery/meshkit v0.8.43
+	github.com/meshery/meshkit v0.8.44
 )
 
 require (
