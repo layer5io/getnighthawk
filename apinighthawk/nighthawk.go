@@ -49,8 +49,7 @@ func NighthawkRun(config *NighthawkConfig) ([]byte, error) {
 		"--output-format experimental_fortio_pedantic").Output()
 
 	if err != nil {
-		msg := "Unable to run load-test"
-		err = errors.Wrapf(err, msg)
+		err = errors.Wrapf(err, "Unable to run load-test")
 		log.Error(err)
 		return nil, err
 	}

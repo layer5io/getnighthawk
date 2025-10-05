@@ -5,8 +5,8 @@ import (
 
 	"google.golang.org/grpc"
 
-	"github.com/layer5io/meshkit/utils"
 	nighthawk_client "github.com/layer5io/nighthawk-go/pkg/proto"
+	"github.com/meshery/meshkit/utils"
 )
 
 // Options argument for customizing the client
