@@ -1,0 +1,86 @@
+---
+layout: default
+title: Building Nighthawk
+permalink: /docs/build-nighthawk/
+---
+
+<h1>Building Nighthawk (Beginner Guide)</h1>
+
+<p>
+  This guide helps new contributors build <strong>Nighthawk</strong> locally.
+  No prior experience with Envoy or Bazel is required.
+</p>
+
+<hr />
+
+<h2>Prerequisites</h2>
+<ul>
+  <li>OS: Linux (Ubuntu / Arch tested)</li>
+  <li>RAM: Minimum 8 GB (16 GB recommended)</li>
+  <li>CPU: 4 cores or more</li>
+</ul>
+
+<h2>Required Tools</h2>
+
+<pre><code>
+    sudo pacman -S --needed git base-devel curl python jdk11-openjdk bazel
+  </code></pre>
+
+<h2>Clone Nighthawk</h2>
+
+<pre><code>
+    git clone https://github.com/envoyproxy/nighthawk.git
+    cd nighthawk
+  </code></pre>
+
+<h2>Build Nighthawk</h2>
+
+<pre><code>
+    bazel build //:nighthawk
+  </code></pre>
+
+<p>
+  The first build may take 15–30 minutes as dependencies are downloaded.
+</p>
+
+<h2>Verify the Build</h2>
+
+<pre><code>
+    ./bazel-bin/nighthawk --help
+  </code></pre>
+
+<p>
+  If the help menu appears, the build was successful.
+</p>
+
+<hr />
+
+<h2>Common Issues</h2>
+
+<h3>Bazel build fails due to memory</h3>
+<p>
+  Bazel is memory-intensive. Close other applications or use a machine
+  with at least 16 GB RAM.
+</p>
+
+<h3>Java version errors</h3>
+<p>
+  Ensure Java 11 is installed:
+</p>
+
+<pre><code>
+    java -version
+  </code></pre>
+
+<p>
+  Install OpenJDK 11 if missing.
+</p>
+
+<hr />
+
+<h2>Next Steps</h2>
+<ul>
+  <li>Try running a simple HTTP load test</li>
+  <li>Explore GetNighthawk Docker images</li>
+  <li>Join the Layer5 Slack and ask questions</li>
+</ul>
