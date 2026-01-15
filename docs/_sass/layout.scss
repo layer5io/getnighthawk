@@ -542,3 +542,17 @@ hr {
     grid-template-columns: 1fr;
   }
 }
+/* Custom Scrollbar*/
+::-webkit-scrollbar{
+  width: 0.5rem;
+}
+::-webkit-scrollbar-track {
+  background: rgb(255, 255, 255);
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(60, 73, 79);
+  border-radius: 0.3rem;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(85, 85, 85);
+}
