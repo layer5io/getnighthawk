@@ -24,7 +24,7 @@ func Transform(res *nighthawk_client.ExecutionResponse) ([]byte, error) {
 	resFortio.Labels = strings.Join(res.Output.GetOptions().GetLabels(), " ")
 	resFortio.Version = res.Output.GetVersion().GetVersion().String()
 	resFortio.StartTime = res.Output.GetTimestamp()
-	resFortio.RequestedQPS = uint32(workers) * res.Output.Options.RequestsPerSecond.GetValue()
+	resFortio.RequestedQPS = fmt.Sprint(uint32(workers) * res.Output.Options.RequestsPerSecond.GetValue())
 	resFortio.URL = res.Output.Options.GetUri().GetValue()
 	resFortio.RequestedDuration = durationpb.New(res.Output.Options.GetDuration().AsDuration())
 	// actual duration
