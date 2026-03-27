@@ -34,19 +34,14 @@ func NighthawkRun(config *NighthawkConfig) ([]byte, error) {
 
 	args := []string{"--rps " + qps,
 		"--connections " + c,
+		"--concurrency 1",
 		"--duration " + duration,
 		rURL.String(),
 		"--output-format experimental_fortio_pedantic"}
 
 	log.Info("Received arguments for run", args)
 
-	out, err := exec.Command("nighthawk_client",
-		"--rps "+qps,
-		"--concurrency 1",
-		"--connections "+c,
-		"--duration "+duration,
-		rURL.String(),
-		"--output-format experimental_fortio_pedantic").Output()
+	out, err := exec.Command("nighthawk_client", args...).Output()
 
 	if err != nil {
 		err = errors.Wrapf(err, "Unable to run load-test")
