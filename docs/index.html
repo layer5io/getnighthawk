@@ -51,7 +51,7 @@ layout: default
           </div>
         </div>
         <div class="hero-section-button-div">
-          <button class="hero-section-button" type="button" name="Getting Started"><a class="hero-section-button-text" style="text-decoration: none" href="/docs">Get started</a></button>
+          <button class="hero-section-button" type="button" name="Getting Started"><a class="hero-section-button-text" style="text-decoration: none" href="{% include relative-src.html src='/docs' %}">Get started</a></button>
           <p>Put your cloud native infrastructure to the test</p>
 
         </div>
@@ -70,7 +70,7 @@ layout: default
   <div class="nighthawk-description-div">
       <div class="custom-desc-div container">
           <div class="nighthawk-img-container">
-            <img src="/assets/images/screenshots/meshery-nighthawk-performance-chart.png" />              
+            <img src="{{ site.baseurl }}/assets/images/screenshots/meshery-nighthawk-performance-chart.png" />
           </div>
           <div class="description-div">
               <div class="nighthawk-desc-text head-h1">
@@ -103,7 +103,7 @@ layout: default
             </div>
           </div>
           <div class="nighthawk-meshery-div-columns">
-            <img src="/assets/images/screenshots/meshery-nighthawk.png" class="nighthawk-meshery-logo" alt="logo">
+            <img src="{{ site.baseurl }}/assets/images/screenshots/meshery-nighthawk.png" class="nighthawk-meshery-logo" alt="logo">
           </div>
         </div>
       </div>

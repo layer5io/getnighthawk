@@ -175,7 +175,7 @@ strategies.
 
 ## Nighthawk binaries
 
-<img src="/assets/images/screenshots/Nighthawk.svg" style="width:90%;padding:4%;align:center"/>
+<img src="{{ site.baseurl }}/assets/images/screenshots/Nighthawk.svg" style="width:90%;padding:4%;align:center"/>
 
 ### nighthawk_client
 

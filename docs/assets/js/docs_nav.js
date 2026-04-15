@@ -1,7 +1,7 @@
-const menuTray = document.getElementById("menuTray")
+var menuTray = document.getElementById("menuTray")
 
 
-document.querySelector('#toggle').addEventListener("click", () => {
+document.querySelector('#toggle').addEventListener("click", function() {
    if (menuTray.style.visibility === 'hidden') {
        menuTray.style.visibility = 'visible';
        document.getElementById("float-icon-arrow").classList.remove('fa-angle-double-right')
