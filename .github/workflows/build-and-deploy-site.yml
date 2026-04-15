@@ -1,0 +1,47 @@
+name: Build and Deploy Site
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'docs/**'
+      - 'Makefile'
+      - 'CNAME'
+      - '.github/workflows/build-and-deploy-site.yml'
+      - '.github/workflows/build-and-preview-site.yml'
+
+permissions:
+  contents: write
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Checkout site source
+        uses: actions/checkout@v6
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+
+      - name: Install dependencies
+        run: make site-setup
+
+      - name: Build site
+        run: |
+          make site-build
+          cp CNAME docs/_site/CNAME
+          
+      - name: Deploy site
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./docs/_site
+          keep_files: true
