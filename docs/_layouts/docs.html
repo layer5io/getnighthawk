@@ -12,10 +12,11 @@ layout: default
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu&display=swap" rel="stylesheet">
-
-        <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
+        // for copy button
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+        <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
         
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/sidebar_doc.css" />
+    <link rel="stylesheet" href="{{ '/assets/css/sidebar_doc.css' | relative_url }}" />
 
         <script src="https://kit.fontawesome.com/2ffe680fa0.js" crossorigin="anonymous"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
@@ -111,7 +112,36 @@ layout: default
   </div>
   <div class="col-sm-9 container-g section-content">
     {{category}}
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var codeBlocks = document.querySelectorAll('pre code');
+        codeBlocks.forEach(function (codeBlock) {
+          var button = document.createElement('button');
+          button.className = 'copy-button';
+          // Use Font Awesome icon for copy button
+          button.innerHTML = '<i class="fas fa-copy"></i>';
+          codeBlock.parentNode.insertBefore(button, codeBlock);
+  
+          var clipboard = new ClipboardJS(button, {
+            target: function (trigger) {
+              return trigger.nextElementSibling;
+            }
+          });
+  
+          clipboard.on('success', function (e) {
+            e.clearSelection();
+            // Change icon to checkmark when copied
+            e.trigger.innerHTML = '<i class="fas fa-check"></i>';
+            setTimeout(function () {
+              // Change back to copy icon after a delay
+              e.trigger.innerHTML = '<i class="fas fa-copy"></i>';
+            }, 2000);
+          });
+        });
+      });
+    </script>
+
     {{content}}
   </div>
 </div>
-<script src="{{ site.baseurl }}/assets/js/docs_nav.js"></script>
+<script src="{{ '/assets/js/docs_nav.js' | relative_url }}"></script>
