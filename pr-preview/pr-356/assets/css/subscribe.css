@@ -1,0 +1,66 @@
+.subscribe-a {
+  text-align: center;
+}
+
+.email-div {
+  white-space: nowrap;
+  vertical-align: bottom;
+  margin-top: 5px;
+}
+
+.subscribe-button {
+  width: 100%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-decoration: none;
+  padding: 15px 30px;
+  background: #3c494f;
+  border-radius: 3px;
+  border: 1px solid rgba(255,255,255,0.5);
+  transition: .2s ease-in-out;
+  display: flex;
+  justify-content: center;
+  height: 3.5rem;
+  color: white;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.125rem;
+  cursor:     ;
+  letter-spacing: 0.5px;
+}
+
+.subscribe-inputbox {
+  white-space: nowrap;
+}
+#mc_embed_signup {
+  font: 14px Helvetica, Arial, sans-serif;
+}
+
+/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+    We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+#mc_embed_signup .button {
+  width: 100%;
+  margin: 0px;
+  background-color: rgba(255, 152, 0, 0.5);
+  text-align: center;
+}
+
+#mc_embed_signup .button:hover {
+  background-color: rgba(255, 152, 0, 0.7);
+}
+
+@media (max-width: 768px) {
+  #mc_embed_signup input.email {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  #mc_embed_signup {
+    width: 100%;
+  }
+
+  #mc_embed_signup .button {
+    width: 100%;
+    margin: 0;
+  }
+}
