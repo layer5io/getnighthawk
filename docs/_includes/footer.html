@@ -2,7 +2,7 @@
 			<div class="container foot-container">
 				<p class="editor-link"><a href="cloudcannon:collections/_data/footer.yml" class="btn"><strong>&#9998;</strong> Edit footer</a></p>
 				<div class="nighthawk-logo">
-					<a href="/" target="_blank" rel="noopener noreferrer"><img src="{{ site.baseurl }}/assets/images/logos/nighthawk/horizontal/nighthawk-text-side_white.svg" alt="Nighthawk Logo">	</a>
+					<a href="{% include relative-src.html src='/' %}" target="_blank" rel="noopener noreferrer"><img src="{{ '/assets/images/logos/nighthawk/horizontal/nighthawk-text-side_white.svg' | relative_url }}" alt="Nighthawk Logo">	</a>
 				<!-- <p>Nighthawk</p> -->
 				</div>
 				<div class="footer-columns">
@@ -63,12 +63,12 @@
 		</footer>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		{% if jekyll.environment == 'production' %}
-       		<script src="{{ site.baseurl }}/assets/js/stellarnav.min.js"></script>
+		<script src="{{ '/assets/js/stellarnav.min.js' | relative_url }}"></script>
         {% else %}
-		<script src="{{ site.baseurl }}/assets/js/stellarnav.js"></script>
+		<script src="{{ '/assets/js/stellarnav.js' | relative_url }}"></script>
 	    {% endif %}
 
-		<script src="{{ site.baseurl }}/assets/js/main.js"></script>
+		<script src="{{ '/assets/js/main.js' | relative_url }}"></script>
 
 		<!-- Site Navigation Menu -->
 		<script type="text/javascript">
@@ -82,7 +82,7 @@
 		<script>
 
 		function resetCopyText(element) {
-			let childElements = element.childNodes
+			var childElements = element.childNodes
 			childElements[3].innerHTML="Copy to clipboard";
 		}
 
@@ -91,7 +91,7 @@
 			console.info('Action:', e.action);
 			console.info('Text:', e.text);
 			console.info('Trigger:', e.trigger);
-			let childElements = e.trigger.childNodes;
+			var childElements = e.trigger.childNodes;
 			childElements[3].innerHTML = "Copied!";
 			e.clearSelection();
 		});
@@ -107,7 +107,7 @@
 				var element = document.getElementById(divId);
 				element.classList.toggle("showDiv");
 				var toggleDivs = document.getElementsByClassName("toggle");
-				for(let i=0; i<toggleDivs.length; i++) {
+				for(var i=0; i<toggleDivs.length; i++) {
 					if(toggleDivs[i] != element)
 						toggleDivs[i].classList.remove("showDiv");
 				}
