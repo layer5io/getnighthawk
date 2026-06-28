@@ -131,7 +131,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
           git add pr-preview
-          git commit -m "Prune old PR previews" || true
+          git commit -m "Prune old PR previews"
           git push
 
           echo "removed_prs_json=$(printf '%s\n' "${removed_prs[@]}" | jq -R . | jq -sc .)" >> "$GITHUB_OUTPUT"
