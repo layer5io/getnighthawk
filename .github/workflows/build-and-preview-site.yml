@@ -26,10 +26,10 @@ defaults:
 
 jobs:
   build-and-deploy-preview:
+    runs-on: ubuntu-24.04
+
     outputs:
       removed_prs_json: ${{ steps.prune-previews.outputs.removed_prs_json }}
-
-    runs-on: ubuntu-24.04
 
     env:
       PREVIEW_RETENTION_LIMIT: 6
